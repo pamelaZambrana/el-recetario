@@ -2,7 +2,7 @@ import React from 'react';
 
 const Menu = () => {
     return (
-        <div>
+        <div className='navbar-menu'>
             <i className="bi bi-list"></i>
 
         </div>

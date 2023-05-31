@@ -1,0 +1,39 @@
+@import "main";
+.navbar{
+    height: 10%;
+    background-color: $primary;
+    img{
+        width: 68px;
+        height: auto;
+    };
+    p{
+        margin: 0px;
+        font-size: $size-title;
+        font-family: $font-title;
+        color: $white;
+    };
+    .navbar-menu{
+        i{
+            color: $white;
+            font-size: $size-title;
+        }
+    }
+};
+
+@media (min-width: 450px){
+    .navbar{
+        
+        img{
+            width: 81.6px;
+        };
+        p{
+            font-size:1.2*$size-title;
+        }
+        .navbar-menu{
+            i{
+                color: $white;
+                font-size: 1.2*$size-title;
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+body {
+  background-color: #FBFAF8;
+  min-width: 360px;
+}
+
+.navbar {
+  height: 10%;
+  background-color: #C02E09;
+}
+.navbar img {
+  width: 68px;
+  height: auto;
+}
+.navbar p {
+  margin: 0px;
+  font-size: 30px;
+  font-family: "Libre Baskerville", serif;
+  color: #FBFAF8;
+}
+.navbar .navbar-menu i {
+  color: #FBFAF8;
+  font-size: 30px;
+}
+
+@media (min-width: 450px) {
+  .navbar img {
+    width: 81.6px;
+  }
+  .navbar p {
+    font-size: 36px;
+  }
+  .navbar .navbar-menu i {
+    color: #FBFAF8;
+    font-size: 36px;
+  }
+}/*# sourceMappingURL=home.css.map */

@@ -1,12 +1,13 @@
 import React from 'react';
 import Menu from '../Secondary/Menu';
+import "../../../css/home.css";
 
 const Navbar = () => {
     return (
-        <div className='navbar'>
+        <div className='navbar px-3'>
             <img src='/img/logotipo - El Recetario.png' alt='Logotipo de El Recetario'/>
-            <p>El Recetario2</p>
-            <Menu></Menu>
+            <p>El Recetario</p>
+            <Menu className="navbar-menu"></Menu>
 
         </div>
     );

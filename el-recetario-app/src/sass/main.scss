@@ -18,16 +18,14 @@ $font-content-medium : 'Comfortaa', cursive;
 $font-content-small : 'Rubik', sans-serif;
 
 /* Font-size variables */
-$size-title : 24px;
+$size-title : 30px;
 $size-subtitule1: 20px;
 $size-subtitule2 : 16px;
 $size-content-medium : 14px;
 $size-content-small : 12px;
 
-
 body{
     background-color: $background1;
-    font-family: $font-content-small;
-    font-size: $size-content-small;
+    min-width: 360px;
 }
 
