@@ -20,6 +20,33 @@
     }
 };
 
+.footer{
+    position: absolute;
+    bottom: 0px;
+    height: auto;
+    width: 100vw;
+    padding: 8px 1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: $primary;
+    color: $white;
+    @include small;
+    .social-media-section{
+        width: 60%;
+        p{
+            margin: 0px;
+        }
+    };
+    .actions-section{
+        .register-link-true{
+            text-decoration: none;
+            color: $white;
+        };
+
+    }
+    
+}
+
 @media (min-width: 450px){
     .navbar{
         
@@ -35,5 +62,9 @@
                 font-size: 1.2*$size-title;
             }
         }
+    };
+
+    .footer {
+        font-size: 1.2*$size-content-small;
     }
 }

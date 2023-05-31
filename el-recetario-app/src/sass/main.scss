@@ -24,6 +24,14 @@ $size-subtitule2 : 16px;
 $size-content-medium : 14px;
 $size-content-small : 12px;
 
+@mixin subtitle1 ($font, $size){
+    font-family: $font-subtitule2;
+    font-size: $size-subtitule2;
+};
+@mixin small{
+    font-family: $font-content-small;
+    font-size: $size-content-small;
+};
 body{
     background-color: $background1;
     min-width: 360px;

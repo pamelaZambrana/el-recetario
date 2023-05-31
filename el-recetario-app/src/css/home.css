@@ -25,6 +25,30 @@ body {
   font-size: 30px;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0px;
+  height: auto;
+  width: 100vw;
+  padding: 8px 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #C02E09;
+  color: #FBFAF8;
+  font-family: "Rubik", sans-serif;
+  font-size: 12px;
+}
+.footer .social-media-section {
+  width: 60%;
+}
+.footer .social-media-section p {
+  margin: 0px;
+}
+.footer .actions-section .register-link-true {
+  text-decoration: none;
+  color: #FBFAF8;
+}
+
 @media (min-width: 450px) {
   .navbar img {
     width: 81.6px;
@@ -35,5 +59,8 @@ body {
   .navbar .navbar-menu i {
     color: #FBFAF8;
     font-size: 36px;
+  }
+  .footer {
+    font-size: 14.4px;
   }
 }/*# sourceMappingURL=home.css.map */
