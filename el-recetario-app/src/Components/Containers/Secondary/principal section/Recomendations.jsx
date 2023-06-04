@@ -2,10 +2,9 @@ import React from 'react';
 
 const Recomendations = () => {
     return (
-        <section>
-
-            <h2>Nuestras recomendaciones</h2>
-            <div id="carouselExample" className="carousel slide">
+        <section className='carousel-container'>
+            <h2 className='carousel-title'>Nuestras recomendaciones</h2>
+            <div id="carouselExample" className="carousel slide container">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img src="/img/carousel/platillos-principales.jpg" className="d-block w-100" alt="..."/>

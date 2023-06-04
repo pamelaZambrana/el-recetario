@@ -1,47 +1,175 @@
 @import "main";
+/* -----Variables----- */
+$hero-heigth1 : 200px;
+$hero-heigth2 : 30vh;
+$hero-heigth3 : 50vh;
+$hero-heigth4 : 70vh;
+$hero-heigth5 : 90vh;
+
+/* misxins */
+@mixin display-estructure($justify,$align){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+};
+@mixin shadow{
+    box-shadow: rgba(0, 0, 0, 0.486) 0px 5px 15px;
+}
 
 .home-principal-section{
     display: block;
     .hero{
         width: 100%;
-        height: 200px;
+        height: $hero-heigth1;
+        @include display-estructure(center,center);
         background-image: url('../../public/img/hero-big.jpg');
         background-size: cover;
-        .hero-img{
-            object-fit: cover;
-        }
-    }
+        .hero-message{
+            position: absolute;
+            width: 100%;
+            height: 0.4*$hero-heigth1;
+            padding: 12px;
+            @include display-estructure(center,center );
+            @include subtitle1;
+            background-color: hsla(30, 20%, 98%, 0.664);
+            @include shadow();
+            ;
+            p{
+                margin: 0;
+                text-align: center;
+                color: $primary;
+                font-weight: bold;
+            };
+        };
+    };
+    .subsection-container{
+        width: 100%;
+        .subsection-title{
+            margin: 0;
+            padding: 0.8rem 0.8rem 0 0.8rem;
+            @include subtitle2;
+            font-weight: bold;
+        };
+        .scroll{
+            padding: 0.8rem;
+            @include display-estructure(center,center );
+            gap: 1rem;
+            .arrow-active{
+                right: 0;
+                font-size: 24px;
+                font-weight: bold;
+                color: $primary;
+            };
+            .arrow-inactive{
+                font-size: 24px;
+                font-weight: bold;
+                visibility: hidden;
+            };
+            .arrow-active:hover{
+                cursor: pointer;
+            }
+            .scroll-content{
+                width: 100%;
+                @include display-estructure(left, center);
+                overflow-x: hidden;
+                gap: 1rem;
+                border-radius: 12px;
+                .scroll-card{
+                    height: auto;
+                    background-color: $primary;
+                    border-radius: 15px;
+                    @include shadow;
+                    h4{
+                        margin: 0.5rem 1rem;
+                        text-align: center;
+                        @include content-medium;
+                        color: $white;
+                    }
+                    img{
+                        border-radius: 15px 15px 0px 0px;
+                        width: 180px;
+                    };
+                };
+            };
+        };
+    };
 };
 
 @media (min-width:400px){
     .home-principal-section{
         .hero{
-            height: 30vh;
-        }
+            height: $hero-heigth2;
+            .hero-message{
+                height: 0.4*$hero-heigth2;
+                
+                p{
+                    font-size: 1.2*$size-subtitule1;
+                }
+            };
+        };
+        .subsection-container{
+            .subsection-title{
+                font-size: 1.2*$size-subtitule2;
+            };
+        };
     };
 };
 @media (min-width:500px){
     .home-principal-section{
         .hero{
-            height: 50vh;
-        }
+            height: $hero-heigth3;
+            .hero-message{
+                height: 0.4*$hero-heigth3;
+                p{
+                    font-size: 1.3*$size-subtitule1;
+                }
+            };
+        };
+        .subsection-container{
+            .subsection-title{
+                font-size: 1.3*$size-subtitule2;
+            };
+        };
     };
 };
 @media (min-width:800px){
     .home-principal-section{
         .hero{
-            height: 70vh;
-        }
+            height: $hero-heigth4;
+            .hero-message{
+                height: 0.4*$hero-heigth4;
+                p{
+                    font-size: 1.4*$size-subtitule1;
+                }
+            };
+        };
+        .subsection-container{
+            .subsection-title{
+                font-size: 1.4*$size-subtitule2;
+            };
+        };
     };
 };
 @media (min-width:1300px){
     .home-principal-section{
         .hero{
             width: 100%;
-            height: 90vh;
+            height: $hero-heigth5;
             background-image: url('../../public/img/hero\ biggest.jpg');
             object-fit: cover;
             object-position: center;
-        }
+            .hero-message{
+                height: 0.4*$hero-heigth5;
+                p{
+                    font-size: 1.8*$size-subtitule1;
+
+                }
+            };
+        };
+        .subsection-container{
+            .subsection-title{
+                font-size: 2*$size-subtitule2;
+            };
+        };
     };
-}
+};

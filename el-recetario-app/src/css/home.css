@@ -21,6 +21,11 @@ body {
   font-family: "Libre Baskerville", serif;
   color: #FBFAF8;
 }
+.navbar .navbar-menu {
+  display: flex;
+  justify-content: right;
+  width: 68px;
+}
 .navbar .navbar-menu i {
   color: #FBFAF8;
   font-size: 30px;
@@ -29,6 +34,7 @@ body {
 .footer {
   height: auto;
   width: 100%;
+  margin-top: 1rem;
   padding: 8px 1rem;
   display: flex;
   justify-content: space-between;
@@ -54,6 +60,9 @@ body {
   }
   .navbar p {
     font-size: 36px;
+  }
+  .navbar .navbar-menu {
+    width: 81.6px;
   }
   .navbar .navbar-menu i {
     color: #FBFAF8;

@@ -6,33 +6,137 @@ body {
   min-width: 360px;
 }
 
+/* -----Variables----- */
+/* misxins */
 .home-principal-section {
   display: block;
 }
 .home-principal-section .hero {
   width: 100%;
   height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image: url("../../public/img/hero-big.jpg");
   background-size: cover;
 }
-.home-principal-section .hero .hero-img {
-  -o-object-fit: cover;
-     object-fit: cover;
+.home-principal-section .hero .hero-message {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Comfortaa", cursive;
+  font-size: 20px;
+  background-color: hsla(30, 20%, 98%, 0.664);
+  box-shadow: rgba(0, 0, 0, 0.486) 0px 5px 15px;
+}
+.home-principal-section .hero .hero-message p {
+  margin: 0;
+  text-align: center;
+  color: #C02E09;
+  font-weight: bold;
+}
+.home-principal-section .subsection-container {
+  width: 100%;
+}
+.home-principal-section .subsection-container .subsection-title {
+  margin: 0;
+  padding: 0.8rem 0.8rem 0 0.8rem;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+.home-principal-section .subsection-container .scroll {
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.home-principal-section .subsection-container .scroll .arrow-active {
+  right: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #C02E09;
+}
+.home-principal-section .subsection-container .scroll .arrow-inactive {
+  font-size: 24px;
+  font-weight: bold;
+  visibility: hidden;
+}
+.home-principal-section .subsection-container .scroll .arrow-active:hover {
+  cursor: pointer;
+}
+.home-principal-section .subsection-container .scroll .scroll-content {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  overflow-x: hidden;
+  gap: 1rem;
+  border-radius: 12px;
+}
+.home-principal-section .subsection-container .scroll .scroll-content .scroll-card {
+  height: auto;
+  background-color: #C02E09;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.486) 0px 5px 15px;
+}
+.home-principal-section .subsection-container .scroll .scroll-content .scroll-card h4 {
+  margin: 0.5rem 1rem;
+  text-align: center;
+  font-family: "Comfortaa", cursive;
+  font-size: 14px;
+  color: #FBFAF8;
+}
+.home-principal-section .subsection-container .scroll .scroll-content .scroll-card img {
+  border-radius: 15px 15px 0px 0px;
+  width: 180px;
 }
 
 @media (min-width: 400px) {
   .home-principal-section .hero {
     height: 30vh;
   }
+  .home-principal-section .hero .hero-message {
+    height: 12vh;
+  }
+  .home-principal-section .hero .hero-message p {
+    font-size: 24px;
+  }
+  .home-principal-section .subsection-container .subsection-title {
+    font-size: 21.6px;
+  }
 }
 @media (min-width: 500px) {
   .home-principal-section .hero {
     height: 50vh;
   }
+  .home-principal-section .hero .hero-message {
+    height: 20vh;
+  }
+  .home-principal-section .hero .hero-message p {
+    font-size: 26px;
+  }
+  .home-principal-section .subsection-container .subsection-title {
+    font-size: 23.4px;
+  }
 }
 @media (min-width: 800px) {
   .home-principal-section .hero {
     height: 70vh;
+  }
+  .home-principal-section .hero .hero-message {
+    height: 28vh;
+  }
+  .home-principal-section .hero .hero-message p {
+    font-size: 28px;
+  }
+  .home-principal-section .subsection-container .subsection-title {
+    font-size: 25.2px;
   }
 }
 @media (min-width: 1300px) {
@@ -44,5 +148,14 @@ body {
        object-fit: cover;
     -o-object-position: center;
        object-position: center;
+  }
+  .home-principal-section .hero .hero-message {
+    height: 36vh;
+  }
+  .home-principal-section .hero .hero-message p {
+    font-size: 36px;
+  }
+  .home-principal-section .subsection-container .subsection-title {
+    font-size: 36px;
   }
 }/*# sourceMappingURL=home-principal-section.css.map */

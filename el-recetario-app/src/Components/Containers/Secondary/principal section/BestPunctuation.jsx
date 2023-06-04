@@ -2,10 +2,10 @@ import React from 'react';
 
 const BestPunctuation = () => {
     return (
-        <section>
+        <section className='carousel-container'>
 
-            <h2>Las 10 recetas con mayor puntuación</h2>
-            <div id="carouselExample" className="carousel slide">
+            <h2 className='carousel-title'>Las 10 recetas con mayor puntuación</h2>
+            <div id="carouselExample" className="carousel slide container">
                 
                 <div className="carousel-inner">
                     <div className="carousel-item active">

@@ -1,36 +1,144 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const Filters = () => {
+
+    const scrollContainerRef = useRef(null);
+    const [scrollValues, setScrollValues] = useState({
+        left: 0,
+        containerWidth: 0,
+        contentWidth: 0,
+    });
+    useEffect(() => {
+        function updateWidth() {
+            const containerWidth = scrollContainerRef.current.clientWidth;
+            const contentWidth = scrollContainerRef.current.scrollWidth;
+            setScrollValues({
+                left: 0,
+                containerWidth : containerWidth,
+                contentWidth : contentWidth,
+            })
+        };
+        updateWidth();
+        window.addEventListener("resize", updateWidth);
+        return () => {
+            window.removeEventListener("resize", updateWidth);
+        }
+    }, []);
+    const scrollRigth = () =>{
+        const newvalueRigth = scrollContainerRef.current.scrollLeft+200;
+        scrollContainerRef.current.scrollBy({
+            left: 200,
+            behavior: "smooth",
+        });
+        setScrollValues({
+            ...scrollValues,
+            left: newvalueRigth,
+
+        });
+    };
+    const scrollLeft = () =>{
+        const newvalueleft = scrollContainerRef.current.scrollLeft-200;
+        scrollContainerRef.current.scrollLeft = newvalueleft;
+        scrollContainerRef.current.scrollBy({
+            left: -200,
+            behavior: "smooth",
+        });
+        setScrollValues({
+            ...scrollValues,
+            left: newvalueleft,
+
+        });
+
+    };
+    function arrowRigth(){
+        console.log(scrollValues);
+        if (scrollValues.left + scrollValues.containerWidth < scrollValues.contentWidth){
+            return (
+                <i 
+                    className="bi bi-chevron-compact-right arrow-active"
+                    onClick={ scrollRigth }
+                ></i> 
+            );
+        }else{
+            return (
+                    <i 
+                        className="bi bi-chevron-compact-right arrow-inactive"
+                        onClick={ scrollRigth }
+                    ></i> 
+            )
+        }
+        ;
+    };
+    function arrowLeft(){
+        console.log(scrollValues);
+        if (scrollValues.left > 0 ){
+            return(
+                <i 
+                    className="bi bi-chevron-compact-left arrow-active"
+                    onClick={ scrollLeft }
+                ></i>                
+            )
+        }else{
+            return(
+                <i 
+                    className="bi bi-chevron-compact-left arrow-inactive"
+                    onClick={ scrollLeft }
+                ></i>                
+            )
+        };
+    };
+    const filtersList = [
+        {
+            name: "Comida típica",
+            image: "/img/carousel/platillos-principales.jpg",
+            description: "Buscar comida típica",
+        },
+        {
+            name: "Comida popular",
+            image: "/img/carousel/platillos-principales.jpg",
+            description: "Buscar comida popular",
+        },
+        {
+            name: "Platillos principales",
+            image: "/img/carousel/platillos-principales.jpg",
+            description: "Buscar por platillos principales",
+        },
+        {
+            name: "Bebidas",
+            image: "/img/carousel/platillos-principales.jpg",
+            description: "Buscar por bebidas",
+        },
+        {
+            name: "Postres",
+            image: "/img/carousel/platillos-principales.jpg",
+            description: "Buscar por postres",
+        },
+        {
+            name: "Mejores puntuaciones",
+            image: "/img/carousel/platillos-principales.jpg",
+            description: "Buscar por puntuaciones",
+        },
+    ];
     return (
-        <section>
-            <h2>Encuentra la mejor receta para hoy</h2>
-            <div id="carouselExample" className="carousel slide">
-                
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <img src="/img/carousel/platillos-principales.jpg" className="d-block w-100" alt="..."/>
-                        <h4>Platillos principales</h4>
-                    </div>
-                    <div className="carousel-item active">
-                        <img src="/img/carousel/platillos-principales.jpg" className="d-block w-100" alt="..."/>
-                        <h4>Platillos principales</h4>
-                    </div>
-                    <div className="carousel-item active">
-                        <img src="/img/carousel/platillos-principales.jpg" className="d-block w-100" alt="..."/>
-                        <h4>Platillos principales</h4>
-                    </div>
+        <section className='subsection-container'>
+            <h2 className='subsection-title'>Encuentra la mejor receta para hoy</h2>
+            <div className='scroll'>
+                { arrowLeft () }
+                <div className='scroll-content' ref={ scrollContainerRef }>
+                    {
+                        filtersList.map((filter,index) => (
+                            <div key={ index } className='scroll-card'>
+                                <img src={ filter.image } alt={ filter.description } />
+                                <h4> { filter.name } </h4>
+                            </div>
+                        ))
+                    }
                 </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                </button>
+                
+                { arrowRigth() }  
             </div>
         </section>
     );
-}
+};
 
 export default Filters;

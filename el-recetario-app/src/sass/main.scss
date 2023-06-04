@@ -13,21 +13,30 @@ $black : #1E1D1D;
 /* Font-family variables */
 $font-title : 'Libre Baskerville', serif;
 $font-subtitule1: 'Comfortaa', cursive;
-$font-subtitule2 : 'Libre Baskerville', serif;
+$font-subtitule2 : 'Rubik', sans-serif;
 $font-content-medium : 'Comfortaa', cursive;
-$font-content-small : 'Rubik', sans-serif;
+$font-content-small : 'Comfortaa', cursive;
 
 /* Font-size variables */
 $size-title : 30px;
 $size-subtitule1: 20px;
-$size-subtitule2 : 16px;
+$size-subtitule2 : 18px;
 $size-content-medium : 14px;
 $size-content-small : 12px;
 
-@mixin subtitle1 ($font, $size){
+@mixin subtitle1{
+    font-family: $font-subtitule1;
+    font-size: $size-subtitule1;
+};
+@mixin subtitle2{
     font-family: $font-subtitule2;
     font-size: $size-subtitule2;
 };
+@mixin content-medium{
+    font-family: $font-content-medium;
+    font-size: $size-content-medium;
+};
+
 @mixin small{
     font-family: $font-content-small;
     font-size: $size-content-small;
