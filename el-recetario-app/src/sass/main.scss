@@ -12,16 +12,16 @@ $black : #1E1D1D;
 
 /* Font-family variables */
 $font-title : 'Libre Baskerville', serif;
-$font-subtitule1: 'Comfortaa', cursive;
-$font-subtitule2 : 'Rubik', sans-serif;
-$font-content-medium : 'Comfortaa', cursive;
-$font-content-small : 'Comfortaa', cursive;
+$font-subtitule1: 'News Cycle', sans-serif;
+$font-subtitule2 : 'Raleway', sans-serif;
+$font-content-medium : 'News Cycle', sans-serif;
+$font-content-small :  'Rubik', sans-serif;
 
 /* Font-size variables */
 $size-title : 30px;
 $size-subtitule1: 20px;
 $size-subtitule2 : 18px;
-$size-content-medium : 14px;
+$size-content-medium : 1.1rem;
 $size-content-small : 12px;
 
 @mixin subtitle1{

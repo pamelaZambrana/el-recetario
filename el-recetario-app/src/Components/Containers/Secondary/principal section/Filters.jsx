@@ -8,6 +8,7 @@ const Filters = () => {
         containerWidth: 0,
         contentWidth: 0,
     });
+
     useEffect(() => {
         function updateWidth() {
             const containerWidth = scrollContainerRef.current.clientWidth;
@@ -16,18 +17,18 @@ const Filters = () => {
                 left: 0,
                 containerWidth : containerWidth,
                 contentWidth : contentWidth,
-            })
+            });
         };
         updateWidth();
         window.addEventListener("resize", updateWidth);
         return () => {
             window.removeEventListener("resize", updateWidth);
         }
-    }, []);
+    }, [scrollValues.containerWidth]);
     const scrollRigth = () =>{
-        const newvalueRigth = scrollContainerRef.current.scrollLeft+200;
+        const newvalueRigth = scrollContainerRef.current.scrollLeft+196;
         scrollContainerRef.current.scrollBy({
-            left: 200,
+            left: 196,
             behavior: "smooth",
         });
         setScrollValues({
@@ -37,10 +38,10 @@ const Filters = () => {
         });
     };
     const scrollLeft = () =>{
-        const newvalueleft = scrollContainerRef.current.scrollLeft-200;
+        const newvalueleft = scrollContainerRef.current.scrollLeft-196;
         scrollContainerRef.current.scrollLeft = newvalueleft;
         scrollContainerRef.current.scrollBy({
-            left: -200,
+            left: -196,
             behavior: "smooth",
         });
         setScrollValues({

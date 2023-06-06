@@ -28,10 +28,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Comfortaa", cursive;
+  font-family: "News Cycle", sans-serif;
   font-size: 20px;
-  background-color: hsla(30, 20%, 98%, 0.664);
-  box-shadow: rgba(0, 0, 0, 0.486) 0px 5px 15px;
+  background-color: hsla(30, 20%, 98%, 0.712);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .home-principal-section .hero .hero-message p {
   margin: 0;
@@ -45,7 +45,7 @@ body {
 .home-principal-section .subsection-container .subsection-title {
   margin: 0;
   padding: 0.8rem 0.8rem 0 0.8rem;
-  font-family: "Rubik", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 18px;
   font-weight: bold;
 }
@@ -71,29 +71,30 @@ body {
   cursor: pointer;
 }
 .home-principal-section .subsection-container .scroll .scroll-content {
-  width: 100%;
+  width: 196px;
+  padding: 0 0.5rem;
   display: flex;
   justify-content: left;
   align-items: center;
-  overflow-x: hidden;
+  overflow-x: scroll;
   gap: 1rem;
-  border-radius: 12px;
 }
 .home-principal-section .subsection-container .scroll .scroll-content .scroll-card {
-  height: auto;
+  height: 100%;
   background-color: #C02E09;
-  border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.486) 0px 5px 15px;
+  border-radius: 12px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .home-principal-section .subsection-container .scroll .scroll-content .scroll-card h4 {
+  height: 2rem;
   margin: 0.5rem 1rem;
   text-align: center;
-  font-family: "Comfortaa", cursive;
-  font-size: 14px;
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.1rem;
   color: #FBFAF8;
 }
 .home-principal-section .subsection-container .scroll .scroll-content .scroll-card img {
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 12px 12px 0px 0px;
   width: 180px;
 }
 
@@ -124,6 +125,12 @@ body {
   .home-principal-section .subsection-container .subsection-title {
     font-size: 23.4px;
   }
+  .home-principal-section .subsection-container .scroll .scroll-content {
+    width: 392px;
+  }
+  .home-principal-section .subsection-container .scroll .scroll-content .scroll-card img {
+    width: 180px;
+  }
 }
 @media (min-width: 800px) {
   .home-principal-section .hero {
@@ -137,6 +144,17 @@ body {
   }
   .home-principal-section .subsection-container .subsection-title {
     font-size: 25.2px;
+  }
+  .home-principal-section .subsection-container .scroll .scroll-content {
+    width: 588px;
+    gap: 1rem;
+  }
+}
+@media (min-width: 1000px) {
+  .home-principal-section .subsection-container .scroll .scroll-content {
+    overflow-x: hidden;
+    width: 768px;
+    gap: 1rem;
   }
 }
 @media (min-width: 1300px) {
@@ -157,5 +175,12 @@ body {
   }
   .home-principal-section .subsection-container .subsection-title {
     font-size: 36px;
+  }
+  .home-principal-section .subsection-container .scroll .scroll-content {
+    width: 100%;
+    gap: 1rem;
+  }
+  .home-principal-section .subsection-container .scroll .scroll-content .scroll-card {
+    width: 180px;
   }
 }/*# sourceMappingURL=home-principal-section.css.map */
