@@ -1,3 +1,6 @@
+:root{
+    font-size: 62.5%;
+}
 /* Color Variables */
 $primary : #C02E09 ;
 $secondary1: #0B8318;
@@ -6,7 +9,7 @@ $background1: #FBFAF8;
 $background2 : #F5F4F2;
 $background3 : #DBDBD9;
 $positive : #1FF536;
-$negative : #C70C00;
+$negative : #C02E09;
 $white: #FBFAF8;
 $black : #1E1D1D;
 
@@ -18,11 +21,11 @@ $font-content-medium : 'News Cycle', sans-serif;
 $font-content-small :  'Rubik', sans-serif;
 
 /* Font-size variables */
-$size-title : 30px;
-$size-subtitule1: 20px;
-$size-subtitule2 : 18px;
-$size-content-medium : 1.1rem;
-$size-content-small : 12px;
+$size-title : 3rem;
+$size-subtitule1: 1.5rem;
+$size-subtitule2 : 1.8rem;
+$size-content-medium : 1.4rem;
+$size-content-small : 1.2rem;
 
 @mixin subtitle1{
     font-family: $font-subtitule1;

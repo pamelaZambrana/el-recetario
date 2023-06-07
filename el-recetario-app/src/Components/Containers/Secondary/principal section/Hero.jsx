@@ -5,9 +5,7 @@ const Hero = () => {
         <div className='hero'>
             <div className='hero-message'>
                 <p>
-                    ¡Descubre los sabores de
-                    <br/>
-                    Bolivia en nuestras recetas!
+                    ¡Descubre los sabores de Bolivia en nuestras recetas!
                 </p>
             </div>
         </div>

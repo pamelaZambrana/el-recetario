@@ -5,11 +5,15 @@ import BestPunctuation from '../Secondary/principal section/BestPunctuation';
 import Recomendations from '../Secondary/principal section/Recomendations';
 import "../../../css/home-principal-section.css";
 const PrincipalSection = () => {
+   
+
     return (
         <div className='home-principal-section'>
             <Hero></Hero>
-            <Filters></Filters>
-            <BestPunctuation></BestPunctuation>
+            <Filters 
+            ></Filters>
+            <BestPunctuation
+            ></BestPunctuation>
             <Recomendations></Recomendations>
         </div>
     );

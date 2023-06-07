@@ -1,39 +1,172 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { arrowLeft, arrowRigth, scrollLeft, scrollRigth } from './carousel';
 
 const Recomendations = () => {
+     /* -----Carousel ----- */
+     const leap = 160;
+    const scrollContainerRef = useRef(null);
+    const [scrollValues, setScrollValues] = useState({
+        left: 0,
+        containerWidth: 0,
+        contentWidth: 0,
+    });
+    useEffect(() => {
+        function updateWidth(){
+            const containerWidth = scrollContainerRef.current.clientWidth;
+            const contentWidth = scrollContainerRef.current.scrollWidth;
+            setScrollValues({
+                left: 0,
+                containerWidth : containerWidth,
+                contentWidth : contentWidth,
+            });
+        };
+        updateWidth();
+        window.addEventListener("resize", updateWidth);
+        return () => {
+            window.removeEventListener("resize", updateWidth);
+        }
+    }, [scrollValues.containerWidth]);
+
+     /* ---- best punctuation list ----*/
+     const recomendationList = [
+        {
+            name: "Piquemacho",
+            image: "/img/carousel/platillos-principales.jpg",
+            description: "Buscar comida típica",
+            punctuation: 5,
+            favorite: false,
+            time: 2,
+            difficulty : 10,
+        },
+        {
+            name: "Huminta",
+            image: "/img/carousel/platillos-principales.jpg",
+            description: "Buscar comida típica",
+            punctuation: 5,
+            favorite: false,
+            time: 2,
+            difficulty : 10,
+        },
+        {
+            name: "Salteña",
+            image: "/img/carousel/platillos-principales.jpg",
+            description: "Buscar comida típica",
+            punctuation: 5,
+            favorite: true,
+            time: 2,
+            difficulty : 10,
+        },
+        {
+            name: "Salchipapa",
+            image: "/img/carousel/platillos-principales.jpg",
+            description: "Buscar comida típica",
+            punctuation: 5,
+            favorite: true,
+            time: 2,
+            difficulty : 10,
+        },
+        {
+            name: "Ají de fideo",
+            image: "/img/carousel/platillos-principales.jpg",
+            description: "Buscar comida típica",
+            punctuation: 5,
+            favorite: true,
+            time: 2,
+            difficulty : 10,
+        },
+        {
+            name: "Plato paceño a la potosina",
+            image: "/img/carousel/platillos-principales.jpg",
+            description: "Buscar comida típica",
+            punctuation: 5,
+            favorite: false,
+            time: 2,
+            difficulty : 10,
+        },
+        {
+            name: "Ají de fideo",
+            image: "/img/carousel/platillos-principales.jpg",
+            description: "Buscar comida típica",
+            punctuation: 5,
+            favorite: true,
+            time: 2,
+            difficulty : 10,
+        },
+        {
+            name: "Sajeta",
+            image: "/img/carousel/platillos-principales.jpg",
+            description: "Buscar comida típica",
+            punctuation: 5,
+            favorite: true,
+            time: 2,
+            difficulty : 10,
+        },
+        {
+            name: "Ají de fideo",
+            image: "/img/carousel/platillos-principales.jpg",
+            description: "Buscar comida típica",
+            punctuation: 5,
+            favorite: true,
+            time: 2,
+            difficulty : 10,
+        },
+        {
+            name: "Hamburguesa de quinua",
+            image: "/img/carousel/platillos-principales.jpg",
+            description: "Buscar comida típica",
+            punctuation: 5,
+            favorite: false,
+            time: 2,
+            difficulty : 10,
+        },
+        
+    ];
+    /* ---- login state ---- */
+    const loginState = true;
+
+    /* ---- heart icon ---- */
+    function fullHeart(state){
+        if(state){
+            return(
+                <i className="bi bi-heart-fill"></i>
+            )
+        }else{
+            return(
+                <i className = { `bi bi-heart`}></i>
+            )
+        };
+    };
     return (
-        <section className='carousel-container'>
-            <h2 className='carousel-title'>Nuestras recomendaciones</h2>
-            <div id="carouselExample" className="carousel slide container">
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <img src="/img/carousel/platillos-principales.jpg" className="d-block w-100" alt="..."/>
-                        <p>8/10</p>
-                        <i className="bi bi-heart"></i>
-                        <h4>Platillos principales</h4>
-                    </div>
-                    <div className="carousel-item active">
-                        <img src="/img/carousel/platillos-principales.jpg" className="d-block w-100" alt="..."/>
-                        <p>8/10</p>
-                        <i className="bi bi-heart"></i>
-                        <h4>Platillos principales</h4>
-                    </div>
-                    <div className="carousel-item active">
-                        <img src="/img/carousel/platillos-principales.jpg" className="d-block w-100" alt="..."/>
-                        <p>8/10</p>
-                        <i className="bi bi-heart"></i>
-                        <h4>Platillos principales</h4>
-                    </div>
+        <section className='subsection-container'>
+            <h2 className='subsection-title'>Recomendaciones</h2>
+            <div className='scroll-recipe'>
+                { arrowLeft (scrollValues, () => scrollLeft(scrollContainerRef, scrollValues, setScrollValues,leap)) }
+                <div className='scroll-content' ref={ scrollContainerRef }>
+                    {
+                        recomendationList.map((recipe,index) => (
+                            <div key={ index } className='scroll-card'>
+                                <img src={ recipe.image } alt={ recipe.description } />
+                                <div className='scroll-card-description'>
+                                    <h4> { recipe.name } </h4>
+                                    <div className='ratings'>
+                                        <h4 className='punctuation'> { `${recipe.punctuation}/10` } </h4>
+                                        {
+                                            loginState
+                                            ?                    
+                                            fullHeart(recipe.favorite)                                       
+                                            :
+                                            <i className = "bi bi-heart"></i>
+                                        }
+                                    </div>
+                                    
+
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                </button>
                 
+                { arrowRigth(scrollValues, () => scrollRigth(scrollContainerRef, scrollValues, setScrollValues, leap)) }  
             </div>
         </section>
     );

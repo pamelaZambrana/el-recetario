@@ -1,3 +1,7 @@
+:root {
+  font-size: 62.5%;
+}
+
 /* Color Variables */
 /* Font-family variables */
 /* Font-size variables */
@@ -13,89 +17,115 @@ body {
 }
 .home-principal-section .hero {
   width: 100%;
-  height: 200px;
+  height: 20rem;
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   background-image: url("../../public/img/hero-big.jpg");
   background-size: cover;
 }
-.home-principal-section .hero .hero-message {
-  position: absolute;
+.home-principal-section .hero-message {
   width: 100%;
-  height: 80px;
-  padding: 12px;
+  height: 6rem;
+  padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "News Cycle", sans-serif;
-  font-size: 20px;
-  background-color: hsla(30, 20%, 98%, 0.712);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  font-size: 1.5rem;
+  background-color: hsla(4, 100%, 39%, 0.74);
+  box-shadow: rgba(58, 57, 57, 0.541) 0px 2px 8px 0px;
 }
-.home-principal-section .hero .hero-message p {
+.home-principal-section .hero-message p {
   margin: 0;
   text-align: center;
-  color: #C02E09;
-  font-weight: bold;
+  color: #DBDBD9;
 }
 .home-principal-section .subsection-container {
   width: 100%;
 }
 .home-principal-section .subsection-container .subsection-title {
   margin: 0;
-  padding: 0.8rem 0.8rem 0 0.8rem;
+  padding: 0.8rem 0.8rem 0.8rem 0.8rem;
   font-family: "Raleway", sans-serif;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 1.8rem;
 }
-.home-principal-section .subsection-container .scroll {
-  padding: 0.8rem;
+.home-principal-section .subsection-container .scroll, .home-principal-section .subsection-container .scroll-recipe {
+  height: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
-.home-principal-section .subsection-container .scroll .arrow-active {
+.home-principal-section .subsection-container .scroll .arrow-active, .home-principal-section .subsection-container .scroll-recipe .arrow-active {
   right: 0;
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: bold;
   color: #C02E09;
 }
-.home-principal-section .subsection-container .scroll .arrow-inactive {
-  font-size: 24px;
+.home-principal-section .subsection-container .scroll .arrow-inactive, .home-principal-section .subsection-container .scroll-recipe .arrow-inactive {
+  font-size: 2.4rem;
   font-weight: bold;
   visibility: hidden;
 }
-.home-principal-section .subsection-container .scroll .arrow-active:hover {
+.home-principal-section .subsection-container .scroll .arrow-active:hover, .home-principal-section .subsection-container .scroll-recipe .arrow-active:hover {
   cursor: pointer;
 }
-.home-principal-section .subsection-container .scroll .scroll-content {
-  width: 196px;
-  padding: 0 0.5rem;
+.home-principal-section .subsection-container .scroll .scroll-content, .home-principal-section .subsection-container .scroll-recipe .scroll-content {
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1rem;
   display: flex;
   justify-content: left;
   align-items: center;
   overflow-x: scroll;
   gap: 1rem;
 }
-.home-principal-section .subsection-container .scroll .scroll-content .scroll-card {
+.home-principal-section .subsection-container .scroll .scroll-content .scroll-card, .home-principal-section .subsection-container .scroll-recipe .scroll-content .scroll-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
   height: 100%;
-  background-color: #C02E09;
+  background-color: #F5F4F2;
   border-radius: 12px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: 12px 15px 5px -8px rgba(133, 125, 125, 0.45);
+  -webkit-box-shadow: 12px 15px 5px -8px rgba(133, 125, 125, 0.45);
+  -moz-box-shadow: 12px 15px 5px -8px rgba(133, 125, 125, 0.45);
 }
-.home-principal-section .subsection-container .scroll .scroll-content .scroll-card h4 {
-  height: 2rem;
-  margin: 0.5rem 1rem;
+.home-principal-section .subsection-container .scroll .scroll-content .scroll-card h4, .home-principal-section .subsection-container .scroll .scroll-content .scroll-card i, .home-principal-section .subsection-container .scroll-recipe .scroll-content .scroll-card h4, .home-principal-section .subsection-container .scroll-recipe .scroll-content .scroll-card i {
+  justify-self: end;
   text-align: center;
+  margin: 0.5rem 1rem;
   font-family: "News Cycle", sans-serif;
-  font-size: 1.1rem;
-  color: #FBFAF8;
+  font-size: 1.4rem;
+  color: #C02E09;
+  font-weight: bold;
 }
-.home-principal-section .subsection-container .scroll .scroll-content .scroll-card img {
+.home-principal-section .subsection-container .scroll .scroll-content .scroll-card img, .home-principal-section .subsection-container .scroll-recipe .scroll-content .scroll-card img {
   border-radius: 12px 12px 0px 0px;
-  width: 180px;
+  width: 120px;
+  height: 130px;
+}
+.home-principal-section .subsection-container .scroll-recipe .scroll-content .scroll-card img {
+  width: 150px;
+  height: 120px;
+}
+.home-principal-section .subsection-container .scroll-recipe .scroll-content .scroll-card .scroll-card-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home-principal-section .subsection-container .scroll-recipe .scroll-content .scroll-card .scroll-card-description .ratings {
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.home-principal-section .subsection-container .scroll-recipe .scroll-content .scroll-card .scroll-card-description .ratings .punctuation {
+  margin: 0;
 }
 
 @media (min-width: 400px) {
@@ -106,58 +136,39 @@ body {
     height: 12vh;
   }
   .home-principal-section .hero .hero-message p {
-    font-size: 24px;
+    font-size: 1.8rem;
   }
   .home-principal-section .subsection-container .subsection-title {
-    font-size: 21.6px;
+    font-size: 2.16rem;
   }
 }
 @media (min-width: 500px) {
   .home-principal-section .hero {
     height: 50vh;
-  }
-  .home-principal-section .hero .hero-message {
-    height: 20vh;
+    padding: 4rem 0;
   }
   .home-principal-section .hero .hero-message p {
-    font-size: 26px;
+    font-size: 1.95rem;
   }
   .home-principal-section .subsection-container .subsection-title {
-    font-size: 23.4px;
-  }
-  .home-principal-section .subsection-container .scroll .scroll-content {
-    width: 392px;
-  }
-  .home-principal-section .subsection-container .scroll .scroll-content .scroll-card img {
-    width: 180px;
+    font-size: 2.34rem;
   }
 }
 @media (min-width: 800px) {
   .home-principal-section .hero {
     height: 70vh;
   }
-  .home-principal-section .hero .hero-message {
-    height: 28vh;
-  }
   .home-principal-section .hero .hero-message p {
-    font-size: 28px;
+    font-size: 2.1rem;
   }
   .home-principal-section .subsection-container .subsection-title {
-    font-size: 25.2px;
+    font-size: 2.52rem;
   }
-  .home-principal-section .subsection-container .scroll .scroll-content {
-    width: 588px;
-    gap: 1rem;
+  .home-principal-section .subsection-container .scroll .scroll-content, .home-principal-section .subsection-container .scroll-recipe .scroll-content {
+    width: 650px;
   }
 }
 @media (min-width: 1000px) {
-  .home-principal-section .subsection-container .scroll .scroll-content {
-    overflow-x: hidden;
-    width: 768px;
-    gap: 1rem;
-  }
-}
-@media (min-width: 1300px) {
   .home-principal-section .hero {
     width: 100%;
     height: 90vh;
@@ -167,20 +178,23 @@ body {
     -o-object-position: center;
        object-position: center;
   }
-  .home-principal-section .hero .hero-message {
-    height: 36vh;
-  }
   .home-principal-section .hero .hero-message p {
-    font-size: 36px;
-  }
-  .home-principal-section .subsection-container .subsection-title {
-    font-size: 36px;
+    font-size: 3rem;
   }
   .home-principal-section .subsection-container .scroll .scroll-content {
-    width: 100%;
-    gap: 1rem;
+    width: 90%;
+    justify-content: center;
+    gap: 2rem;
+    overflow-x: hidden;
   }
   .home-principal-section .subsection-container .scroll .scroll-content .scroll-card {
-    width: 180px;
+    width: 150px;
+  }
+  .home-principal-section .subsection-container .scroll .scroll-content .scroll-card img {
+    width: 150px;
+  }
+  .home-principal-section .subsection-container .scroll-recipe .scroll-content {
+    width: 100%;
+    overflow-x: hidden;
   }
 }/*# sourceMappingURL=home-principal-section.css.map */

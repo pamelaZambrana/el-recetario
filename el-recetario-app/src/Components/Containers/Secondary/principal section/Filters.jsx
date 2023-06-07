@@ -1,16 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { arrowLeft, arrowRigth, scrollLeft, scrollRigth } from './carousel';
 
 const Filters = () => {
-
+    /* ---- carousel ----*/
+    const leap = 130;
     const scrollContainerRef = useRef(null);
     const [scrollValues, setScrollValues] = useState({
         left: 0,
         containerWidth: 0,
         contentWidth: 0,
     });
-
     useEffect(() => {
-        function updateWidth() {
+        function updateWidth(){
             const containerWidth = scrollContainerRef.current.clientWidth;
             const contentWidth = scrollContainerRef.current.scrollWidth;
             setScrollValues({
@@ -25,69 +26,8 @@ const Filters = () => {
             window.removeEventListener("resize", updateWidth);
         }
     }, [scrollValues.containerWidth]);
-    const scrollRigth = () =>{
-        const newvalueRigth = scrollContainerRef.current.scrollLeft+196;
-        scrollContainerRef.current.scrollBy({
-            left: 196,
-            behavior: "smooth",
-        });
-        setScrollValues({
-            ...scrollValues,
-            left: newvalueRigth,
-
-        });
-    };
-    const scrollLeft = () =>{
-        const newvalueleft = scrollContainerRef.current.scrollLeft-196;
-        scrollContainerRef.current.scrollLeft = newvalueleft;
-        scrollContainerRef.current.scrollBy({
-            left: -196,
-            behavior: "smooth",
-        });
-        setScrollValues({
-            ...scrollValues,
-            left: newvalueleft,
-
-        });
-
-    };
-    function arrowRigth(){
-        console.log(scrollValues);
-        if (scrollValues.left + scrollValues.containerWidth < scrollValues.contentWidth){
-            return (
-                <i 
-                    className="bi bi-chevron-compact-right arrow-active"
-                    onClick={ scrollRigth }
-                ></i> 
-            );
-        }else{
-            return (
-                    <i 
-                        className="bi bi-chevron-compact-right arrow-inactive"
-                        onClick={ scrollRigth }
-                    ></i> 
-            )
-        }
-        ;
-    };
-    function arrowLeft(){
-        console.log(scrollValues);
-        if (scrollValues.left > 0 ){
-            return(
-                <i 
-                    className="bi bi-chevron-compact-left arrow-active"
-                    onClick={ scrollLeft }
-                ></i>                
-            )
-        }else{
-            return(
-                <i 
-                    className="bi bi-chevron-compact-left arrow-inactive"
-                    onClick={ scrollLeft }
-                ></i>                
-            )
-        };
-    };
+    
+    
     const filtersList = [
         {
             name: "Comida típica",
@@ -115,7 +55,7 @@ const Filters = () => {
             description: "Buscar por postres",
         },
         {
-            name: "Mejores puntuaciones",
+            name: "Mejores calificaciones",
             image: "/img/carousel/platillos-principales.jpg",
             description: "Buscar por puntuaciones",
         },
@@ -124,7 +64,7 @@ const Filters = () => {
         <section className='subsection-container'>
             <h2 className='subsection-title'>Encuentra la mejor receta para hoy</h2>
             <div className='scroll'>
-                { arrowLeft () }
+                { arrowLeft (scrollValues, () => scrollLeft(scrollContainerRef, scrollValues, setScrollValues), leap) }
                 <div className='scroll-content' ref={ scrollContainerRef }>
                     {
                         filtersList.map((filter,index) => (
@@ -136,7 +76,7 @@ const Filters = () => {
                     }
                 </div>
                 
-                { arrowRigth() }  
+                { arrowRigth(scrollValues, () => scrollRigth(scrollContainerRef, scrollValues, setScrollValues,leap )) }  
             </div>
         </section>
     );

@@ -1,6 +1,6 @@
 @import "main";
 /* -----Variables----- */
-$hero-heigth1 : 200px;
+$hero-heigth1 : 20rem;
 $hero-heigth2 : 30vh;
 $hero-heigth3 : 50vh;
 $hero-heigth4 : 70vh;
@@ -13,56 +13,57 @@ $hero-heigth5 : 90vh;
     align-items: $align;
 };
 @mixin shadow{
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(58, 57, 57, 0.541) 0px 2px 8px 0px;
 }
+@mixin shadow-card{
+    box-shadow: 12px 15px 5px -8px rgba(133,125,125,0.45);
+-webkit-box-shadow: 12px 15px 5px -8px rgba(133,125,125,0.45);
+-moz-box-shadow: 12px 15px 5px -8px rgba(133,125,125,0.45);
+};
 
 .home-principal-section{
     display: block;
     .hero{
         width: 100%;
         height: $hero-heigth1;
-        @include display-estructure(center,center);
+        padding: 2rem 0;
+        @include display-estructure(center,flex-end);
         background-image: url('../../public/img/hero-big.jpg');
         background-size: cover;
-        .hero-message{
-            position: absolute;
-            width: 100%;
-            height: 0.4*$hero-heigth1;
-            padding: 12px;
-            @include display-estructure(center,center );
-            @include subtitle1;
-            background-color: hsla(30, 20%, 98%, 0.712);
-            @include shadow();
-            ;
-            p{
-                margin: 0;
-                text-align: center;
-                color: $primary;
-                font-weight: bold;
-            };
+    };
+    .hero-message{
+        width: 100%;
+        height: 0.3*$hero-heigth1;
+        padding: 2rem;
+        @include display-estructure(center,center);
+        @include subtitle1;
+        background-color: hsla(4, 100%, 39%, 0.74);
+        @include shadow();
+        p{
+            margin: 0;
+            text-align: center;
+            color: $background3;
         };
     };
     .subsection-container{
         width: 100%;
         .subsection-title{
             margin: 0;
-            padding: 0.8rem 0.8rem 0 0.8rem;
+            padding: 0.8rem 0.8rem 0.8rem 0.8rem;
             @include subtitle2;
-            font-weight: bold;
         };
-        .scroll{
-
-            padding: 0.8rem;
+        .scroll, .scroll-recipe{
+            height: 20rem;
             @include display-estructure(center,center );
-            gap: 1rem;
+            gap: 0.5rem;
             .arrow-active{
                 right: 0;
-                font-size: 24px;
+                font-size: 2.4rem;
                 font-weight: bold;
                 color: $primary;
             };
             .arrow-inactive{
-                font-size: 24px;
+                font-size: 2.4rem;
                 font-weight: bold;
                 visibility: hidden;
             };
@@ -70,27 +71,53 @@ $hero-heigth5 : 90vh;
                 cursor: pointer;
             }
             .scroll-content{
-                width: 196px;
-                padding: 0 0.5rem;
+                width: 100%;
+                height: 100%;
+                padding: 1rem 1rem;
                 @include display-estructure(left, center);
                 overflow-x: scroll;
                 gap: 1rem;
                 .scroll-card{
-                    
+                    @include display-estructure(space-between, center);
+                    flex-direction: column;
                     height: 100%;
-                    background-color: $primary;
+                    background-color: $background2;
                     border-radius:  12px ;
-                    @include shadow;
-                    h4{
-                        height: 2rem;
-                        margin: 0.5rem 1rem;
+                    @include shadow-card();
+                    h4, i{
+                        justify-self:end;
                         text-align: center;
+                        margin: 0.5rem 1rem;
                         @include content-medium;
-                        color: $white;
+                        color: $primary;
+                        font-weight: bold;
                     }
                     img{
                         border-radius: 12px 12px 0px 0px;
-                        width: 180px;
+                        width: 120px;
+                        height: 130px;
+                    };
+                    
+                };
+            };
+        };
+        .scroll-recipe{
+            .scroll-content{
+                .scroll-card{
+                    img{
+                        width: 150px;
+                        height: 120px
+                    }
+                    .scroll-card-description{
+                        @include display-estructure(center, center );
+                        .ratings{
+                            align-self: flex-end;
+                            @include display-estructure(center, center);
+                            flex-direction: column;
+                            .punctuation{
+                                margin: 0;
+                            };
+                        };
                     };
                 };
             };
@@ -121,8 +148,9 @@ $hero-heigth5 : 90vh;
     .home-principal-section{
         .hero{
             height: $hero-heigth3;
+            padding: 4rem 0;
             .hero-message{
-                height: 0.4*$hero-heigth3;
+
                 p{
                     font-size: 1.3*$size-subtitule1;
                 }
@@ -132,16 +160,6 @@ $hero-heigth5 : 90vh;
             .subsection-title{
                 font-size: 1.3*$size-subtitule2;
             };
-            .scroll{
-                .scroll-content{
-                    width: 392px;
-                    .scroll-card{
-                        img{
-                            width: 180px;
-                        }
-                    }
-                };
-            };
         };
     };
 };
@@ -150,7 +168,6 @@ $hero-heigth5 : 90vh;
         .hero{
             height: $hero-heigth4;
             .hero-message{
-                height: 0.4*$hero-heigth4;
                 p{
                     font-size: 1.4*$size-subtitule1;
                 }
@@ -160,29 +177,16 @@ $hero-heigth5 : 90vh;
             .subsection-title{
                 font-size: 1.4*$size-subtitule2;
             };
-            .scroll{
+            .scroll, .scroll-recipe{
                 .scroll-content{
-                    width: 588px;
-                    gap: 1rem;
+                    width: 650px;
                 };
             };
+
         };
     };
 };
 @media (min-width:1000px){
-    .home-principal-section{
-        .subsection-container{
-            .scroll{
-                .scroll-content{
-                    overflow-x: hidden;
-                    width: 768px;
-                    gap: 1rem;
-                };
-            };
-        };
-    };
-};
-@media (min-width:1300px){
     .home-principal-section{
         .hero{
             width: 100%;
@@ -191,26 +195,33 @@ $hero-heigth5 : 90vh;
             object-fit: cover;
             object-position: center;
             .hero-message{
-                height: 0.4*$hero-heigth5;
                 p{
-                    font-size: 1.8*$size-subtitule1;
-
+                    font-size: 2*$size-subtitule1;
                 }
             };
+            
         };
         .subsection-container{
-            .subsection-title{
-                font-size: 2*$size-subtitule2;
-            };
             .scroll{
                 .scroll-content{
-                    width: 100%;
-                    gap: 1rem;
+                    width: 90%;
+                    justify-content: center;
+                    gap: 2rem;
+                    overflow-x: hidden;
                     .scroll-card{
-                        width: 180px;
-                    }
+                        width: 150px;
+                        img{
+                            width: 150px;
+                        };
+                    };
+                };
+            };
+            .scroll-recipe{
+                .scroll-content{
+                    width: 100%;
+                    overflow-x: hidden;
                 };
             };
         };
     };
-};
+}
