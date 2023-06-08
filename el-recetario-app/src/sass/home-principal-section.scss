@@ -76,7 +76,7 @@ $hero-heigth5 : 90vh;
                 padding: 1rem 1rem;
                 @include display-estructure(left, center);
                 overflow-x: scroll;
-                gap: 1rem;
+                gap: 2rem;
                 .scroll-card{
                     @include display-estructure(space-between, center);
                     flex-direction: column;
@@ -180,6 +180,7 @@ $hero-heigth5 : 90vh;
             .scroll, .scroll-recipe{
                 .scroll-content{
                     width: 650px;
+                    overflow-x: hidden;
                 };
             };
 
@@ -207,7 +208,6 @@ $hero-heigth5 : 90vh;
                     width: 90%;
                     justify-content: center;
                     gap: 2rem;
-                    overflow-x: hidden;
                     .scroll-card{
                         width: 150px;
                         img{

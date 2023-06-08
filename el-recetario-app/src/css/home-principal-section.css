@@ -80,7 +80,7 @@ body {
   justify-content: left;
   align-items: center;
   overflow-x: scroll;
-  gap: 1rem;
+  gap: 2rem;
 }
 .home-principal-section .subsection-container .scroll .scroll-content .scroll-card, .home-principal-section .subsection-container .scroll-recipe .scroll-content .scroll-card {
   display: flex;
@@ -166,6 +166,7 @@ body {
   }
   .home-principal-section .subsection-container .scroll .scroll-content, .home-principal-section .subsection-container .scroll-recipe .scroll-content {
     width: 650px;
+    overflow-x: hidden;
   }
 }
 @media (min-width: 1000px) {
@@ -185,7 +186,6 @@ body {
     width: 90%;
     justify-content: center;
     gap: 2rem;
-    overflow-x: hidden;
   }
   .home-principal-section .subsection-container .scroll .scroll-content .scroll-card {
     width: 150px;

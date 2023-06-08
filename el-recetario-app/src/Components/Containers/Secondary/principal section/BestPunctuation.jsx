@@ -1,31 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { arrowLeft, arrowRigth, scrollLeft, scrollRigth} from './carousel';
+import React from 'react';
+import ScrollContainer from '../../Terciary/ScrollContainer';
 
 const BestPunctuation = () => {
-    /* -----Carousel ----- */
-    const leap = 160;
-    const scrollContainerRef = useRef(null);
-    const [scrollValues, setScrollValues] = useState({
-        left: 0,
-        containerWidth: 0,
-        contentWidth: 0,
-    });
-    useEffect(() => {
-        function updateWidth(){
-            const containerWidth = scrollContainerRef.current.clientWidth;
-            const contentWidth = scrollContainerRef.current.scrollWidth;
-            setScrollValues({
-                left: 0,
-                containerWidth : containerWidth,
-                contentWidth : contentWidth,
-            });
-        };
-        updateWidth();
-        window.addEventListener("resize", updateWidth);
-        return () => {
-            window.removeEventListener("resize", updateWidth);
-        }
-    }, [scrollValues.containerWidth]);
+   
 
     /* ---- best punctuation list ----*/
     const bestPunctuationList = [
@@ -124,51 +101,14 @@ const BestPunctuation = () => {
     /* ---- login state ---- */
     const loginState = true;
 
-    /* ---- heart icon ---- */
-    function fullHeart(state){
-        if(state){
-            return(
-                <i className="bi bi-heart-fill"></i>
-            )
-        }else{
-            return(
-                <i className = { `bi bi-heart`}></i>
-            )
-        };
-    };
 
     return (
         <section className='subsection-container'>
             <h2 className='subsection-title'>Las 10 recetas con mejores puntuaciones</h2>
-            <div className='scroll-recipe'>
-                { arrowLeft (scrollValues, () => scrollLeft(scrollContainerRef, scrollValues, setScrollValues,leap)) }
-                <div className='scroll-content' ref={ scrollContainerRef }>
-                    {
-                        bestPunctuationList.map((recipe,index) => (
-                            <div key={ index } className='scroll-card'>
-                                <img src={ recipe.image } alt={ recipe.description } />
-                                <div className='scroll-card-description'>
-                                    <h4> { recipe.name } </h4>
-                                    <div className='ratings'>
-                                        <h4 className='punctuation'> { `${recipe.punctuation}/10` } </h4>
-                                        {
-                                            loginState
-                                            ?                    
-                                            fullHeart(recipe.favorite)                                       
-                                            :
-                                            <i className = "bi bi-heart"></i>
-                                        }
-                                    </div>
-                                    
-
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-                
-                { arrowRigth(scrollValues, () => scrollRigth(scrollContainerRef, scrollValues, setScrollValues, leap)) }  
-            </div>
+           <ScrollContainer
+                loginState = { loginState }
+                list={ bestPunctuationList }
+           ></ScrollContainer>
         </section>
     );
 };
