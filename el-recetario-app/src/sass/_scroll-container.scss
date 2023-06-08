@@ -1,0 +1,52 @@
+@import "./variables";
+
+.scroll-filter, .scroll-recipe{
+    height: 20rem;
+    @include display-estructure(center,center );
+    gap: 0.5rem;
+};
+.arrow-active{
+    right: 0;
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: $primary;
+};
+.arrow-inactive{
+    font-size: 2.4rem;
+    font-weight: bold;
+    visibility: hidden;
+};
+.arrow-active:hover{
+    cursor: pointer;
+}
+.scroll-content{
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1rem;
+    @include display-estructure(left, center);
+    overflow-x: scroll;
+    gap: 2rem;
+    
+};
+
+@media(min-width: 800px){
+    .scroll-content{
+        width: 650px;
+        overflow-x: hidden;
+    };
+};
+@media (min-width: 1000px){
+    .scroll-filter{
+        .scroll-content{
+            width: 90%;
+            justify-content: center;
+            gap: 2rem;
+        };
+    };
+    .scroll-recipe{
+        .scroll-content{
+            width: 100%;
+            overflow-x: hidden;
+        };
+    };
+}

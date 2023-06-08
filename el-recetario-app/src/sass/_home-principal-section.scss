@@ -1,0 +1,98 @@
+@import "./variables";
+/* -----Variables----- */
+$hero-heigth1 : 20rem;
+$hero-heigth2 : 30vh;
+$hero-heigth3 : 50vh;
+$hero-heigth4 : 70vh;
+$hero-heigth5 : 90vh;
+
+.home-principal-section{
+    display: block;
+};
+.hero{
+    width: 100%;
+    height: $hero-heigth1;
+    padding: 2rem 0;
+    @include display-estructure(center,flex-end);
+    background-image: url('../../public/img/hero-big.jpg');
+    background-size: cover;
+};
+.hero-message{
+    width: 100%;
+    height: 0.3*$hero-heigth1;
+    padding: 2rem;
+    @include display-estructure(center,center);
+    @include subtitle1;
+    background-color: hsla(4, 100%, 39%, 0.74);
+    @include shadow();
+    p{
+        margin: 0;
+        text-align: center;
+        color: $background3;
+    };
+};
+.subsection-title{
+    margin: 0;
+    padding: 0.8rem 0.8rem 0.8rem 0.8rem;
+    @include subtitle2;
+};
+
+@media (min-width:400px){
+    .hero{
+        height: $hero-heigth2;
+        .hero-message{
+            height: 0.4*$hero-heigth2;
+            
+            p{
+                font-size: 1.2*$size-subtitule1;
+            }
+        };
+    };
+    .subsection-title{
+        font-size: 1.2*$size-subtitule2;
+    };
+};
+@media (min-width:500px){
+    .hero{
+        height: $hero-heigth3;
+        padding: 4rem 0;
+        .hero-message{
+
+            p{
+                font-size: 1.3*$size-subtitule1;
+            }
+        };
+    };
+    .subsection-title{
+        font-size: 1.3*$size-subtitule2;
+    };
+};
+@media (min-width:800px){
+    .hero{
+        height: $hero-heigth4;
+        .hero-message{
+            p{
+                font-size: 1.4*$size-subtitule1;
+            }
+        };
+    };
+    .subsection-title{
+        font-size: 1.4*$size-subtitule2;
+    };
+};
+@media (min-width:1000px){
+
+    .hero{
+        width: 100%;
+        height: $hero-heigth5;
+        background-image: url('../../public/img/hero\ biggest.jpg');
+        object-fit: cover;
+        object-position: center;
+        .hero-message{
+            p{
+                font-size: 2*$size-subtitule1;
+            }
+        };
+        
+    };
+}

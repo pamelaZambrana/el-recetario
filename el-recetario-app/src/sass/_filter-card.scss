@@ -1,0 +1,33 @@
+@import "./variables";
+
+.filter-card{
+    @include display-estructure(space-between, center);
+    flex-direction: column;
+    height: 100%;
+    background-color: $background2;
+    border-radius:  12px ;
+    @include shadow-card();
+    h4, i{
+        justify-self:end;
+        text-align: center;
+        margin: 0.5rem 1rem;
+        @include content-medium;
+        color: $primary;
+        font-weight: bold;
+    }
+    img{
+        border-radius: 12px 12px 0px 0px;
+        width: 120px;
+        height: 130px;
+    };
+    
+};
+
+@media (min-width: 1000px){
+    .filter-card{
+        width: 150px;
+        img{
+            width: 150px;
+        };
+    };
+}

@@ -14,9 +14,9 @@ const RecipeCard = ({ recipe, index, loginState }) => {
         };
     };
     return (
-        <div key={ index } className='scroll-card'>
+        <div key={ index } className='recipe-card'>
             <img src={ recipe.image } alt={ recipe.description } />
-            <div className='scroll-card-description'>
+            <div className='recipe-card-description'>
                 <h4> { recipe.name } </h4>
                 <div className='ratings'>
                     <h4 className='punctuation'> { `${recipe.punctuation}/10` } </h4>

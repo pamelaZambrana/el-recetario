@@ -1,0 +1,59 @@
+/* Color Variables */
+$primary : #C02E09 ;
+$secondary1: #0B8318;
+$secondary2: #F5E418;
+$background1: #FBFAF8;
+$background2 : #F5F4F2;
+$background3 : #DBDBD9;
+$positive : #1FF536;
+$negative : #C02E09;
+$white: #FBFAF8;
+$black : #1E1D1D;
+
+/* Font-family variables */
+$font-title : 'Libre Baskerville', serif;
+$font-subtitule1: 'News Cycle', sans-serif;
+$font-subtitule2 : 'Raleway', sans-serif;
+$font-content-medium : 'News Cycle', sans-serif;
+$font-content-small :  'Rubik', sans-serif;
+
+/* Font-size variables */
+$size-title : 3rem;
+$size-subtitule1: 1.5rem;
+$size-subtitule2 : 1.8rem;
+$size-content-medium : 1.4rem;
+$size-content-small : 1.2rem;
+
+/* Mixins */
+@mixin subtitle1{
+    font-family: $font-subtitule1;
+    font-size: $size-subtitule1;
+};
+@mixin subtitle2{
+    font-family: $font-subtitule2;
+    font-size: $size-subtitule2;
+};
+@mixin content-medium{
+    font-family: $font-content-medium;
+    font-size: $size-content-medium;
+};
+
+@mixin small{
+    font-family: $font-content-small;
+    font-size: $size-content-small;
+};
+
+@mixin display-estructure($justify,$align){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+};
+
+@mixin shadow{
+    box-shadow: rgba(58, 57, 57, 0.541) 0px 2px 8px 0px;
+}
+@mixin shadow-card{
+    box-shadow: 12px 15px 5px -8px rgba(133,125,125,0.45);
+-webkit-box-shadow: 12px 15px 5px -8px rgba(133,125,125,0.45);
+-moz-box-shadow: 12px 15px 5px -8px rgba(133,125,125,0.45);
+};

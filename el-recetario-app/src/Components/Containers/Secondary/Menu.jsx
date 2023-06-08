@@ -1,11 +1,26 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import OpenMenu from '../Terciary/OpenMenu';
 const Menu = () => {
+    const [open, setOpen] = useState(false);
+
+
+    function openMenu() {
+        setOpen(prev => !prev);
+    }
     return (
         <div className='navbar-menu'>
-            <i className="bi bi-list"></i>
+            <i 
+                className="bi bi-list"
+                onClick={ openMenu }
+            ></i>
+            {
+                open ?
+                <OpenMenu></OpenMenu>
+                :
+                null
 
-        </div>
+            }
+        </div> 
     );
 }
 

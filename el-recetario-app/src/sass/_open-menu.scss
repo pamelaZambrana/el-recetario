@@ -1,0 +1,9 @@
+@import "./variables";
+
+.open-menu-container{
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    background-color: $white;
+    color: $black;
+}
