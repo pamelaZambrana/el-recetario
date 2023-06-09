@@ -16,7 +16,7 @@
     .navbar-menu{
         width: 68px;
         @include display-estructure(right, center);
-        i{
+        .menu-icon{
             color: $white;
             font-size: $size-title;
         }
@@ -62,8 +62,7 @@
         }
         .navbar-menu{
             width: 81.6px;
-            i{
-                color: $white;
+            .menu-icon{
                 font-size: 1.2*$size-title;
             }
         }

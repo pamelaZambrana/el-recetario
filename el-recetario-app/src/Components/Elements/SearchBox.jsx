@@ -2,9 +2,9 @@ import React from 'react';
 
 const SearchBox = () => {
     return (
-        <div>
+        <div className='search-box-container'>
             <i className="bi bi-search"></i>
-            <input></input>
+            <input className='search-box'></input>
         </div>
     );
 }

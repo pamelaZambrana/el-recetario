@@ -10,7 +10,7 @@ const Menu = () => {
     return (
         <div className='navbar-menu'>
             <i 
-                className="bi bi-list"
+                className="bi bi-list menu-icon"
                 onClick={ openMenu }
             ></i>
             {

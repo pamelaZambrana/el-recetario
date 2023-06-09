@@ -24,7 +24,6 @@ $hero-heigth5 : 90vh;
     @include display-estructure(center,center);
     @include subtitle1;
     background-color: hsla(4, 100%, 39%, 0.74);
-    @include shadow();
     p{
         margin: 0;
         text-align: center;
