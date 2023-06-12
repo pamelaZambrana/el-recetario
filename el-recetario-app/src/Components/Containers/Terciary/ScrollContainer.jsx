@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { arrowLeft, arrowRigth, scrollLeft, scrollRigth } from '../Secondary/principal section/carouselFunctions';
 import RecipeCard from '../../Elements/RecipeCard';
 
-const ScrollContainer = ({ list, loginState}) => {
+const ScrollContainer = ({ list }) => {
      /* -----Carousel ----- */
      const leap = 170;
      const scrollContainerRef = useRef(null);
@@ -32,11 +32,10 @@ const ScrollContainer = ({ list, loginState}) => {
                 { arrowLeft (scrollValues, () => scrollLeft(scrollContainerRef, scrollValues, setScrollValues,leap)) }
                 <div className='scroll-content' ref={ scrollContainerRef }>
                     {
-                        list.map((recipe,index) => (
+                        list.map((recipe) => (
                             <RecipeCard
                                 recipe={ recipe }
-                                index={ index }
-                                loginState={ loginState } 
+                                key={ recipe.id } 
                             ></RecipeCard>                          
                         ))
                     }

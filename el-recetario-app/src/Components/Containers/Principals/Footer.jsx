@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { GlobalContext, UserContext } from '../../../Contexts/globalContext';
 
 const Footer = () => {
-const loginState = false;
+const [globalState, dispatch] = useContext( GlobalContext );
+const user = globalState.user;
+const loginState = user.loginState;
 const socialMedia = [
     {
         name: "Facebook",

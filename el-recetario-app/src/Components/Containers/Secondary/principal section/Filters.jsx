@@ -64,7 +64,7 @@ const Filters = () => {
         <section className='subsection-container'>
             <h2 className='subsection-title'>Encuentra la mejor receta para hoy</h2>
             <div className='scroll-filter'>
-                { arrowLeft (scrollValues, () => scrollLeft(scrollContainerRef, scrollValues, setScrollValues), leap) }
+                { arrowLeft (scrollValues, () => scrollLeft(scrollContainerRef, scrollValues, setScrollValues, leap)) }
                 <div className='scroll-content' ref={ scrollContainerRef }>
                     {
                         filtersList.map((filter,index) => (
