@@ -138,6 +138,7 @@ export const initialState ={
         },
 
     ],
+    titles : "",
 };
 
 /* const bestPunctuationList = initialState.recipes.sort((a,b) => {

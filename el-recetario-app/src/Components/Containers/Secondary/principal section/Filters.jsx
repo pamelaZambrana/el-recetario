@@ -1,7 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { arrowLeft, arrowRigth, scrollLeft, scrollRigth } from './carouselFunctions';
+import { GlobalContext } from '../../../../Contexts/globalContext';
+import { TYPES } from '../../../../Contexts/globalReducer';
 
 const Filters = () => {
+    /* ----using global context ---- */
+    const [globalState, dispatch ] = useContext(GlobalContext);
+    const { titles } = globalState.titles;
     /* ---- carousel ----*/
     const leap = 130;
     const scrollContainerRef = useRef(null);
@@ -60,6 +66,17 @@ const Filters = () => {
             description: "Buscar por puntuaciones",
         },
     ];
+
+    /* ----navigating to recipes page and setting title ---- */
+    const navigate = useNavigate();
+    function setTitle(title) {
+        dispatch({
+            type : TYPES.SET_TITLE,
+            payload : title
+        })
+        navigate("/recipes");
+
+    };
     return (
         <section className='subsection-container'>
             <h2 className='subsection-title'>Encuentra la mejor receta para hoy</h2>
@@ -68,7 +85,11 @@ const Filters = () => {
                 <div className='scroll-content' ref={ scrollContainerRef }>
                     {
                         filtersList.map((filter,index) => (
-                            <div key={ index } className='filter-card'>
+                            <div 
+                                key={ index } 
+                                className='filter-card'
+                                onClick={() => setTitle(filter.name)}
+                            >
                                 <img src={ filter.image } alt={ filter.description } />
                                 <h4> { filter.name } </h4>
                             </div>
