@@ -9,31 +9,26 @@ import RecipePage from './pages/recipePage.js';
 function App() {
   return (
     <div>
-    <GlobalProvider>
-    <header>
-      <Navbar></Navbar>
-    </header>
-    <body>
-        <Routes>
-          <Route
-            path='/' 
-            element=<PrincipalPage/>
-          />
-          <Route
-            path = "recipes/:filter" 
-            element = <Dashboard/>
-          />
-          <Route
-            path = "recipe/:id"
-            element = <RecipePage/>
-          />
-        </Routes>
-    </body>
-    <footer>
-      <Footer></Footer>
-    </footer>
-    </GlobalProvider>
+      <GlobalProvider>
+        <Navbar></Navbar>
+          <Routes>
+            <Route
+              path='/' 
+              element=<PrincipalPage/>
+            />
+            <Route
+              path = "recipes/:filter" 
+              element = <Dashboard/>
+            />
+            <Route
+              path = "recipe/:id"
+              element = <RecipePage/>
+            />
+          </Routes>
+        <Footer></Footer>
+      </GlobalProvider>
     </div>
+
   );
 }
 

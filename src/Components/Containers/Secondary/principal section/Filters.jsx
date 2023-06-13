@@ -6,7 +6,7 @@ import { TYPES } from '../../../../Contexts/globalReducer';
 
 const Filters = () => {
     /* ----using global context ---- */
-    const [ dispatch ] = useContext(GlobalContext);
+    const [ globalState, dispatch ] = useContext(GlobalContext);
     /* ---- carousel ----*/
     const leap = 130;
     const scrollContainerRef = useRef(null);
@@ -68,6 +68,7 @@ const Filters = () => {
 
     /* ----navigating to recipes page and setting title ---- */
     function setTitle(title) {
+        console.log(globalState);
         dispatch({
             type : TYPES.SET_TITLE,
             payload : title
