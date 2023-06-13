@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { GlobalContext, UserContext } from '../../../Contexts/globalContext';
+import { GlobalContext } from '../../../Contexts/globalContext';
 
 const Footer = () => {
-const [globalState, dispatch] = useContext( GlobalContext );
+const [globalState] = useContext( GlobalContext );
 const user = globalState.user;
 const loginState = user.loginState;
 const socialMedia = [

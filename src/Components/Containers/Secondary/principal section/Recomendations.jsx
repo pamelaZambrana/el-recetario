@@ -3,7 +3,7 @@ import ScrollContainer from '../../Terciary/ScrollContainer';
 import { GlobalContext } from '../../../../Contexts/globalContext';
 
 const Recomendations = () => {
-     const [ globalState, dispatch ] = useContext(GlobalContext);
+     const [ globalState ] = useContext(GlobalContext);
      const recipes = globalState.recipes;
 
      /* ---- recomendations list ----*/

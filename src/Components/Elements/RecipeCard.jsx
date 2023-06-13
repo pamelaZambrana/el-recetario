@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 const RecipeCard = ({ recipe, index}) => {
-    const [globalState, dispatch] = useContext(GlobalContext);
+    const [globalState ] = useContext(GlobalContext);
     const user = globalState.user;
     const loginState = user.loginState
     /* ---- heart icon ---- */

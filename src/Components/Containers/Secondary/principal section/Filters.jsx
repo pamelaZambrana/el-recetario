@@ -1,13 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { arrowLeft, arrowRigth, scrollLeft, scrollRigth } from './carouselFunctions';
 import { GlobalContext } from '../../../../Contexts/globalContext';
 import { TYPES } from '../../../../Contexts/globalReducer';
 
 const Filters = () => {
     /* ----using global context ---- */
-    const [globalState, dispatch ] = useContext(GlobalContext);
-    const { titles } = globalState.titles;
+    const [ dispatch ] = useContext(GlobalContext);
     /* ---- carousel ----*/
     const leap = 130;
     const scrollContainerRef = useRef(null);
@@ -68,7 +67,6 @@ const Filters = () => {
     ];
 
     /* ----navigating to recipes page and setting title ---- */
-    const navigate = useNavigate();
     function setTitle(title) {
         dispatch({
             type : TYPES.SET_TITLE,

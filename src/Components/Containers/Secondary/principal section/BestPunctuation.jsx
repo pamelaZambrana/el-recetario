@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import ScrollContainer from '../../Terciary/ScrollContainer';
 import { GlobalContext } from '../../../../Contexts/globalContext';
 
 const BestPunctuation = () => {
-   const [globalState, dispatch] = useContext(GlobalContext);
+   const [globalState] = useContext(GlobalContext);
     const { recipes } = globalState;
 
     let bestPunctuationList = [];

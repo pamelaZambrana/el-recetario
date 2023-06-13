@@ -3,7 +3,7 @@ import { GlobalContext } from '../../../Contexts/globalContext';
 import RecipesGrill from '../Secondary/recipesDashboar/recipesGrill';
 
 const RecipeDashboard = () => {
-    const [ globalState, dispatch ] = useContext(GlobalContext);
+    const [ globalState ] = useContext(GlobalContext);
     const title = globalState.titles;
     return (
         <div className='recipes-dashboard'>
