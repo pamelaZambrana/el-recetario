@@ -10,144 +10,140 @@ export const initialState ={
         {   id:1,
             name: "Piquemacho",
             image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar comida típica",
             punctuation: 7,
             favorite: false,
             time: 2,
             difficulty : 10,
             recommended : true,
+            category: ["Comida típica", "Platillos principales"]
+
         },
         {
             id:2,
             name: "Huminta",
             image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar comida típica",
             punctuation: 9,
             favorite: false,
             time: 2,
             difficulty : 10,
             recommended : false,
+            category: ["Comida típica", "Postres"]
         },
         {
             id:3,
             name: "Salteña",
             image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar comida típica",
             punctuation: 10,
             favorite: true,
             time: 2,
             difficulty : 10,
             recommended : true,
+            category: ["Comida típica", "Postres"]
         },
         {
             id:4,
             name: "Salchipapa",
             image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar comida típica",
             punctuation: 10,
             favorite: true,
             time: 2,
             difficulty : 10,
             recommended : false,
+            category: ["Comida popular", "Platillos principales"]
         },
         {
             id:5,
             name: "Ají de fideo",
             image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar comida típica",
             punctuation: 5,
             favorite: true,
             time: 2,
             difficulty : 10,
             recommended : true,
+            category: ["Comida popular", "Platillos principales"]
         },
         {
             id:6,
             name: "Ají de papa",
             image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar comida típica",
             punctuation: 1,
             favorite: true,
             time: 2,
             difficulty : 10,
             recommended : true,
+            category: ["Comida típica", "Platillos principales"]
         },
         {
             id:7,
             name: "Hamburguesa de quinua",
             image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar comida típica",
             punctuation: 5,
             favorite: false,
             time: 2,
             difficulty : 8,
+            category: ["Comida popular", "Platillos principales"]
         },
         {
             id:8,
             name: "Plato paceño a la potosina",
             image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar comida típica",
             punctuation: 5,
             favorite: false,
             time: 2,
             difficulty : 10,
             recommended : false,
+            category: ["Comida típica", "Platillos principales"]
         },
         {
             id:9,
-            name: "Ají de fideo",
+            name: "Api morado",
             image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar comida típica",
             punctuation: 4,
             favorite: true,
             time: 2,
             difficulty : 10,
             recommended : true,
+            category: ["Comida típica", "Bebidas"]
         },
         {
             id:10,
-            name: "Hamburguesa de quinua",
+            name: "Mocochinchi",
             image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar comida típica",
             punctuation: 3,
             favorite: false,
             time: 2,
             difficulty : 10,
             recommended : true,
+            category: ["Comida típica", "Bebidas"]
         },
         {
             id:11,
-            name: "Api con pastel",
+            name: "Llaucha",
             image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar comida típica",
             punctuation: 10,
             favorite: false,
             time: 2,
             difficulty : 5,
+            category: ["Comida típica", "Postres"]
         },
         {
             id:12,
             name: "Alfajor",
             image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar comida típica",
             punctuation: 7,
             favorite: false,
             time: 2,
             difficulty : 10,
             recommended : true,
+            category: ["Comida popular", "Postres"]
         },
 
     ],
     titles : "",
 };
-
-/* const bestPunctuationList = initialState.recipes.sort((a,b) => {
-    return b.punctuation - a.punctuation;
-});
-console.log(
-    bestPunctuationList
-)
- */
-
-/* const recomendationList = [...initialState.recipes].filter(recipe => recipe.recommended === true);
-console.log(recomendationList); */
+/* const searcher = "Bebidas";
+const filterList = [...initialState.recipes].filter( recipe => {
+    return recipe.category.some( cat => cat === searcher);
+    }
+    );
+     console.log(filterList) */

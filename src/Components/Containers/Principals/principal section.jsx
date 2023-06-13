@@ -9,10 +9,8 @@ const PrincipalSection = () => {
     return (
         <div className='home-principal-section'>
             <Hero></Hero>
-            <Filters 
-            ></Filters>
-            <BestPunctuation
-            ></BestPunctuation>
+            <Filters></Filters>
+            <BestPunctuation></BestPunctuation>
             <Recomendations></Recomendations>
         </div>
     );

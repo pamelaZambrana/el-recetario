@@ -2,14 +2,13 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '../../Contexts/globalContext';
 
 
-const RecipeCard = ({ recipe, index }) => {
+const RecipeCard = ({ recipe, index}) => {
     const [globalState, dispatch] = useContext(GlobalContext);
     const user = globalState.user;
     const loginState = user.loginState
     /* ---- heart icon ---- */
     function fullHeart(favoriteArray, recipeId){
         const favorite = favoriteArray.find(id => id === recipeId);
-
         if(favorite ){
             return(
                 <i className="bi bi-heart-fill"></i>

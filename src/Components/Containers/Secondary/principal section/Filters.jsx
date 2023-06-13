@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { arrowLeft, arrowRigth, scrollLeft, scrollRigth } from './carouselFunctions';
 import { GlobalContext } from '../../../../Contexts/globalContext';
 import { TYPES } from '../../../../Contexts/globalReducer';
@@ -74,7 +74,7 @@ const Filters = () => {
             type : TYPES.SET_TITLE,
             payload : title
         })
-        navigate("/recipes");
+        //navigate("/recipes");
 
     };
     return (
@@ -85,14 +85,15 @@ const Filters = () => {
                 <div className='scroll-content' ref={ scrollContainerRef }>
                     {
                         filtersList.map((filter,index) => (
-                            <div 
+                            <Link
                                 key={ index } 
                                 className='filter-card'
+                                to="/recipes"
                                 onClick={() => setTitle(filter.name)}
                             >
                                 <img src={ filter.image } alt={ filter.description } />
                                 <h4> { filter.name } </h4>
-                            </div>
+                            </Link>
                         ))
                     }
                 </div>

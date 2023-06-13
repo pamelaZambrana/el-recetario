@@ -1,6 +1,7 @@
 @import "./variables";
 
 .filter-card{
+    text-decoration: none;
     @include display-estructure(space-between, center);
     flex-direction: column;
     height: 100%;
