@@ -205,6 +205,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
 .recipe-card .recipe-card-description .ratings {
   align-self: flex-end;
@@ -434,6 +435,39 @@
   border-radius: 12px;
 }
 
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
+.recipes-dashboard {
+  height: 100%;
+}
+.recipes-dashboard h1 {
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  font-family: "News Cycle", sans-serif;
+  font-size: "News Cycle", sans-serif;
+}
+
+.grill-recipes-container {
+  width: 100%;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  justify-content: center;
+  justify-items: center;
+  gap: 2rem;
+}
+
+.grill-recipe-content {
+  width: 150px;
+}
+
+@media (min-width: 800px) {
+  .grill-recipes-container {
+    width: 85%;
+  }
+}
 :root {
   font-size: 62.5%;
 }
@@ -441,4 +475,5 @@
 body {
   background-color: #FBFAF8;
   min-width: 360px;
+  min-height: 100vh;
 }/*# sourceMappingURL=main.css.map */

@@ -17,7 +17,7 @@ const RecipesGrill = () => {
         <section className='grill-recipes-container'>
             {
                 filteredList.map(recipe =>(
-                    <div className='grill-recipe-content'>
+                    <div className='grill-recipe-content' key={recipe.id}>
                         <RecipeCard 
                             recipe = { recipe }
                             index={ recipe.id }

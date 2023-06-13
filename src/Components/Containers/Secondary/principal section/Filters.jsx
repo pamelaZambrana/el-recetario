@@ -88,7 +88,7 @@ const Filters = () => {
                             <Link
                                 key={ index } 
                                 className='filter-card'
-                                to="/recipes"
+                                to={`/recipes/${filter.name}`}
                                 onClick={() => setTitle(filter.name)}
                             >
                                 <img src={ filter.image } alt={ filter.description } />

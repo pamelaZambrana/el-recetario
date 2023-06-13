@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../../Contexts/globalContext';
+import { Link } from 'react-router-dom';
 
 
 const RecipeCard = ({ recipe, index}) => {
@@ -22,7 +23,7 @@ const RecipeCard = ({ recipe, index}) => {
     return (
         <div key={ index } className='recipe-card'>
             <img src={ recipe.image } alt={ recipe.description } />
-            <div className='recipe-card-description'>
+            <Link to={ `/recipe/${recipe.id}`} className='recipe-card-description'>
                 <h4> { recipe.name } </h4>
                 <div className='ratings'>
                     <h4 className='punctuation'> { `${recipe.punctuation}/10` } </h4>
@@ -34,7 +35,7 @@ const RecipeCard = ({ recipe, index}) => {
                         <i className = "bi bi-heart"></i>
                     } 
                 </div>
-            </div>
+            </Link>
         </div>
     );
 };

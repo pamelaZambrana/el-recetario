@@ -1,0 +1,29 @@
+@import "./variables";
+
+.recipes-dashboard{
+    height: 100%;
+    h1{
+        padding: 1.2rem;
+        margin-bottom: 1rem;
+        font-family: $font-subtitule1;
+        font-size: $font-subtitule1;
+    }
+}
+.grill-recipes-container{
+    width: 100%;
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 150px);
+    justify-content: center;
+    justify-items: center;
+    gap: 2rem;
+}
+.grill-recipe-content{
+    width: 150px;
+};
+
+@media (min-width: 800px){
+    .grill-recipes-container{
+        width: 85%;
+    }
+}

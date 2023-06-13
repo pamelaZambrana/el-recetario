@@ -6,7 +6,7 @@ const RecipeDashboard = () => {
     const [ globalState, dispatch ] = useContext(GlobalContext);
     const title = globalState.titles;
     return (
-        <div>
+        <div className='recipes-dashboard'>
             <h1>{ title }</h1>
             <RecipesGrill></RecipesGrill>
         </div>

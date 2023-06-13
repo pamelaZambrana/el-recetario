@@ -6,6 +6,7 @@
 @import "./scroll-container";
 @import "./open-menu";
 @import "./searchBox";
+@import "./recipes-grill";
 
 :root{
     font-size: 62.5%;
@@ -16,5 +17,6 @@
 body{
     background-color: $background1;
     min-width: 360px;
+    min-height: 100vh;
 }
 

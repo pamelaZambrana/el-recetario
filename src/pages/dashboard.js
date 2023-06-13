@@ -1,5 +1,5 @@
 import React from 'react';
-import RecipeDashboard from '../Components/Containers/Principals/recipeDashboard';
+import RecipeDashboard from '../Components/Containers/Principals/recipesDashboard';
 
 const Dashboard = () => {
     return (
