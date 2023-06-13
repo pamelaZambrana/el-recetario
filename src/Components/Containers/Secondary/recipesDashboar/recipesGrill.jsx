@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { GlobalContext } from '../../../../Contexts/globalContext';
 import RecipeCard from '../../../Elements/RecipeCard';
 
 const RecipesGrill = () => {
-    const [ globalState, dispatch ] = useContext(GlobalContext);
+    const [ globalState ] = useContext(GlobalContext);
     const recipes = globalState.recipes;
     const searcher = globalState.titles;
 
