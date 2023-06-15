@@ -21,7 +21,11 @@ function App() {
               element = <Dashboard/>
             />
             <Route
-              path = "recipe/:id"
+              path = "recipe/:filter/:recipe"
+              element = <RecipePage/>
+            />
+            <Route
+              path = "recipe/:recipe"
               element = <RecipePage/>
             />
           </Routes>

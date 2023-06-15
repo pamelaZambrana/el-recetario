@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../../../../Contexts/globalContext';
 import RecipeCard from '../../../Elements/RecipeCard';
+import { useParams } from 'react-router';
 
 const RecipesGrill = () => {
     const [ globalState ] = useContext(GlobalContext);
     const recipes = globalState.recipes;
-    const searcher = globalState.titles;
+    const params = useParams();
+
+    const searcher = params.filter;
 
     const filteredList = [...recipes].filter( recipe => {
             return recipe.category.some( cat => cat === searcher);

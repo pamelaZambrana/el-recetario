@@ -1,59 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import SearchBox from '../../Elements/SearchBox';
+import { GlobalContext } from '../../../Contexts/globalContext';
+import { menuOptionList } from '../../option lists.js/Menu options';
+
 
 const OpenMenu = () => {
-    const loginState =  false;
-    const optionList = [
-        {
-            class : "principal-option",
-            name : "COMIDA TÍPICA",
-            items: {
-                class : "secondary-option",
-                itemName : [
-                    "Platillos principales",
-                    "Postres",
-                    "Bebidas"
-                ]
-            },
-        },
-        {
-            class : "principal-option",
-            name : "COMIDA POPULAR",
-            items : {
-                class : "secondary-option",
-                itemName : [
-                    "Platillos principales",
-                    "Postres",
-                    "Bebidas"
-                ]
-            },
-        },
-        {
-            logged : false,
-            class : "principal-option",
-            name : "REGÍSTRATE",
-        },
-        {
-            logged : false,
-            class : "principal-option",
-            name : "INICIAR SESIÓN",
-        },
-        {
-            logged : true,
-            class : "principal-option",
-            name : "MIS FAVORITOS",
-        },
-        {
-            logged : true,
-            class : "principal-option",
-            name : "EDITAR USUSARIO",
-        },
-        {
-            logged : true,
-            class : "principal-option",
-            name : "CERRAR SESIÓN",
-        },
-    ];
+    const [globalState, dispatch] = useContext(GlobalContext);
+    const user = globalState.user;
+    const loginState =  user.loginState;
 
     return (
         <div className='open-menu-container'>
@@ -76,7 +30,7 @@ const OpenMenu = () => {
                         <SearchBox></SearchBox>
                 </li>
                 {
-                    optionList.map((option, index) => (
+                    menuOptionList.map((option, index) => (
                         option.items ? 
                         <li key={ index }>
                             <span className={ `${option.class}`}>

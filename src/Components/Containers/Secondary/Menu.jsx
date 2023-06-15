@@ -8,7 +8,7 @@ const Menu = () => {
         setOpen(prev => !prev);
     }
     return (
-        <div className='navbar-menu'>
+        <nav className='navbar-menu'>
             <i 
                 className="bi bi-list menu-icon"
                 onClick={ openMenu }
@@ -20,7 +20,7 @@ const Menu = () => {
                 null
 
             }
-        </div> 
+        </nav> 
     );
 }
 

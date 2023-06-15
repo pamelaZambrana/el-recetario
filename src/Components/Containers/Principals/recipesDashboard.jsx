@@ -1,13 +1,12 @@
-import React, { useContext } from 'react';
-import { GlobalContext } from '../../../Contexts/globalContext';
+import React from 'react';
 import RecipesGrill from '../Secondary/recipesDashboar/recipesGrill';
+import { useParams } from "react-router";
 
 const RecipeDashboard = () => {
-    const [ globalState ] = useContext(GlobalContext);
-    const title = globalState.titles;
+    const params = useParams();
     return (
         <div className='recipes-dashboard'>
-            <h1>{ title }</h1>
+            <h1>{ params.filter }</h1>
             <RecipesGrill></RecipesGrill>
         </div>
     );

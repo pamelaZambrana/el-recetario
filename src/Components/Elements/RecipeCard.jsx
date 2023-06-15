@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../../Contexts/globalContext';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 
 const RecipeCard = ({ recipe, index}) => {
     const [globalState ] = useContext(GlobalContext);
     const user = globalState.user;
-    const loginState = user.loginState
+    const loginState = user.loginState;
+    const params = useParams();
     /* ---- heart icon ---- */
     function fullHeart(favoriteArray, recipeId){
         const favorite = favoriteArray.find(id => id === recipeId);
@@ -20,11 +21,21 @@ const RecipeCard = ({ recipe, index}) => {
             )
         };
     };
+    /* ---- filling the path ----- */
+    function path(){
+        if( params.filter ){
+            return `/recipe/${params.filter}/${recipe.name}`
+        }else{
+            return `/recipe/${recipe.name}`
+        };
+    };
     return (
         <div key={ index } className='recipe-card'>
             <img src={ recipe.image } alt={ recipe.description } />
-            <Link to={ `/recipe/${recipe.id}`} className='recipe-card-description'>
-                <h4> { recipe.name } </h4>
+            <div  className='recipe-card-description'>
+                <Link to={ path() } className='recipe-card-description'>
+                    <h4> { recipe.name } </h4>
+                </Link>
                 <div className='ratings'>
                     <h4 className='punctuation'> { `${recipe.punctuation}/10` } </h4>
                     {
@@ -35,7 +46,7 @@ const RecipeCard = ({ recipe, index}) => {
                         <i className = "bi bi-heart"></i>
                     } 
                 </div>
-            </Link>
+            </div>
         </div>
     );
 };
