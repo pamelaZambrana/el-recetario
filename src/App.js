@@ -1,23 +1,26 @@
 import {Routes, Route} from 'react-router-dom';
-import Navbar from './Components/Containers/Principals/navbar.jsx';
-import Footer from './Components/Containers/Principals/Footer.jsx';
 import PrincipalPage from './pages/principalPage.js';
 import Dashboard from './pages/dashboard.js';
 import GlobalProvider from './Contexts/globalContext.jsx';
 import RecipePage from './pages/recipePage.js';
+import LayoutPage from './pages/LayoutPage.js';
 
 function App() {
   return (
     <div>
       <GlobalProvider>
-        <Navbar></Navbar>
-          <Routes>
+        <Routes>
+          <Route element = <LayoutPage/>>
             <Route
               path='/' 
               element=<PrincipalPage/>
             />
             <Route
               path = "recipes/:filter" 
+              element = <Dashboard/>
+            />
+             <Route
+              path = "recipes/:filter/:filter2" 
               element = <Dashboard/>
             />
             <Route
@@ -28,8 +31,8 @@ function App() {
               path = "recipe/:recipe"
               element = <RecipePage/>
             />
-          </Routes>
-        <Footer></Footer>
+          </Route>
+        </Routes>
       </GlobalProvider>
     </div>
 

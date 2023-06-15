@@ -2,12 +2,13 @@ import React, { useContext } from 'react';
 import SearchBox from '../../Elements/SearchBox';
 import { GlobalContext } from '../../../Contexts/globalContext';
 import { menuOptionList } from '../../option lists.js/Menu options';
+import { Link } from 'react-router-dom';
+import { TYPES } from '../../../Contexts/globalReducer';
 
 
 const OpenMenu = () => {
     const [globalState, dispatch] = useContext(GlobalContext);
-    const user = globalState.user;
-    const loginState =  user.loginState;
+    const loginState =  globalState.loginState;
 
     return (
         <div className='open-menu-container'>
@@ -33,14 +34,28 @@ const OpenMenu = () => {
                     menuOptionList.map((option, index) => (
                         option.items ? 
                         <li key={ index }>
-                            <span className={ `${option.class}`}>
+                            <Link 
+                                className={ `${option.class}`}
+                                to={`recipes/${ option.name}`}
+                                onClick={() => dispatch({ type: TYPES.SET_TITLE, payload : option.name })}
+                            >
                                 { option.name }
 
-                            </span>
+                            </Link>
                             <ul>
                                 {
                                     option.items.itemName.map((item, index) => (
-                                        <li key={ index } className={ `${option.items.class}`}>{ item }</li>
+                                        <li 
+                                            key={ index } 
+                                        >
+                                            <Link 
+                                                to={`recipes/${ option.name}/${item}`}
+                                                onClick={() => dispatch({ type: TYPES.SET_TITLE, payload : `${option.name}/ ${item}` })}
+                                                className={ `${option.items.class}`}
+                                            > 
+                                                { item } 
+                                            </Link>
+                                        </li>
                                     ))
                                 }
                             </ul>
@@ -48,7 +63,10 @@ const OpenMenu = () => {
                         :
                         option.logged === loginState? 
                         <li key={ index }>
-                            <span className={ `${option.class}`}>
+                            <span 
+                                className={ `${option.class}`}
+                                onClick={ () => dispatch({ type: option.action})}
+                            >
                                     { option.name }
                             </span>
                         </li>

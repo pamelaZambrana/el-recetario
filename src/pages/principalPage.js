@@ -3,9 +3,9 @@ import PrincipalSection from '../Components/Containers/Principals/principal sect
 
 const PrincipalPage = () => {
     return (
-        <div>
-            <PrincipalSection></PrincipalSection>
-        </div>
+        
+        <PrincipalSection></PrincipalSection>
+        
     );
 }
 

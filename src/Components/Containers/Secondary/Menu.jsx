@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import OpenMenu from '../Terciary/OpenMenu';
+import { GlobalContext } from '../../../Contexts/globalContext';
+import { TYPES } from '../../../Contexts/globalReducer';
+
 const Menu = () => {
-    const [open, setOpen] = useState(false);
+    const [ globalState, dispatch ] = useContext(GlobalContext) ;
+    const open = globalState.openMenu;
 
-
-    function openMenu() {
-        setOpen(prev => !prev);
-    }
     return (
         <nav className='navbar-menu'>
             <i 
                 className="bi bi-list menu-icon"
-                onClick={ openMenu }
+                onClick={ () => dispatch({ type: TYPES.CLOSE_OPEN_MENU })}
             ></i>
             {
                 open ?

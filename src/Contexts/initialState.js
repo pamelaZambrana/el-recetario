@@ -1,11 +1,12 @@
 export const initialState ={
     user : {
         id: "123",
-        loginState: true,
         name : "Bellota Saltarina",
         email : "belloti@gmail.com",
         favorites : [2,3,7]
     },
+    loginState: true,
+    openMenu: false,
     recipes:  [
         {   id:1,
             name: "Piquemacho",
@@ -141,9 +142,16 @@ export const initialState ={
     ],
     titles : "",
 };
-/* const searcher = "Bebidas";
-const filterList = [...initialState.recipes].filter( recipe => {
-    return recipe.category.some( cat => cat === searcher);
-    }
-    );
-     console.log(filterList) */
+    /* const searcher = "Comida popular";
+    const searcher2 = "Platillos principales";
+    
+    let filteredList  = [...initialState.recipes].filter( recipe => {
+        return recipe.category.some( cat => cat === searcher );
+    })
+    console.log(searcher2)
+    if(searcher2){
+        filteredList  = [...filteredList].filter( recipe => {
+            return recipe.category.some( cat => cat === searcher2 );
+        })
+    };
+    console.log(filteredList) */

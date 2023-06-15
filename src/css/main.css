@@ -373,13 +373,17 @@
   width: 100%;
   font-family: "News Cycle", sans-serif;
   font-size: 1.4rem;
+  text-decoration: none;
   font-weight: bold;
+  color: #1E1D1D;
 }
 
 .secondary-option {
   font-family: "News Cycle", sans-serif;
   font-size: 1.4rem;
   padding-left: 1rem;
+  text-decoration: none;
+  color: #1E1D1D;
 }
 
 .principal-option:hover, .secondary-option:hover {

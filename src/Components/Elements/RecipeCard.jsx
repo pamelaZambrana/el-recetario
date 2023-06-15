@@ -6,7 +6,7 @@ import { Link, useParams } from 'react-router-dom';
 const RecipeCard = ({ recipe, index}) => {
     const [globalState ] = useContext(GlobalContext);
     const user = globalState.user;
-    const loginState = user.loginState;
+    const loginState = globalState.loginState;
     const params = useParams();
     /* ---- heart icon ---- */
     function fullHeart(favoriteArray, recipeId){

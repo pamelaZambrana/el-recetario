@@ -3,8 +3,7 @@ import { GlobalContext } from '../../../Contexts/globalContext';
 
 const Footer = () => {
 const [globalState] = useContext( GlobalContext );
-const user = globalState.user;
-const loginState = user.loginState;
+const loginState = globalState.loginState;
 const socialMedia = [
     {
         name: "Facebook",
@@ -36,7 +35,7 @@ const buttons = [
 
 
     return (
-        <div className='footer'>
+        <footer className='footer'>
             <section className='social-media-section'>
                 <p>SÍGUENOS POR:</p>
                 {
@@ -69,7 +68,7 @@ const buttons = [
                         ))
                     }
             </section>
-        </div>
+        </footer>
     );
 }
 
