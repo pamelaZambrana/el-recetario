@@ -1,0 +1,21 @@
+@import "./variables";
+.second-navbar{
+    z-index: 0;
+    position: absolute;
+    right: 0;
+    padding: 1.2rem 1.2rem 0;
+    @include display-estructure(flex-end,center);
+    gap: 1rem;
+    text-decoration: none;
+    @include subtitle2;
+    i{
+        color: $black;
+    };
+};
+
+@media(max-width:350px){
+    .second-navbar{
+        right: -50px
+
+    }
+}

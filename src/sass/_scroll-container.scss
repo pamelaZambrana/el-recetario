@@ -6,6 +6,7 @@
     gap: 0.5rem;
 };
 .arrow-active{
+    visibility: hidden;
     right: 0;
     font-size: 2.4rem;
     font-weight: bold;
@@ -29,6 +30,11 @@
     
 };
 
+@media (min-width: 500px){
+    .arrow-active{
+        visibility: visible;
+    };
+};
 @media(min-width: 800px){
     .scroll-content{
         width: 650px;
@@ -45,7 +51,7 @@
     };
     .scroll-recipe{
         .scroll-content{
-            width: 100%;
+            width: 90%;
             overflow-x: hidden;
         };
     };

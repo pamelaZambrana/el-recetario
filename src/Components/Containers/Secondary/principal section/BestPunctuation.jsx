@@ -1,20 +1,16 @@
 import React, { useContext } from 'react';
 import ScrollContainer from '../../Terciary/ScrollContainer';
 import { GlobalContext } from '../../../../Contexts/globalContext';
+import { bestScores } from '../../../../functions/bestScores';
 
 const BestPunctuation = () => {
    const [globalState] = useContext(GlobalContext);
     const { recipes } = globalState;
 
     let bestPunctuationList = [];
+
     /* ---- best punctuation list ----*/
-    const orderedList = [...recipes].sort((a,b) => {
-        return b.punctuation - a.punctuation;
-    });
-    for( let i=0; i<10 ;i++){
-        bestPunctuationList.push(orderedList[i]);
-    };  
-    
+    bestScores(recipes, bestPunctuationList);
 
     return (
         <section className='subsection-container'>

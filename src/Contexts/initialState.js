@@ -16,7 +16,9 @@ export const initialState ={
             time: 2,
             difficulty : 10,
             recommended : true,
-            category: ["Comida típica", "Platillos principales"]
+            category: ["Comida típica", "Platillos principales"],
+            ingredients : ["cebolla", "carne", "salchicha", "papas"],
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
 
         },
         {
@@ -28,7 +30,9 @@ export const initialState ={
             time: 2,
             difficulty : 10,
             recommended : false,
-            category: ["Comida típica", "Postres"]
+            category: ["Comida típica", "Postres"],
+            ingredients : ["cebolla", "carne", "salchicha", "papas"],
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
         },
         {
             id:3,
@@ -39,7 +43,9 @@ export const initialState ={
             time: 2,
             difficulty : 10,
             recommended : true,
-            category: ["Comida típica", "Postres"]
+            category: ["Comida típica", "Postres"],
+            ingredients : ["cebolla", "carne", "salchicha", "papas"],
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
         },
         {
             id:4,
@@ -50,7 +56,9 @@ export const initialState ={
             time: 2,
             difficulty : 10,
             recommended : false,
-            category: ["Comida popular", "Platillos principales"]
+            category: ["Comida popular", "Platillos principales"],
+            ingredients : ["cebolla", "carne", "salchicha", "papas"],
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
         },
         {
             id:5,
@@ -61,7 +69,9 @@ export const initialState ={
             time: 2,
             difficulty : 10,
             recommended : true,
-            category: ["Comida popular", "Platillos principales"]
+            category: ["Comida popular", "Platillos principales"],
+            ingredients : ["cebolla", "carne", "salchicha", "papas"],
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
         },
         {
             id:6,
@@ -72,7 +82,9 @@ export const initialState ={
             time: 2,
             difficulty : 10,
             recommended : true,
-            category: ["Comida típica", "Platillos principales"]
+            category: ["Comida típica", "Platillos principales"],
+            ingredients : ["cebolla", "carne", "salchicha", "papas"],
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
         },
         {
             id:7,
@@ -82,7 +94,9 @@ export const initialState ={
             favorite: false,
             time: 2,
             difficulty : 8,
-            category: ["Comida popular", "Platillos principales"]
+            category: ["Comida popular", "Platillos principales"],
+            ingredients : ["quinua", "bebolla", "morrón", "huevo"],
+            process : ["Lavar y hervir la quinua","mezclar los ingredientes", "Freir la hamburgues", "Servir"]
         },
         {
             id:8,
@@ -93,7 +107,9 @@ export const initialState ={
             time: 2,
             difficulty : 10,
             recommended : false,
-            category: ["Comida típica", "Platillos principales"]
+            category: ["Comida típica", "Platillos principales"],
+            ingredients : ["cebolla", "carne", "salchicha", "papas"],
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
         },
         {
             id:9,
@@ -104,7 +120,9 @@ export const initialState ={
             time: 2,
             difficulty : 10,
             recommended : true,
-            category: ["Comida típica", "Bebidas"]
+            category: ["Comida típica", "Bebidas"],
+            ingredients : ["cebolla", "carne", "salchicha", "papas"],
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
         },
         {
             id:10,
@@ -115,7 +133,9 @@ export const initialState ={
             time: 2,
             difficulty : 10,
             recommended : true,
-            category: ["Comida típica", "Bebidas"]
+            category: ["Comida típica", "Bebidas"],
+            ingredients : ["cebolla", "carne", "salchicha", "papas"],
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
         },
         {
             id:11,
@@ -125,7 +145,9 @@ export const initialState ={
             favorite: false,
             time: 2,
             difficulty : 5,
-            category: ["Comida típica", "Postres"]
+            category: ["Comida típica", "Postres"],
+            ingredients : ["cebolla", "carne", "salchicha", "papas"],
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
         },
         {
             id:12,
@@ -136,11 +158,27 @@ export const initialState ={
             time: 2,
             difficulty : 10,
             recommended : true,
-            category: ["Comida popular", "Postres"]
+            category: ["Comida popular", "Postres"],
+            ingredients : ["cebolla", "carne", "salchicha", "papas"],
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
+        },
+        {
+            id:13,
+            name: "Chairo",
+            image: "/img/carousel/platillos-principales.jpg",
+            punctuation: 7,
+            favorite: false,
+            time: 2,
+            difficulty : 10,
+            recommended : true,
+            category: ["Comida típica", "Platillos principales"],
+            ingredients : ["cebolla", "carne", "salchicha", "papas"],
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
         },
 
     ],
     titles : "",
+    selectedRecipe : "",
 };
     /* const searcher = "Comida popular";
     const searcher2 = "Platillos principales";

@@ -1,17 +1,19 @@
 @import "./variables";
 
 .recipes-dashboard{
-    height: 100vh;
+
+    min-height: 100vh;
     h1{
+        width: 70%;
         padding: 1.2rem;
         margin-bottom: 1rem;
         font-family: $font-subtitule1;
-        font-size: $font-subtitule1;
+        font-size: $size-subtitule1;
     }
 }
 .grill-recipes-container{
     width: 100%;
-    margin: 1rem auto;
+    margin: 1rem auto 2rem auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, 150px);
     justify-content: center;

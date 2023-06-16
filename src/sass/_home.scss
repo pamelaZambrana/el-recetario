@@ -7,8 +7,9 @@
         width: 68px;
         height: auto;
     };
-    h1{
+    .navbar-title{
         margin: 0px;
+        text-decoration: none;
         font-size: $size-title;
         font-family: $font-title;
         color: $white;

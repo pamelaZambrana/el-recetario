@@ -2,8 +2,10 @@ import {Routes, Route} from 'react-router-dom';
 import PrincipalPage from './pages/principalPage.js';
 import Dashboard from './pages/dashboard.js';
 import GlobalProvider from './Contexts/globalContext.jsx';
-import RecipePage from './pages/recipePage.js';
+import RecipePage from './pages/recipeDetailPage.js';
 import LayoutPage from './pages/LayoutPage.js';
+import RecipesLayout from './pages/recipesLayout.js';
+import RecipeDetailPage from "./pages/recipeDetailPage";
 
 function App() {
   return (
@@ -15,21 +17,27 @@ function App() {
               path='/' 
               element=<PrincipalPage/>
             />
+            <Route path="recipes" element={<RecipesLayout/>}>
+              <Route
+                path = ":filter" 
+                element = <Dashboard/>
+              />
+              <Route
+                path = ":filter/:filter2" 
+                element = <Dashboard/>
+              />
+              <Route
+                path = ":filter/recipe/:recipeName"
+                element = <RecipePage/>
+              />
+              <Route
+                path = ":filter/:filter2/recipe/:recipeName"
+                element = <RecipePage/>
+              />
+            </Route>
             <Route
-              path = "recipes/:filter" 
-              element = <Dashboard/>
-            />
-             <Route
-              path = "recipes/:filter/:filter2" 
-              element = <Dashboard/>
-            />
-            <Route
-              path = "recipe/:filter/:recipe"
-              element = <RecipePage/>
-            />
-            <Route
-              path = "recipe/:recipe"
-              element = <RecipePage/>
+              path = "recipe/:recipeName"
+              element = <RecipeDetailPage/>
             />
           </Route>
         </Routes>

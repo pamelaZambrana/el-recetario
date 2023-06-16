@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { arrowLeft, arrowRigth, scrollLeft, scrollRigth } from '../Secondary/principal section/carouselFunctions';
+import { arrowLeft, arrowRigth, scrollLeft, scrollRigth } from '../../../functions/carouselFunctions.js';
 import RecipeCard from '../../Elements/RecipeCard';
 
 const ScrollContainer = ({ list }) => {

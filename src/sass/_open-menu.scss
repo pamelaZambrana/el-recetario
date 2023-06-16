@@ -1,6 +1,7 @@
 @import "./variables";
 
 .open-menu-container{
+    z-index: 1;
     @include display-estructure(center, center);
     width: 80%;
     height: auto;

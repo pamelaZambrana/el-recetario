@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Link } from "react-router-dom";
-import { arrowLeft, arrowRigth, scrollLeft, scrollRigth } from './carouselFunctions';
+import { arrowLeft, arrowRigth, scrollLeft, scrollRigth } from '../../../../functions/carouselFunctions';
 import { GlobalContext } from '../../../../Contexts/globalContext';
 import { TYPES } from '../../../../Contexts/globalReducer';
 
@@ -60,7 +60,7 @@ const Filters = () => {
             description: "Buscar por postres",
         },
         {
-            name: "Mejores calificaciones",
+            name: "Las 10 mejores calificaciones",
             image: "/img/carousel/platillos-principales.jpg",
             description: "Buscar por puntuaciones",
         },

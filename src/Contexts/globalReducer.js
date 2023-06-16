@@ -3,6 +3,7 @@ export const TYPES = {
     CLOSE_SESION : "close sesion",
     INIT_SESSION: "init session",
     CLOSE_OPEN_MENU : "close, open menu",
+    SHOW_RECIPE : "show recipe",
 }
 
 export function globalReducer(state, action){
@@ -29,6 +30,11 @@ export function globalReducer(state, action){
                 ...state,
                 loginState : true,
                 openMenu : false,
+            };
+        case TYPES.SHOW_RECIPE:
+            return{
+                ...state,
+                selectedRecipe : action.payload
             };
         default:
             return state

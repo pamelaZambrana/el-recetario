@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../../Contexts/globalContext';
 import { Link, useParams } from 'react-router-dom';
+import { TYPES } from '../../Contexts/globalReducer';
 
 
 const RecipeCard = ({ recipe, index}) => {
-    const [globalState ] = useContext(GlobalContext);
+    const [globalState, dispatch ] = useContext(GlobalContext);
     const user = globalState.user;
     const loginState = globalState.loginState;
     const params = useParams();
@@ -23,8 +24,12 @@ const RecipeCard = ({ recipe, index}) => {
     };
     /* ---- filling the path ----- */
     function path(){
-        if( params.filter ){
-            return `/recipe/${params.filter}/${recipe.name}`
+        if( params.filter){
+            if(params.filter2){
+                return `/recipes/${params.filter}/${params.filter2}/recipe/${recipe.name}`;
+            }else{
+                return `/recipes/${params.filter}/recipe/${recipe.name}`;
+            };
         }else{
             return `/recipe/${recipe.name}`
         };
@@ -33,7 +38,11 @@ const RecipeCard = ({ recipe, index}) => {
         <div key={ index } className='recipe-card'>
             <img src={ recipe.image } alt={ recipe.description } />
             <div  className='recipe-card-description'>
-                <Link to={ path() } className='recipe-card-description'>
+                <Link 
+                    to={ path() } 
+                    className='recipe-card-description'
+                    onClick={() => dispatch({ type : TYPES.SHOW_RECIPE, payload : recipe.id})}
+                >
                     <h4> { recipe.name } </h4>
                 </Link>
                 <div className='ratings'>

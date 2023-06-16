@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../../../Contexts/globalContext';
+import { TYPES } from '../../../Contexts/globalReducer';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
-const [globalState] = useContext( GlobalContext );
+const [globalState, dispatch] = useContext( GlobalContext );
 const loginState = globalState.loginState;
 const socialMedia = [
     {
@@ -25,11 +27,13 @@ const buttons = [
         state : `${!loginState}`,
         text : "INICIAR SESIÓN",
         goto : "/",
+        action : TYPES.INIT_SESSION
     },
     {
         state : `${loginState}`,
         text : "CERRAR SESIÓN",
         goto : "/",
+        action : TYPES.CLOSE_SESION
     }
 ]
 
@@ -54,12 +58,13 @@ const buttons = [
                             {
                                 button.state === "true" 
                                 ? (
-                                    <a 
+                                    <Link
                                         className= { `register-link-${button.state}` } 
-                                        href={ `${button.goto}` }
+                                        to={ `${button.goto}` }
+                                        onClick = {() => dispatch({type: button.action})}
                                     >
                                         { button.text }
-                                    </a>
+                                    </Link>
                                 )  
                                 : null
                             }
