@@ -36,7 +36,7 @@ const OpenMenu = () => {
                         <li key={ index }>
                             <Link 
                                 className={ `${option.class}`}
-                                to={`recipes/${ option.name}`}
+                                to={`recipes?type=${ option.name}`}
                                 onClick={() => dispatch({ type: TYPES.SET_TITLE, payload : option.name })}
                             >
                                 { option.name }
@@ -49,7 +49,7 @@ const OpenMenu = () => {
                                             key={ index } 
                                         >
                                             <Link 
-                                                to={`recipes/${ option.name}/${item}`}
+                                                to={`recipes?type=${ option.name}&type2=${item}`}
                                                 onClick={() => dispatch({ type: TYPES.SET_TITLE, payload : `${option.name}/ ${item}` })}
                                                 className={ `${option.items.class}`}
                                             > 

@@ -1,14 +1,17 @@
 import React from 'react';
 import RecipesGrill from '../Secondary/recipesDashboar/recipesGrill';
-import { useParams } from "react-router";
+
 import { title } from '../../../functions/setTitles';
+import { useSearchParams } from 'react-router-dom';
 
 const RecipeDashboard = () => {
-    const params = useParams();
-   
+    const [searchParams] = useSearchParams();
+    const typeFilter = searchParams.get("type");
+    const typeFilter2 = searchParams.get("type2");
+
     return (
         <div className='recipes-dashboard'>
-            <h1>{ title(params) }</h1>
+            <h1>{ title([typeFilter, typeFilter2]) }</h1>
             <RecipesGrill></RecipesGrill>
         </div>
     );

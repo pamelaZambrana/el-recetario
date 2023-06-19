@@ -1,29 +1,46 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../../../../Contexts/globalContext';
 import RecipeCard from '../../../Elements/RecipeCard';
-import { useParams } from 'react-router';
 import { bestScores } from '../../../../functions/bestScores';
+import { useSearchParams } from 'react-router-dom';
 
 const RecipesGrill = () => {
+    /* ---- Using the global context---- */
     const [ globalState ] = useContext(GlobalContext);
     const recipes = globalState.recipes;
-    const params = useParams();
+    /* ----Usins searchParams---- */
+    const [searchParams] = useSearchParams();
+    const typeFilter = searchParams.get("type");
+    const typeFilter2 = searchParams.get("type2");
 
-    const searcher = params.filter;
-    const searcher2 = params.filter2;
+    const searcher = typeFilter;
+    const searcher2 = typeFilter2;
     let filteredList =[];
-    if(searcher !== "Las 10 mejores calificaciones" ){
-        filteredList  = [...recipes].filter( recipe => {
-            return recipe.category.some( cat => cat === searcher );
-        })
-        if(searcher2){
-            filteredList  = [...filteredList].filter( recipe => {
-                return recipe.category.some( cat => cat === searcher2 );
+    if(searcher !== "Todas las recetas" ){
+        if(searcher !== "Las 10 mejores calificaciones"){
+            filteredList  = [...recipes].filter( recipe => {
+                return recipe.category.some( cat => cat === searcher );
             })
+            if(searcher2){
+                filteredList  = [...filteredList].filter( recipe => {
+                    return recipe.category.some( cat => cat === searcher2 );
+                })
+            }else;
+        }else{
+            bestScores(recipes, filteredList);
+            if(searcher2){
+                filteredList  = [...filteredList].filter( recipe => {
+                    return recipe.category.some( cat => cat === searcher2 );
+                })
+            };
         };
+    }else if(searcher === "Todas las recetas" && searcher2){
+        filteredList  = [...recipes].filter( recipe => {
+            return recipe.category.some( cat => cat === searcher2 );
+        })
     }else{
-        bestScores(recipes, filteredList);
-    }
+        filteredList = [...recipes];
+    };
 
 
 

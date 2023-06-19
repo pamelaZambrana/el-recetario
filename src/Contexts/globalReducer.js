@@ -3,6 +3,7 @@ export const TYPES = {
     CLOSE_SESION : "close sesion",
     INIT_SESSION: "init session",
     CLOSE_OPEN_MENU : "close, open menu",
+    CLOSE_SECOND_OPEN_MENU : "close, second open menu",
     SHOW_RECIPE : "show recipe",
 }
 
@@ -18,7 +19,12 @@ export function globalReducer(state, action){
             return{
                 ...state,
                 openMenu : !state.openMenu
-            }
+            };
+            case TYPES.CLOSE_SECOND_OPEN_MENU:
+                return{
+                    ...state,
+                    secondOpenMenu : !state.secondOpenMenu
+                };
         case TYPES.CLOSE_SESION:
             return {
                 ...state,

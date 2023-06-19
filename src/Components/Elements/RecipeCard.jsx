@@ -26,9 +26,9 @@ const RecipeCard = ({ recipe, index}) => {
     function path(){
         if( params.filter){
             if(params.filter2){
-                return `/recipes/${params.filter}/${params.filter2}/recipe/${recipe.name}`;
+                return `recipe/${recipe.name}`;
             }else{
-                return `/recipes/${params.filter}/recipe/${recipe.name}`;
+                return `recipe/${recipe.name}`;
             };
         }else{
             return `/recipe/${recipe.name}`

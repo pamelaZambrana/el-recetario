@@ -19,7 +19,7 @@ function App() {
             />
             <Route path="recipes" element={<RecipesLayout/>}>
               <Route
-                path = ":filter" 
+                index
                 element = <Dashboard/>
               />
               <Route

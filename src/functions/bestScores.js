@@ -5,4 +5,5 @@ export function bestScores(initialList, finalList){
     for( let i=0; i<10 ;i++){
         finalList.push(orderedList[i]);
     }; 
+    return finalList;
 }

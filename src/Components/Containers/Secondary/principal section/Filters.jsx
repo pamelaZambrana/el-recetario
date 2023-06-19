@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { arrowLeft, arrowRigth, scrollLeft, scrollRigth } from '../../../../functions/carouselFunctions';
 import { GlobalContext } from '../../../../Contexts/globalContext';
 import { TYPES } from '../../../../Contexts/globalReducer';
+import { filterList } from '../../../option lists.js/filterList';
 
 const Filters = () => {
     /* ----using global context ---- */
@@ -32,39 +33,6 @@ const Filters = () => {
         }
     }, [scrollValues.containerWidth]);
     
-    
-    const filtersList = [
-        {
-            name: "Comida típica",
-            image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar comida típica",
-        },
-        {
-            name: "Comida popular",
-            image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar comida popular",
-        },
-        {
-            name: "Platillos principales",
-            image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar por platillos principales",
-        },
-        {
-            name: "Bebidas",
-            image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar por bebidas",
-        },
-        {
-            name: "Postres",
-            image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar por postres",
-        },
-        {
-            name: "Las 10 mejores calificaciones",
-            image: "/img/carousel/platillos-principales.jpg",
-            description: "Buscar por puntuaciones",
-        },
-    ];
 
     /* ----navigating to recipes page and setting title ---- */
     function setTitle(title) {
@@ -83,12 +51,12 @@ const Filters = () => {
                 { arrowLeft (scrollValues, () => scrollLeft(scrollContainerRef, scrollValues, setScrollValues, leap)) }
                 <div className='scroll-content' ref={ scrollContainerRef }>
                     {
-                        filtersList.map((filter,index) => (
+                        filterList.map((filter,index) => (
                             <Link
                                 key={ index } 
                                 className='filter-card'
-                                to={`/recipes/${filter.name}`}
-                                onClick={() => setTitle(filter.name)}
+                                to={`/recipes?type=${filter.name}`}
+                                onClick={() => setTitle(filter.level)}
                             >
                                 <img src={ filter.image } alt={ filter.description } />
                                 <h4> { filter.name } </h4>

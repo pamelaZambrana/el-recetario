@@ -1,12 +1,9 @@
-export function title(params){
-    const valuesArray = Object.values(params);
-    if( params.filter ){
-        let title = params.filter;
-        for(let i=1; i < valuesArray.length; i++){
-            title = `${title}/ ${valuesArray[i]}`;
+export function title(filterArray){
+        let title = filterArray[0];
+        for(let i=1; i < filterArray.length; i++){
+            if(filterArray[i]){
+                title = `${title}/ ${filterArray[i]}`;
+            }
         };
         return title;
-    }else{
-        return `${params.recipeName}`
-    };
 };

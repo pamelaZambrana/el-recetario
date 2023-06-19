@@ -7,6 +7,7 @@ export const initialState ={
     },
     loginState: true,
     openMenu: false,
+    secondOpenMenu: false,
     recipes:  [
         {   id:1,
             name: "Piquemacho",
