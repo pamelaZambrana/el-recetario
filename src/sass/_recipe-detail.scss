@@ -1,8 +1,71 @@
 @import "./variables";
-.recipe-detail-title{
-    width: 70%;
-    padding: 1.2rem;
-    margin-bottom: 1rem;
-    font-family: $font-subtitule1;
-    font-size: $size-subtitule1;
+.recipe-detail{
+    min-height: 100vh;
+    margin: 1rem;
+    @include display-estructure(space-between, center);
+    flex-direction: column;
+    h3{
+        margin-left: 1.2rem;
+        
+        align-self: flex-start;
+        @include subtitle2;
+        font-weight: bold;
+    }
 }
+.recipe-detail-img{
+    padding: 1rem;
+    img{
+        width: 150px;
+    }
+}
+.recipe-detail-title{
+    width: 100%;
+    margin-top: 1rem;
+    @include subtitle1;
+    text-align: center;
+    font-weight: bold;
+};
+.recipe-ingredients, .recipe-process{
+    margin: 1rem auto 0;
+    align-self: flex-start;
+    @include content-medium;
+};
+.recipe-detail-author{
+    @extend .recipe-ingredients;
+    width: 100%;
+    padding: 1.2rem;
+    border-top: solid 2px $primary;
+    border-bottom: solid 2px $primary;
+    text-align: end;
+}
+.recipe-icons-container{
+    width: 100%;
+    padding: 1rem;
+    @include display-estructure(space-between, center);
+    gap: 1rem;
+    @include content-medium;
+};
+.recipe-detail-icons{
+    text-align: center;
+}
+@media(min-width: 450px){
+    .recipe-detail{
+        width: 90%;
+    };
+};
+@media(min-width: 500px){
+    .recipe-detail{
+        width: 60%;
+        margin: 1rem auto;
+    };
+};
+@media(min-width: 800px){
+    .recipe-detail{
+        width: 50%;
+    };
+};
+@media(min-width: 1000px){
+    .recipe-detail{
+        width: 40%;
+    };
+};

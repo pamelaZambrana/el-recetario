@@ -19,7 +19,8 @@ export const initialState ={
             recommended : true,
             category: ["Comida típica", "Platillos principales"],
             ingredients : ["cebolla", "carne", "salchicha", "papas"],
-            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"],
+            author : "Ana Foronda"
 
         },
         {
@@ -33,7 +34,8 @@ export const initialState ={
             recommended : false,
             category: ["Comida típica", "Postres"],
             ingredients : ["cebolla", "carne", "salchicha", "papas"],
-            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"],
+            author : "Ana Foronda"
         },
         {
             id:3,
@@ -59,7 +61,8 @@ export const initialState ={
             recommended : false,
             category: ["Comida popular", "Platillos principales"],
             ingredients : ["cebolla", "carne", "salchicha", "papas"],
-            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"],
+            author : "Ana Foronda"
         },
         {
             id:5,
@@ -72,7 +75,8 @@ export const initialState ={
             recommended : true,
             category: ["Comida popular", "Platillos principales"],
             ingredients : ["cebolla", "carne", "salchicha", "papas"],
-            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"],
+            author : "Ana Foronda"
         },
         {
             id:6,
@@ -85,7 +89,8 @@ export const initialState ={
             recommended : true,
             category: ["Comida típica", "Platillos principales"],
             ingredients : ["cebolla", "carne", "salchicha", "papas"],
-            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"],
+            author : "Ana Foronda"
         },
         {
             id:7,
@@ -97,7 +102,8 @@ export const initialState ={
             difficulty : 8,
             category: ["Comida popular", "Platillos principales"],
             ingredients : ["quinua", "bebolla", "morrón", "huevo"],
-            process : ["Lavar y hervir la quinua","mezclar los ingredientes", "Freir la hamburgues", "Servir"]
+            process : ["Lavar y hervir la quinua","mezclar los ingredientes", "Freir la hamburgues", "Servir"],
+            author : "Ana Foronda"
         },
         {
             id:8,
@@ -110,7 +116,8 @@ export const initialState ={
             recommended : false,
             category: ["Comida típica", "Platillos principales"],
             ingredients : ["cebolla", "carne", "salchicha", "papas"],
-            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"],
+            author : "Ana Foronda"
         },
         {
             id:9,
@@ -123,7 +130,8 @@ export const initialState ={
             recommended : true,
             category: ["Comida típica", "Bebidas"],
             ingredients : ["cebolla", "carne", "salchicha", "papas"],
-            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"],
+            author : "Ana Foronda"
         },
         {
             id:10,
@@ -136,7 +144,8 @@ export const initialState ={
             recommended : true,
             category: ["Comida típica", "Bebidas"],
             ingredients : ["cebolla", "carne", "salchicha", "papas"],
-            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"],
+            author : "Ana Foronda"
         },
         {
             id:11,
@@ -148,7 +157,8 @@ export const initialState ={
             difficulty : 5,
             category: ["Comida típica", "Postres"],
             ingredients : ["cebolla", "carne", "salchicha", "papas"],
-            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"],
+            author : "Ana Foronda"
         },
         {
             id:12,
@@ -161,7 +171,8 @@ export const initialState ={
             recommended : true,
             category: ["Comida popular", "Postres"],
             ingredients : ["cebolla", "carne", "salchicha", "papas"],
-            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"],
+            author : "Ana Foronda"
         },
         {
             id:13,
@@ -174,7 +185,8 @@ export const initialState ={
             recommended : true,
             category: ["Comida típica", "Platillos principales"],
             ingredients : ["cebolla", "carne", "salchicha", "papas"],
-            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
+            process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"],
+            author : "Ana Foronda"
         },
 
     ],

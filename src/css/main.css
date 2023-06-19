@@ -550,14 +550,89 @@
 /* Font-family variables */
 /* Font-size variables */
 /* Mixins */
-.recipe-detail-title {
-  width: 70%;
-  padding: 1.2rem;
-  margin-bottom: 1rem;
-  font-family: "News Cycle", sans-serif;
-  font-size: 2rem;
+.recipe-detail {
+  min-height: 100vh;
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.recipe-detail h3 {
+  margin-left: 1.2rem;
+  align-self: flex-start;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
+.recipe-detail-img {
+  padding: 1rem;
+}
+.recipe-detail-img img {
+  width: 150px;
+}
+
+.recipe-detail-title {
+  width: 100%;
+  margin-top: 1rem;
+  font-family: "News Cycle", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.recipe-ingredients, .recipe-detail-author, .recipe-process {
+  margin: 1rem auto 0;
+  align-self: flex-start;
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+}
+
+.recipe-detail-author {
+  width: 100%;
+  padding: 1.2rem;
+  border-top: solid 2px #C02E09;
+  border-bottom: solid 2px #C02E09;
+  text-align: end;
+}
+
+.recipe-icons-container {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+}
+
+.recipe-detail-icons {
+  text-align: center;
+}
+
+@media (min-width: 450px) {
+  .recipe-detail {
+    width: 90%;
+  }
+}
+@media (min-width: 500px) {
+  .recipe-detail {
+    width: 60%;
+    margin: 1rem auto;
+  }
+}
+@media (min-width: 800px) {
+  .recipe-detail {
+    width: 50%;
+  }
+}
+@media (min-width: 1000px) {
+  .recipe-detail {
+    width: 40%;
+  }
+}
 :root {
   font-size: 62.5%;
 }

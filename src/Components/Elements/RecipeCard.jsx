@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../../Contexts/globalContext';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { TYPES } from '../../Contexts/globalReducer';
 
 
@@ -8,7 +8,6 @@ const RecipeCard = ({ recipe, index}) => {
     const [globalState, dispatch ] = useContext(GlobalContext);
     const user = globalState.user;
     const loginState = globalState.loginState;
-    const params = useParams();
     /* ---- heart icon ---- */
     function fullHeart(favoriteArray, recipeId){
         const favorite = favoriteArray.find(id => id === recipeId);
@@ -23,7 +22,7 @@ const RecipeCard = ({ recipe, index}) => {
         };
     };
     /* ---- filling the path ----- */
-    function path(){
+   /*  function path(){
         if( params.filter){
             if(params.filter2){
                 return `recipe/${recipe.name}`;
@@ -33,13 +32,13 @@ const RecipeCard = ({ recipe, index}) => {
         }else{
             return `/recipe/${recipe.name}`
         };
-    };
+    }; */
     return (
         <div key={ index } className='recipe-card'>
             <img src={ recipe.image } alt={ recipe.description } />
             <div  className='recipe-card-description'>
                 <Link 
-                    to={ path() } 
+                    to={ `/recipe/${recipe.name}` } 
                     className='recipe-card-description'
                     onClick={() => dispatch({ type : TYPES.SHOW_RECIPE, payload : recipe.id})}
                 >
