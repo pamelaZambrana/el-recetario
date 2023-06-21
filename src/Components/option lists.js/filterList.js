@@ -1,7 +1,7 @@
 export const filterList = [
     {
         name : "Comida típica",
-        filter:"Comida típica",
+        filter:"tipica",
         class : "filter-button",
         level : 1,
         image: "/img/carousel/platillos-principales.jpg",
@@ -10,7 +10,7 @@ export const filterList = [
     },
     {
         name : "Comida popular",
-        filter:"Comida popular",
+        filter:"popular",
         class : "filter-button",
         level : 1,
         image: "/img/carousel/platillos-principales.jpg",
@@ -18,7 +18,7 @@ export const filterList = [
     },
     {
         name : "Platillos principales",
-        filter:"Platillos principales",
+        filter:"principales",
         class : "filter-button",
         level : 2,
         image: "/img/carousel/platillos-principales.jpg",
@@ -26,7 +26,7 @@ export const filterList = [
     },
     {
         name : "Bebidas",
-        filter:"Bebidas",
+        filter:"bebidas",
         class : "filter-button",
         level : 2,
         image: "/img/carousel/platillos-principales.jpg",
@@ -34,7 +34,7 @@ export const filterList = [
     },
     {
         name : "Postres",
-        filter:"Postres",
+        filter:"postres",
         class : "filter-button",
         level : 2,
         image: "/img/carousel/platillos-principales.jpg",
@@ -42,7 +42,7 @@ export const filterList = [
     },
     {
         name: "Las 10 mejores calificaciones",
-        filter:"Las 10 mejores calificaciones",
+        filter:"mejores",
         class : "filter-button",
         level : 0,
         image: "/img/carousel/platillos-principales.jpg",
@@ -50,7 +50,7 @@ export const filterList = [
     },
     {
         name: "Todas las recetas",
-        filter:".",
+        filter:"todas",
         class : "filter-button",
         level : 0,
         image: "/img/carousel/platillos-principales.jpg",

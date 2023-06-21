@@ -16,8 +16,8 @@ const RecipesGrill = () => {
     const searcher = typeFilter;
     const searcher2 = typeFilter2;
     let filteredList =[];
-    if(searcher !== "Todas las recetas" ){
-        if(searcher !== "Las 10 mejores calificaciones"){
+    if(searcher !== "todas" ){
+        if(searcher !== "mejores"){
             filteredList  = [...recipes].filter( recipe => {
                 return recipe.category.some( cat => cat === searcher );
             })
@@ -34,7 +34,7 @@ const RecipesGrill = () => {
                 })
             };
         };
-    }else if(searcher === "Todas las recetas" && searcher2){
+    }else if(searcher === "todas" && searcher2){
         filteredList  = [...recipes].filter( recipe => {
             return recipe.category.some( cat => cat === searcher2 );
         })

@@ -55,7 +55,7 @@ const Filters = () => {
                             <Link
                                 key={ index } 
                                 className='filter-card'
-                                to={`/recipes?type=${filter.name}`}
+                                to={`/recipes?type=${filter.filter}`}
                                 onClick={() => setTitle(filter.level)}
                             >
                                 <img src={ filter.image } alt={ filter.description } />

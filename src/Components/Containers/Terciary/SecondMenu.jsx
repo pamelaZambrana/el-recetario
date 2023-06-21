@@ -8,10 +8,11 @@ const SecondOpenMenu = () => {
     const [globalState, dispatch] = useContext(GlobalContext);
     const [searchParams] = useSearchParams();
     const typeFilter = searchParams.get("type");
+    console.log(typeFilter);
     console.log(globalState);
 
 
-    const paramsLevel = filterList.filter(filter => filter.name === typeFilter)[0].level;
+    const paramsLevel = filterList.filter(filter => filter.filter === typeFilter)[0].level;
 
     const list = filterList.filter(filter => (filter.level !== paramsLevel && filter.level !== 0));
 
