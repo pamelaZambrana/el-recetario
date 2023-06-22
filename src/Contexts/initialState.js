@@ -1,6 +1,6 @@
     /* ----using localStorage---- */
 const userName = JSON.parse(localStorage.getItem("user")) ? JSON.parse(localStorage.getItem("user")).userName : "";
-const loginState = JSON.parse(localStorage.getItem("user")).token ? true : false;
+const loginState = JSON.parse(localStorage.getItem("user"))!== null? true : false;
 export const initialState ={
     user : {
         id: "123",
