@@ -5,6 +5,7 @@ import GlobalProvider from './Contexts/globalContext.jsx';
 import RecipePage from './pages/recipeDetailPage.js';
 import LayoutPage from './pages/LayoutPage.js';
 import RecipesLayout from './pages/recipesLayout.js';
+import NotFoundPage from './pages/NotFoundPage.js';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
                 element = <RecipePage/>
               />
             </Route>
+            <Route path='*' element={<NotFoundPage/>}/>
           </Route>
         </Routes>
       </GlobalProvider>

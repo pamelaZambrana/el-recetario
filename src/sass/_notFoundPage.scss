@@ -1,0 +1,14 @@
+@import "./variables";
+.not-found-page{
+    min-height: 100vh;
+    width: 50%;
+    margin: 10rem auto;
+    text-align: center;
+    h1{
+        @include subtitle1;
+    };
+    a{
+        @include content-medium;
+    }
+
+}

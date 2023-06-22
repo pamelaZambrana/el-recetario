@@ -695,6 +695,25 @@
     width: 40%;
   }
 }
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
+.not-found-page {
+  min-height: 100vh;
+  width: 50%;
+  margin: 10rem auto;
+  text-align: center;
+}
+.not-found-page h1 {
+  font-family: "News Cycle", sans-serif;
+  font-size: 2rem;
+}
+.not-found-page a {
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+}
+
 :root {
   font-size: 62.5%;
 }
