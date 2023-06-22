@@ -26,8 +26,8 @@ const buttons = [
     {
         state : `${!loginState}`,
         text : "INICIAR SESIÓN",
-        goto : "/",
-        action : TYPES.INIT_SESSION
+        goto : "/login",
+        action : null
     },
     {
         state : `${loginState}`,

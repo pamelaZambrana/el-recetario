@@ -5,6 +5,7 @@ export const TYPES = {
     CLOSE_OPEN_MENU : "close, open menu",
     CLOSE_SECOND_OPEN_MENU : "close, second open menu",
     SHOW_RECIPE : "show recipe",
+    SET_ALL_RECIPES : "set all recipes",
 }
 
 export function globalReducer(state, action){
@@ -42,6 +43,11 @@ export function globalReducer(state, action){
                 ...state,
                 selectedRecipe : action.payload
             };
+        case TYPES.SET_ALL_RECIPES:
+            return {
+                ...state,
+                allRecipes : action.payload,
+            }
 
         default:
             return state

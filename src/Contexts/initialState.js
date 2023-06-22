@@ -192,6 +192,7 @@ export const initialState ={
     ],
     titles : "",
     selectedRecipe : "",
+    allRecipes : [],
 };
     /* const searcher = "Comida popular";
     const searcher2 = "Platillos principales";

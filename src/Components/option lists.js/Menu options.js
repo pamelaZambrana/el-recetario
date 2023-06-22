@@ -56,18 +56,21 @@ export const menuOptionList = [
         class : "principal-option",
         name : "REGÍSTRATE",
         action : TYPES.CLOSE_SESION,
+        path : "/register",
     },
     {
         logged : false,
         class : "principal-option",
         name : "INICIAR SESIÓN",
         action : TYPES.INIT_SESSION,
+        path : "/login",
     },
     {
         logged : true,
         class : "principal-option",
         name : "MIS FAVORITOS",
         action : TYPES.CLOSE_SESION,
+        path : "/favorites",
 
     },
     {
@@ -75,11 +78,13 @@ export const menuOptionList = [
         class : "principal-option",
         name : "EDITAR USUSARIO",
         action : TYPES.CLOSE_SESION,
+        path : "/editUser",
     },
     {
         logged : true,
         class : "principal-option",
         name : "CERRAR SESIÓN",
         action : TYPES.CLOSE_SESION,
+        path : "/",
     },
 ];

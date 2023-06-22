@@ -1,0 +1,52 @@
+@import "./variables";
+.form{
+    width: 80%;
+    min-height: 100vh;
+    margin: 2rem auto;
+    @include display-estructure(flex-start, center);
+    flex-direction: column;
+    gap: 1rem;
+    h1{
+
+        @include subtitle1;
+    }
+    label{
+        align-self: flex-start;
+        @include content-medium
+    }
+    input{
+        @extend.search-box;
+        @include content-medium
+    }
+    button{
+        width: 35%;
+        margin-top: 1rem;
+        padding: 1rem;
+        @include content-medium;
+        color: $white;
+        background-color: $secondary1;
+        border-radius: 15px;
+
+    }
+};
+
+@media(min-width:500px){
+    .form{
+        width: 60%;
+    };
+};
+@media(min-width:600px){
+    .form{
+        width: 50%;
+    };
+};
+@media(min-width:800px){
+    .form{
+        width: 40%;
+    };
+};
+@media(min-width:1000px){
+    .form{
+        width: 30%;
+    };
+};

@@ -63,12 +63,13 @@ const OpenMenu = () => {
                         :
                         option.logged === loginState? 
                         <li key={ index }>
-                            <span 
+                            <Link 
                                 className={ `${option.class}`}
                                 onClick={ () => dispatch({ type: option.action})}
+                                to={`${option.path}`}
                             >
                                     { option.name }
-                            </span>
+                            </Link>
                         </li>
                         :
                         null

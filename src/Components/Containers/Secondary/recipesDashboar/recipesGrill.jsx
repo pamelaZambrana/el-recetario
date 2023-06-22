@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { GlobalContext } from '../../../../Contexts/globalContext';
 import RecipeCard from '../../../Elements/RecipeCard';
 import { bestScores } from '../../../../functions/bestScores';
 import { useSearchParams } from 'react-router-dom';
+import { allRecipesRequest } from '../../../../Requests/recipes requests';
 
 const RecipesGrill = () => {
     /* ---- Using the global context---- */
@@ -16,6 +17,19 @@ const RecipesGrill = () => {
 
     const searcher = typeFilter;
     const searcher2 = typeFilter2;
+    async function getAllRecipes(){
+        await allRecipesRequest()
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => console.log(error))
+    };
+    useEffect(() => {
+        if(searcher === "todas"){
+            getAllRecipes();
+            console.log("obteniendo todas las recetas")
+        }
+    }, [searcher]);
     let filteredList =[];
     if(searcher !== "todas" ){
         if(searcher !== "mejores"){
