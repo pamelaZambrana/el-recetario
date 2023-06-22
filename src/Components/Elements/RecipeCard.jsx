@@ -23,7 +23,7 @@ const RecipeCard = ({ recipe, index}) => {
             )
         };
     };
-
+    //console.log(recipe);
     return (
         <div key={ index } className='recipe-card'>
             <img src={ recipe.image } alt={ recipe.description } />

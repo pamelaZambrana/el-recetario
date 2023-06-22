@@ -6,6 +6,7 @@ export const TYPES = {
     CLOSE_SECOND_OPEN_MENU : "close, second open menu",
     SHOW_RECIPE : "show recipe",
     SET_ALL_RECIPES : "set all recipes",
+    SET_RECIPES_BY_CAT : "set recipes by category",
 }
 
 export function globalReducer(state, action){
@@ -47,8 +48,12 @@ export function globalReducer(state, action){
             return {
                 ...state,
                 allRecipes : action.payload,
+            };
+        case TYPES.SET_RECIPES_BY_CAT:
+            return{
+                ...state,
+                searchedRecipes : action.payload,
             }
-
         default:
             return state
     }

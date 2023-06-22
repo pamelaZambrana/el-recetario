@@ -55,8 +55,8 @@ export const menuOptionList = [
         logged : false,
         class : "principal-option",
         name : "REGÍSTRATE",
-        action : TYPES.CLOSE_SESION,
-        path : "/register",
+        action : null,
+        path : "/registro",
     },
     {
         logged : false,
@@ -88,3 +88,5 @@ export const menuOptionList = [
         path : "/",
     },
 ];
+
+

@@ -7,6 +7,7 @@ import LayoutPage from './pages/LayoutPage.js';
 import RecipesLayout from './pages/recipesLayout.js';
 import NotFoundPage from './pages/NotFoundPage.js';
 import LoginPage from './pages/loginPage.js';
+import RegistePage from './pages/registePage.js';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
               />
             </Route>
             <Route path='login' element = { <LoginPage/> }/>
+            <Route path='registro' element = { <RegistePage/> }/>
             <Route path='*' element={<NotFoundPage/>}/>
           </Route>
         </Routes>

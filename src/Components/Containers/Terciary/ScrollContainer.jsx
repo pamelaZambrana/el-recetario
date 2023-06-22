@@ -32,10 +32,10 @@ const ScrollContainer = ({ list }) => {
                 { arrowLeft (scrollValues, () => scrollLeft(scrollContainerRef, scrollValues, setScrollValues,leap)) }
                 <div className='scroll-content' ref={ scrollContainerRef }>
                     {
-                        list.map((recipe) => (
+                        list.map((recipe, index) => (
                             <RecipeCard
                                 recipe={ recipe }
-                                key={ recipe.id } 
+                                key={ index } 
                             ></RecipeCard>                          
                         ))
                     }

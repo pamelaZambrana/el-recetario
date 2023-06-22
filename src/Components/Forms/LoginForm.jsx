@@ -1,14 +1,22 @@
 import React, { useRef } from 'react';
 import { loginRequest } from '../../Requests/userRequests';
+import { useNavigate } from 'react-router';
 
 const LoginForm = () => {
     const emailRef = useRef("");
     const passwordRef = useRef("");
-
+    const navigate = useNavigate();
     async function login(values){
         await loginRequest(values)
             .then(response => {
+                const user = {
+                    userName : response.data.body.name,
+                    rol : response.data.body.rol,
+                    token : response.data.body.token
+                }
+                localStorage.setItem("user", `${JSON.stringify(user)}`);
                 console.log(response);
+                navigate(-1);
             })
             .catch(error => console.log(error));
     };
@@ -43,7 +51,14 @@ const LoginForm = () => {
                     className='input'
                     ref={ passwordRef }
                 />
-                <button type='submit' className='submit-button'> Ingresar </button>
+                <div className='buttons-container'>
+                    <button type='submit' className='submit-button'> Ingresar </button>
+                    <button 
+                        type='submit' 
+                        className='cancel-button'
+                        onClick={() => navigate(-1)}
+                    > Cancelar </button>
+                </div>
             </form>
         </div>
     );

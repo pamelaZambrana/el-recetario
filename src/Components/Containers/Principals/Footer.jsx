@@ -21,7 +21,7 @@ const buttons = [
     {
         state : `${!loginState}`,
         text : "REGÍSTRATE",
-        goto : "/",
+        goto : "/registro",
     },
     {
         state : `${!loginState}`,
@@ -36,7 +36,10 @@ const buttons = [
         action : TYPES.CLOSE_SESION
     }
 ]
-
+function closeSession(){
+    localStorage.removeItem("user");
+    return TYPES.CLOSE_SESION;
+};
 
     return (
         <footer className='footer'>
@@ -61,7 +64,12 @@ const buttons = [
                                     <Link
                                         className= { `register-link-${button.state}` } 
                                         to={ `${button.goto}` }
-                                        onClick = {() => dispatch({type: button.action})}
+                                        onClick = {() => {
+                                            dispatch({type: button.action});
+                                            if(button.text==="CERRAR SESIÓN"){
+                                                closeSession();
+                                            }
+                                            }}
                                     >
                                         { button.text }
                                     </Link>

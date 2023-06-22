@@ -18,16 +18,28 @@
         @extend.search-box;
         @include content-medium
     }
-    button{
-        width: 35%;
-        margin-top: 1rem;
-        padding: 1rem;
-        @include content-medium;
-        color: $white;
-        background-color: $secondary1;
-        border-radius: 15px;
+};
+.buttons-container{
+    width: 100%;
+    margin-top: 1rem;  
+    @include display-estructure(center, center) ;
+    gap: 1rem;
+};
+.submit-button, .cancel-button{
+    width: 10rem;
+    padding: 1rem;
+    @include content-medium;
+    border-radius: 1.5rem;
+    border: none;
 
-    }
+};
+.submit-button{
+    color: $white;
+    background-color: $secondary1;
+};
+.cancel-button{
+    color: $black;
+    background-color: $background3;
 };
 
 @media(min-width:500px){

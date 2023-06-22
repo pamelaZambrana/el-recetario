@@ -741,15 +741,33 @@
   font-family: "News Cycle", sans-serif;
   font-size: 1.4rem;
 }
-.form button {
-  width: 35%;
+
+.buttons-container {
+  width: 100%;
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.submit-button, .cancel-button {
+  width: 10rem;
   padding: 1rem;
   font-family: "News Cycle", sans-serif;
   font-size: 1.4rem;
+  border-radius: 1.5rem;
+  border: none;
+}
+
+.submit-button {
   color: #FBFAF8;
   background-color: #0B8318;
-  border-radius: 15px;
+}
+
+.cancel-button {
+  color: #1E1D1D;
+  background-color: #DBDBD9;
 }
 
 @media (min-width: 500px) {

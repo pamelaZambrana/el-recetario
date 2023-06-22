@@ -7,9 +7,15 @@ import { TYPES } from '../../../Contexts/globalReducer';
 
 
 const OpenMenu = () => {
+    /* ----using global state */
     const [globalState, dispatch] = useContext(GlobalContext);
     const loginState =  globalState.loginState;
-
+    const userName = globalState.user.name;
+    
+    function closeSession(){
+        localStorage.removeItem("user");
+        return TYPES.CLOSE_SESION;
+    };
     return (
         <div className='open-menu-container'>
            <ul>
@@ -18,7 +24,7 @@ const OpenMenu = () => {
                         loginState ?
                             <div className='user-container'>
                                 <i className="bi bi-person-fill"></i>
-                                <span className='user-name'>Bellota Saltarina</span>
+                                <span className='user-name'>{ userName }</span>
                             </div>
                         :
                         null
@@ -37,7 +43,6 @@ const OpenMenu = () => {
                             <Link 
                                 className={ `${option.class}`}
                                 to={`recipes?type=${ option.filter}`}
-                                onClick={() => dispatch({ type: TYPES.SET_TITLE, payload : option.name })}
                             >
                                 { option.name }
 
@@ -50,7 +55,6 @@ const OpenMenu = () => {
                                         >
                                             <Link 
                                                 to={`recipes?type=${ option.filter }&type2=${ item.filter }` }
-                                                onClick={() => dispatch({ type: TYPES.SET_TITLE, payload : `${option.name}/ ${item.itemName}` })}
                                                 className={ `${option.secOptions.class}`}
                                             > 
                                                 { item.itemName } 
@@ -65,7 +69,12 @@ const OpenMenu = () => {
                         <li key={ index }>
                             <Link 
                                 className={ `${option.class}`}
-                                onClick={ () => dispatch({ type: option.action})}
+                                onClick={ () => {
+                                    dispatch({ type: option.action});
+                                    if(option.name === "CERRAR SESIÓN"){
+                                        closeSession();
+                                    }
+                                }}
                                 to={`${option.path}`}
                             >
                                     { option.name }

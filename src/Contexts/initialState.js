@@ -1,15 +1,18 @@
+    /* ----using localStorage---- */
+const userName = JSON.parse(localStorage.getItem("user")) ? JSON.parse(localStorage.getItem("user")).userName : "";
+const loginState = JSON.parse(localStorage.getItem("user")).token ? true : false;
 export const initialState ={
     user : {
         id: "123",
-        name : "Bellota Saltarina",
+        name : userName,
         email : "belloti@gmail.com",
         favorites : [2,3,7]
     },
-    loginState: true,
+    loginState: loginState,
     openMenu: false,
     secondOpenMenu: false,
     recipes:  [
-        {   id:1,
+        {   _id: 1,
             name: "Piquemacho",
             image: "/img/carousel/platillos-principales.jpg",
             punctuation: 7,
@@ -24,7 +27,7 @@ export const initialState ={
 
         },
         {
-            id:2,
+            _id: 2,
             name: "Huminta",
             image: "/img/carousel/platillos-principales.jpg",
             punctuation: 9,
@@ -38,7 +41,7 @@ export const initialState ={
             author : "Ana Foronda"
         },
         {
-            id:3,
+            _id: 3,
             name: "Salteña",
             image: "/img/carousel/platillos-principales.jpg",
             punctuation: 10,
@@ -51,7 +54,7 @@ export const initialState ={
             process : ["Cortar todos los ingredientes", "Freir los ingredientes", "Servir"]
         },
         {
-            id:4,
+            _id: 4,
             name: "Salchipapa",
             image: "/img/carousel/platillos-principales.jpg",
             punctuation: 10,
@@ -65,7 +68,7 @@ export const initialState ={
             author : "Ana Foronda"
         },
         {
-            id:5,
+            _id: 5,
             name: "Ají de fideo",
             image: "/img/carousel/platillos-principales.jpg",
             punctuation: 5,
@@ -79,7 +82,7 @@ export const initialState ={
             author : "Ana Foronda"
         },
         {
-            id:6,
+            _id: 6,
             name: "Ají de papa",
             image: "/img/carousel/platillos-principales.jpg",
             punctuation: 1,
@@ -93,7 +96,7 @@ export const initialState ={
             author : "Ana Foronda"
         },
         {
-            id:7,
+            _id: 7,
             name: "Hamburguesa de quinua",
             image: "/img/carousel/platillos-principales.jpg",
             punctuation: 5,
@@ -106,7 +109,7 @@ export const initialState ={
             author : "Ana Foronda"
         },
         {
-            id:8,
+            _id: 8,
             name: "Plato paceño a la potosina",
             image: "/img/carousel/platillos-principales.jpg",
             punctuation: 5,
@@ -120,7 +123,7 @@ export const initialState ={
             author : "Ana Foronda"
         },
         {
-            id:9,
+            _id: 9,
             name: "Api morado",
             image: "/img/carousel/platillos-principales.jpg",
             punctuation: 4,
@@ -134,7 +137,7 @@ export const initialState ={
             author : "Ana Foronda"
         },
         {
-            id:10,
+            _id: 10,
             name: "Mocochinchi",
             image: "/img/carousel/platillos-principales.jpg",
             punctuation: 3,
@@ -148,7 +151,7 @@ export const initialState ={
             author : "Ana Foronda"
         },
         {
-            id:11,
+            _id: 11,
             name: "Llaucha",
             image: "/img/carousel/platillos-principales.jpg",
             punctuation: 10,
@@ -161,7 +164,7 @@ export const initialState ={
             author : "Ana Foronda"
         },
         {
-            id:12,
+            _id: 12,
             name: "Alfajor",
             image: "/img/carousel/platillos-principales.jpg",
             punctuation: 7,
@@ -175,7 +178,7 @@ export const initialState ={
             author : "Ana Foronda"
         },
         {
-            id:13,
+            _id: 13,
             name: "Chairo",
             image: "/img/carousel/platillos-principales.jpg",
             punctuation: 7,
@@ -193,6 +196,7 @@ export const initialState ={
     titles : "",
     selectedRecipe : "",
     allRecipes : [],
+    searchedRecipes : [],
 };
     /* const searcher = "Comida popular";
     const searcher2 = "Platillos principales";
