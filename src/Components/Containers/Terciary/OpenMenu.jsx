@@ -32,11 +32,11 @@ const OpenMenu = () => {
                 </li>
                 {
                     menuOptionList.map((option, index) => (
-                        option.items ? 
+                        option.secOptions ? 
                         <li key={ index }>
                             <Link 
                                 className={ `${option.class}`}
-                                to={`recipes?type=${ option.name}`}
+                                to={`recipes?type=${ option.filter}`}
                                 onClick={() => dispatch({ type: TYPES.SET_TITLE, payload : option.name })}
                             >
                                 { option.name }
@@ -44,16 +44,16 @@ const OpenMenu = () => {
                             </Link>
                             <ul>
                                 {
-                                    option.items.itemName.map((item, index) => (
+                                    option.secOptions.items.map((item, index) => (
                                         <li 
                                             key={ index } 
                                         >
                                             <Link 
-                                                to={`recipes?type=${ option.name}&type2=${item}`}
-                                                onClick={() => dispatch({ type: TYPES.SET_TITLE, payload : `${option.name}/ ${item}` })}
-                                                className={ `${option.items.class}`}
+                                                to={`recipes?type=${ option.filter }&type2=${ item.filter }` }
+                                                onClick={() => dispatch({ type: TYPES.SET_TITLE, payload : `${option.name}/ ${item.itemName}` })}
+                                                className={ `${option.secOptions.class}`}
                                             > 
-                                                { item } 
+                                                { item.itemName } 
                                             </Link>
                                         </li>
                                     ))

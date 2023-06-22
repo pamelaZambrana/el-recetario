@@ -5,9 +5,11 @@ import { TYPES } from '../../Contexts/globalReducer';
 
 
 const RecipeCard = ({ recipe, index}) => {
+    /* ----using global context---- */
     const [globalState, dispatch ] = useContext(GlobalContext);
     const user = globalState.user;
     const loginState = globalState.loginState;
+    //console.log(searchParams.toString())
     /* ---- heart icon ---- */
     function fullHeart(favoriteArray, recipeId){
         const favorite = favoriteArray.find(id => id === recipeId);
@@ -21,24 +23,14 @@ const RecipeCard = ({ recipe, index}) => {
             )
         };
     };
-    /* ---- filling the path ----- */
-   /*  function path(){
-        if( params.filter){
-            if(params.filter2){
-                return `recipe/${recipe.name}`;
-            }else{
-                return `recipe/${recipe.name}`;
-            };
-        }else{
-            return `/recipe/${recipe.name}`
-        };
-    }; */
+
     return (
         <div key={ index } className='recipe-card'>
             <img src={ recipe.image } alt={ recipe.description } />
             <div  className='recipe-card-description'>
                 <Link 
-                    to={ `/recipe/${recipe.name}` } 
+                    to={ `/recipes/recipe/${recipe.name}` } 
+                    //state={{path :"recipes", search : searchParams.toString()}}
                     className='recipe-card-description'
                     onClick={() => dispatch({ type : TYPES.SHOW_RECIPE, payload : recipe.id})}
                 >

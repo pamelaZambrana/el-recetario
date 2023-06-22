@@ -5,5 +5,4 @@ const RecipePage = () => {
         <RecipeDetail></RecipeDetail>
     );
 }
-
 export default RecipePage;

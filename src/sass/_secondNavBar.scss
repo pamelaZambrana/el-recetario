@@ -2,12 +2,20 @@
 .second-navbar{
     z-index: 0;
     padding: 1.2rem 1.2rem 0;
-    @include display-estructure(flex-start,flex-start);
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items:center;
     text-decoration: none;
     @include subtitle2;
     i{
         color: $black;
+    };
+    i:hover{
+        cursor: pointer;
+    }
+    .search-box-container{
+        width: 90%;
+        grid-column: 1 / 4;
     };
 
 };
@@ -22,7 +30,7 @@
     z-index: 1;
     position: absolute;
     top: 10rem;
-    left: 10rem;
+    left: 100vw - 0.45*100vw;
     padding: 1rem;
     @include display-estructure(flex-start, flex-start);
     flex-direction: column;
@@ -42,5 +50,57 @@
     .second-navbar{
         right: -50px
 
+    };
+};
+@media(min-width:400px){
+    .second-navbar-button-list{
+        top: 11rem;
+        left: 100vw - 0.38*100vw;
     }
-}
+};
+@media(min-width:450px){
+    .second-navbar-button-list{
+        top: 11rem;
+        left: 100vw - 0.36*100vw;
+    }
+};
+@media(min-width:500px){
+    .second-navbar{
+        @include display-estructure(space-between,center);
+        margin: 0 auto;
+        width: 70%;
+        .search-box-container{
+            width: 50%;
+        }
+    };
+    .second-navbar-button-list{
+        top: 12rem;
+        left: 40vw;
+    };
+};
+
+@media(min-width:800px){
+    .second-navbar{
+        width: 50%;
+        @include display-estructure(space-between,center);
+        margin: 0 auto;
+        .search-box-container{
+            width: 50%;
+        }
+    };
+    .second-navbar-button-list{
+        top: 12rem;
+        left: 45vw;
+    };
+    
+};
+@media(min-width:1300px){
+    .second-navbar{
+        width: 40%;
+        @include display-estructure(space-between,center);
+        margin: 0 auto;
+        .search-box-container{
+            width: 50%;
+        }
+    }
+};

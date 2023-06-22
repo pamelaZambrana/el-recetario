@@ -10,7 +10,6 @@ const RecipeDetail = () => {
     const recipes = globalState.recipes;
     const id = globalState.selectedRecipe;
     const recipeToShow = recipes.filter(recipe => recipe.id === id)[0];
-    console.log(recipeToShow)
 
     return (
         <section className='recipe-detail'>

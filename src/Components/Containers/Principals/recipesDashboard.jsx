@@ -6,7 +6,7 @@ import { useSearchParams } from 'react-router-dom';
 
 const RecipeDashboard = () => {
     const [searchParams] = useSearchParams();
-    const typeFilter = searchParams.get("type");
+    const typeFilter = searchParams.size? searchParams.get("type"):"todas";
     const typeFilter2 = searchParams.get("type2");
 
     return (

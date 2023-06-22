@@ -5,7 +5,7 @@ import GlobalProvider from './Contexts/globalContext.jsx';
 import RecipePage from './pages/recipeDetailPage.js';
 import LayoutPage from './pages/LayoutPage.js';
 import RecipesLayout from './pages/recipesLayout.js';
-import RecipeDetailPage from "./pages/recipeDetailPage";
+
 
 function App() {
   return (
@@ -23,22 +23,10 @@ function App() {
                 element = <Dashboard/>
               />
               <Route
-                path = ":filter/:filter2" 
-                element = <Dashboard/>
-              />
-              <Route
-                path = ":filter/recipe/:recipeName"
-                element = <RecipePage/>
-              />
-              <Route
-                path = ":filter/:filter2/recipe/:recipeName"
+                path = "recipe/:recipeName"
                 element = <RecipePage/>
               />
             </Route>
-            <Route
-              path = "recipe/:recipeName"
-              element = <RecipeDetailPage/>
-            />
           </Route>
         </Routes>
       </GlobalProvider>

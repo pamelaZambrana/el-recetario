@@ -42,6 +42,7 @@ export function globalReducer(state, action){
                 ...state,
                 selectedRecipe : action.payload
             };
+
         default:
             return state
     }

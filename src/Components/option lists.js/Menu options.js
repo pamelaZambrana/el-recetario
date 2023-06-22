@@ -6,12 +6,22 @@ export const menuOptionList = [
     {
         class : "principal-option",
         name : "Comida típica",
-        items: {
+        filter : "tipica",
+        secOptions : {
             class : "secondary-option",
-            itemName : [
-                "Platillos principales",
-                "Postres",
-                "Bebidas"
+            items : [
+                {
+                    itemName : "Platillos principales",
+                    filter : "principales"
+                },
+                {
+                    itemName : "Postres",
+                    filter : "postres"
+                },
+                {
+                    itemName : "Bebidas",
+                    filter : "bebidas"
+                }              
             ],
             action : TYPES.CLOSE_SESION,
         },
@@ -20,12 +30,22 @@ export const menuOptionList = [
     {
         class : "principal-option",
         name : "Comida popular",
-        items : {
+        filter : "popular",
+        secOptions : {
             class : "secondary-option",
-            itemName : [
-                "Platillos principales",
-                "Postres",
-                "Bebidas"
+            items : [
+                {
+                    itemName : "Platillos principales",
+                    filter : "principales"
+                },
+                {
+                    itemName : "Postres",
+                    filter : "postres"
+                },
+                {
+                    itemName : "Bebidas",
+                    filter : "bebidas"
+                }              
             ],
             action : TYPES.CLOSE_SESION,
         },

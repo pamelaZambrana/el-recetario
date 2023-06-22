@@ -57,4 +57,4 @@ export const filterList = [
         description: "Mostrar todas las recetas",
     },
 
-]
+];

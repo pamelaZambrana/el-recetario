@@ -495,16 +495,22 @@
 .second-navbar {
   z-index: 0;
   padding: 1.2rem 1.2rem 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
   text-decoration: none;
   font-family: "Raleway", sans-serif;
   font-size: 1.8rem;
 }
 .second-navbar i {
   color: #1E1D1D;
+}
+.second-navbar i:hover {
+  cursor: pointer;
+}
+.second-navbar .search-box-container {
+  width: 90%;
+  grid-column: 1/4;
 }
 
 .second-open-menu {
@@ -522,7 +528,7 @@
   z-index: 1;
   position: absolute;
   top: 10rem;
-  left: 10rem;
+  left: 55vw;
   padding: 1rem;
   display: flex;
   justify-content: flex-start;
@@ -544,6 +550,62 @@
 @media (max-width: 350px) {
   .second-navbar {
     right: -50px;
+  }
+}
+@media (min-width: 400px) {
+  .second-navbar-button-list {
+    top: 11rem;
+    left: 62vw;
+  }
+}
+@media (min-width: 450px) {
+  .second-navbar-button-list {
+    top: 11rem;
+    left: 64vw;
+  }
+}
+@media (min-width: 500px) {
+  .second-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 70%;
+  }
+  .second-navbar .search-box-container {
+    width: 50%;
+  }
+  .second-navbar-button-list {
+    top: 12rem;
+    left: 40vw;
+  }
+}
+@media (min-width: 800px) {
+  .second-navbar {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .second-navbar .search-box-container {
+    width: 50%;
+  }
+  .second-navbar-button-list {
+    top: 12rem;
+    left: 45vw;
+  }
+}
+@media (min-width: 1300px) {
+  .second-navbar {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .second-navbar .search-box-container {
+    width: 50%;
   }
 }
 /* Color Variables */

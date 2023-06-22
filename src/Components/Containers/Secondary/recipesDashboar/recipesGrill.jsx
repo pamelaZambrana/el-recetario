@@ -8,9 +8,10 @@ const RecipesGrill = () => {
     /* ---- Using the global context---- */
     const [ globalState ] = useContext(GlobalContext);
     const recipes = globalState.recipes;
+
     /* ----Usins searchParams---- */
     const [searchParams] = useSearchParams();
-    const typeFilter = searchParams.get("type");
+    const typeFilter = searchParams.toString()?searchParams.get("type"):"todas";
     const typeFilter2 = searchParams.get("type2");
 
     const searcher = typeFilter;

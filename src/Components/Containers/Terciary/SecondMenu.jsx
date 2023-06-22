@@ -5,16 +5,17 @@ import { GlobalContext } from '../../../Contexts/globalContext';
 import { TYPES } from '../../../Contexts/globalReducer';
 
 const SecondOpenMenu = () => {
+    /* ----using global state---- */
     const [globalState, dispatch] = useContext(GlobalContext);
+    console.log(globalState);
+    /* ----using query params---- */
     const [searchParams] = useSearchParams();
     const typeFilter = searchParams.get("type");
-    console.log(typeFilter);
-    console.log(globalState);
-
-
+    /* ----filtering the list---- */
     const paramsLevel = filterList.filter(filter => filter.filter === typeFilter)[0].level;
-
+    console.log(paramsLevel)
     const list = filterList.filter(filter => (filter.level !== paramsLevel && filter.level !== 0));
+
 
 
     return (
@@ -22,8 +23,8 @@ const SecondOpenMenu = () => {
                 {list.map((item,index) => {
                     return(
                         <Link 
-                            key={index} 
                             to={ `?type=${typeFilter}&type2=${item.filter}` }
+                            key={index} 
                             onClick={() => dispatch({type: TYPES.CLOSE_SECOND_OPEN_MENU})}
                         >
                             { item.name }
@@ -33,6 +34,7 @@ const SecondOpenMenu = () => {
                 )}
                 <Link 
                     to={ `?type=${typeFilter}` }
+                    //state={ {search : searchParams} }
                     onClick={() => dispatch({type: TYPES.CLOSE_SECOND_OPEN_MENU})}
                 >
                     Ver todo

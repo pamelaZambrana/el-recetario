@@ -6,6 +6,9 @@ import { TYPES } from '../../../../Contexts/globalReducer';
 import { filterList } from '../../../option lists.js/filterList';
 
 const Filters = () => {
+    /* ----Usins searchParams---- */
+
+    //console.log(searchParams.toString());
     /* ----using global context ---- */
     const [ globalState, dispatch ] = useContext(GlobalContext);
     /* ---- carousel ----*/
@@ -56,6 +59,7 @@ const Filters = () => {
                                 key={ index } 
                                 className='filter-card'
                                 to={`/recipes?type=${filter.filter}`}
+                               // state={{search : ""}}
                                 onClick={() => setTitle(filter.level)}
                             >
                                 <img src={ filter.image } alt={ filter.description } />
