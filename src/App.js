@@ -14,7 +14,7 @@ import NotFoundPage from './pages/NotFoundPage.js';
 import LoginPage from './pages/loginPage.js';
 import RegistePage from './pages/registePage.js';
 import FavoritesPage from './pages/FavoritesPage.js';
-import { loader as favoriteLoader } from './Components/Containers/Principals/Favorites.jsx';
+import { authFunction } from './functions/authFunction.js';
 
 const router = createBrowserRouter(createRoutesFromElements(
           <Route element = <LayoutPage/>>
@@ -34,7 +34,8 @@ const router = createBrowserRouter(createRoutesFromElements(
               <Route
                 path='favorites'
                 element = <FavoritesPage/>
-                loader={ favoriteLoader }
+                loader={ async () => await authFunction()}
+                  
               />
 
             </Route>

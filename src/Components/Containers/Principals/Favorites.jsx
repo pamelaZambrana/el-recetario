@@ -5,9 +5,7 @@ import { TYPES } from '../../../Contexts/globalReducer';
 import { useSearchParams } from 'react-router-dom';
 import { filteringList } from '../../../functions/filteringList';
 
-export function loader(){
-    return "mis favoritos"
-};
+
 const Favorites = () => {
     /* ---- using local state---- */
     const [loading, setLoading] = useState(true);

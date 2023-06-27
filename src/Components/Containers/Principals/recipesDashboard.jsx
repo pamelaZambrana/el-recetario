@@ -9,6 +9,7 @@ import { TYPES } from '../../../Contexts/globalReducer';
 import { filteringList } from '../../../functions/filteringList';
 import { bestScores } from '../../../functions/bestScores';
 
+
 const RecipeDashboard = () => {
      /* ---- using local state---- */
      const [loading, setLoading] = useState(true);
@@ -26,6 +27,7 @@ const RecipeDashboard = () => {
     const searcher2 = typeFilter2;
     let filteredList =[];
     
+    /* ---- using loaders ---- */
     
     useEffect(() => {
         async function getAllRecipes(){

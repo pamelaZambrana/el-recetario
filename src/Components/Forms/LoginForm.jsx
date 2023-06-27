@@ -56,7 +56,7 @@ const LoginForm = () => {
                     <button 
                         type='submit' 
                         className='cancel-button'
-                        onClick={() => navigate(-1)}
+                        onClick={() => navigate("/")}
                     > Cancelar </button>
                 </div>
             </form>
