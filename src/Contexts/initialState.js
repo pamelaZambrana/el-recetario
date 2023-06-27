@@ -197,17 +197,12 @@ export const initialState ={
     selectedRecipe : "",
     allRecipes : [],
     searchedRecipes : [],
+    favoriteRecipes : [],
 };
-    /* const searcher = "Comida popular";
-    const searcher2 = "Platillos principales";
-    
-    let filteredList  = [...initialState.recipes].filter( recipe => {
-        return recipe.category.some( cat => cat === searcher );
-    })
-    console.log(searcher2)
-    if(searcher2){
-        filteredList  = [...filteredList].filter( recipe => {
-            return recipe.category.some( cat => cat === searcher2 );
-        })
-    };
-    console.log(filteredList) */
+/* const recipes = initialState.recipes;
+const favor = initialState.user.favorites;
+const favoriteRecipes = recipes.filter(recipe => {
+    let confirm = favor.some(favoriteID => ( favoriteID === recipe._id));
+    return confirm
+});
+console.log(favoriteRecipes) */

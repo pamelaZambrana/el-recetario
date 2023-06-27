@@ -56,5 +56,13 @@ export const filterList = [
         image: "/img/carousel/platillos-principales.jpg",
         description: "Mostrar todas las recetas",
     },
+    {
+        name: "Mis favoritos",
+        path:"/recipes/favorites",
+        class : "filter-button",
+        level : 0,
+        image: "/img/carousel/platillos-principales.jpg",
+        description: "Ir a mis recetas favoritas",
+    },
 
 ];

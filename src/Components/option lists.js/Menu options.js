@@ -70,7 +70,7 @@ export const menuOptionList = [
         class : "principal-option",
         name : "MIS FAVORITOS",
         action : TYPES.CLOSE_SESION,
-        path : "/favorites",
+        path : "/recipes/favorites",
 
     },
     {

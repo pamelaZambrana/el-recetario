@@ -7,6 +7,7 @@ export const TYPES = {
     SHOW_RECIPE : "show recipe",
     SET_ALL_RECIPES : "set all recipes",
     SET_RECIPES_BY_CAT : "set recipes by category",
+    SET_FAVORITES : "set favorites",
 }
 
 export function globalReducer(state, action){
@@ -53,6 +54,11 @@ export function globalReducer(state, action){
             return{
                 ...state,
                 searchedRecipes : action.payload,
+            }
+        case TYPES.SET_FAVORITES:
+            return{
+                ...state,
+                favoriteRecipes : action.payload,
             }
         default:
             return state

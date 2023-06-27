@@ -11,11 +11,17 @@ const SecondOpenMenu = () => {
     /* ----using query params---- */
     const [searchParams] = useSearchParams();
     const typeFilter = searchParams.get("type");
-    /* ----filtering the list---- */
-    const paramsLevel = filterList.filter(filter => filter.filter === typeFilter)[0].level;
-    console.log(paramsLevel)
-    const list = filterList.filter(filter => (filter.level !== paramsLevel && filter.level !== 0));
 
+    /* ----filtering the list---- */
+    let paramsLevel = 0;
+    let list = [];
+    if ( !typeFilter ){
+        paramsLevel = 0;
+    }else{
+        paramsLevel = filterList.filter(filter => filter.filter === typeFilter)[0].level;
+    };
+    list = filterList.filter(filter => (filter.level !== paramsLevel && filter.level !== 0));
+    
 
 
     return (
@@ -23,7 +29,7 @@ const SecondOpenMenu = () => {
                 {list.map((item,index) => {
                     return(
                         <Link 
-                            to={ `?type=${typeFilter}&type2=${item.filter}` }
+                            to={ `?${typeFilter?`type=${typeFilter}&`:""}type2=${item.filter}` }
                             key={index} 
                             onClick={() => dispatch({type: TYPES.CLOSE_SECOND_OPEN_MENU})}
                         >

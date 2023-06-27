@@ -1,4 +1,9 @@
-import {Routes, Route} from 'react-router-dom';
+import { 
+  Route,
+  RouterProvider, 
+  createBrowserRouter, 
+  createRoutesFromElements 
+} from 'react-router-dom';
 import PrincipalPage from './pages/principalPage.js';
 import Dashboard from './pages/dashboard.js';
 import GlobalProvider from './Contexts/globalContext.jsx';
@@ -8,13 +13,10 @@ import RecipesLayout from './pages/recipesLayout.js';
 import NotFoundPage from './pages/NotFoundPage.js';
 import LoginPage from './pages/loginPage.js';
 import RegistePage from './pages/registePage.js';
+import FavoritesPage from './pages/FavoritesPage.js';
+import { loader as favoriteLoader } from './Components/Containers/Principals/Favorites.jsx';
 
-
-function App() {
-  return (
-    <div>
-      <GlobalProvider>
-        <Routes>
+const router = createBrowserRouter(createRoutesFromElements(
           <Route element = <LayoutPage/>>
             <Route
               path='/' 
@@ -29,14 +31,26 @@ function App() {
                 path = "recipe/:recipeName"
                 element = <RecipePage/>
               />
+              <Route
+                path='favorites'
+                element = <FavoritesPage/>
+                loader={ favoriteLoader }
+              />
+
             </Route>
+
             <Route path='login' element = { <LoginPage/> }/>
             <Route path='registro' element = { <RegistePage/> }/>
             <Route path='*' element={<NotFoundPage/>}/>
           </Route>
-        </Routes>
+  ));
+function App() {
+  return (
+    <>
+      <GlobalProvider>
+        <RouterProvider router={ router }/>
       </GlobalProvider>
-    </div>
+    </>
 
   );
 }

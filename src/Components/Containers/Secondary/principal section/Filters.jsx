@@ -58,7 +58,7 @@ const Filters = () => {
                             <Link
                                 key={ index } 
                                 className='filter-card'
-                                to={`/recipes?type=${filter.filter}`}
+                                to={`${filter.filter? `/recipes?type=${filter.filter}`: `${filter.path}`}`}
                                // state={{search : ""}}
                                 onClick={() => setTitle(filter.level)}
                             >
