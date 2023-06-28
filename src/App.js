@@ -45,7 +45,11 @@ const router = createBrowserRouter(createRoutesFromElements(
               element = { <LoginPage/> }
               loader={ async () => await loginFunction()}
               />
-            <Route path='registro' element = { <RegistePage/> }/>
+            <Route 
+              path='registro' 
+              element = { <RegistePage/> }
+              loader={ async () => await loginFunction()}
+              />
             <Route path='*' element={<NotFoundPage/>}/>
           </Route>
   ));

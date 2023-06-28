@@ -55,7 +55,7 @@ export const menuOptionList = [
         logged : false,
         class : "principal-option",
         name : "REGÍSTRATE",
-        action : null,
+        action :TYPES.CLOSE_OPEN_MENU,
         path : "/registro",
     },
     {

@@ -1,5 +1,5 @@
     /* ----using localStorage---- */
-const userName = JSON.parse(localStorage.getItem("user")) ? JSON.parse(localStorage.getItem("user")).userName : "";
+const userName = JSON.parse(localStorage.getItem("user")) ? JSON.parse(localStorage.getItem("user")).name : "";
 const loginState = JSON.parse(localStorage.getItem("user"))!== null? true : false;
 export const initialState ={
     user : {

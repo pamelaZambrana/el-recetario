@@ -1,10 +1,10 @@
 import React from 'react';
-import RegisterForn from '../Components/Forms/RegisterForn';
+import RegisterForm from '../Components/Forms/RegisterForm';
 
 const RegistePage = () => {
     return (
         <>
-         <RegisterForn></RegisterForn>   
+         <RegisterForm></RegisterForm>   
         </>
     );
 }

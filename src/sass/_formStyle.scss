@@ -9,15 +9,22 @@
     h1{
 
         @include subtitle1;
-    }
+    };
     label{
         align-self: flex-start;
         @include content-medium
-    }
+    };
     input{
         @extend.search-box;
         @include content-medium
+    };
+    p{
+        @include small;
+    };
+    .error-message{
+        color: $negative;
     }
+
 };
 .buttons-container{
     width: 100%;

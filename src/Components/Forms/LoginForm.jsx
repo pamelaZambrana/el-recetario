@@ -3,6 +3,7 @@ import { loginRequest } from '../../Requests/userRequests';
 import { useNavigate } from 'react-router';
 import { GlobalContext } from '../../Contexts/globalContext';
 import { TYPES } from '../../Contexts/globalReducer';
+import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
     /* ---- using ref to save the changes ---- */
@@ -20,7 +21,7 @@ const LoginForm = () => {
         await loginRequest(values)
             .then(response => {
                 const user = {
-                    userName : response.data.body.name,
+                    name : response.data.body.name,
                     rol : response.data.body.rol,
                     token : response.data.body.token
                 }
@@ -29,6 +30,15 @@ const LoginForm = () => {
                 navigate(-1);
                 dispatch({
                     type : TYPES.INIT_SESSION,
+                });
+                dispatch({
+                    type : TYPES.SET_USER,
+                    payload : {
+                        id : 123,
+                        name : user.name,
+                        email : emailRef.current.value,
+                        favorites : [2,3,8,1],
+                    }
                 })
                 setError(null);
             })
@@ -44,7 +54,6 @@ const LoginForm = () => {
             email : emailRef.current.value,
             password : passwordRef.current.value,            
         };
-        console.log(values);
         login(values);
     };
     return (
@@ -54,7 +63,7 @@ const LoginForm = () => {
                 {
                     error !== null 
                     ?
-                    <p>{ `${error}` }</p>
+                    <p className='error-message'>{ `${error}` }</p>
                     :
                     null
                 }
@@ -76,6 +85,7 @@ const LoginForm = () => {
                     className='input'
                     ref={ passwordRef }
                 />
+                <p>Si no tienes cuenta aún <Link to={"/registro"}> haz click aquí</Link> para crear una.</p>
                 <div className='buttons-container'>
                     <button type='submit' className='submit-button'> Ingresar </button>
                     <button 

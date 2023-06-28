@@ -741,6 +741,13 @@
   font-family: "News Cycle", sans-serif;
   font-size: 1.4rem;
 }
+.form p {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.2rem;
+}
+.form .error-message {
+  color: #db0909;
+}
 
 .buttons-container {
   width: 100%;

@@ -8,6 +8,7 @@ export const TYPES = {
     SET_ALL_RECIPES : "set all recipes",
     SET_RECIPES_BY_CAT : "set recipes by category",
     SET_FAVORITES : "set favorites",
+    SET_USER : "set user"
 }
 
 export function globalReducer(state, action){
@@ -39,6 +40,11 @@ export function globalReducer(state, action){
                 ...state,
                 loginState : true,
             };
+        case TYPES.SET_USER:
+            return{
+                ...state,
+                user : action.payload,
+            }
         case TYPES.SHOW_RECIPE:
             return{
                 ...state,

@@ -1,7 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
+import { newUserRequest } from '../../Requests/userRequests';
 
 const RegisterForn = () => {
+    /* ---- using local state ---- */
+    const [passwordConfirm, setPasswordConfirm] = useState("");
+    const [error,setError] =useState(null);
     /* ----navigation ----- */
     const navigate = useNavigate();
     /* ----refs---- */
@@ -9,10 +13,45 @@ const RegisterForn = () => {
     const emailRef = useRef("");
     const passwordRef = useRef("");
     const passConfirmRef = useRef("");
+    /* ---- user register---- */
+    async function newUser(values){
+        await newUserRequest(values)
+            .then(response => {
+                console.log(response);
+                setError(null);
+                navigate("/login")
+            })
+            .catch(err => {
+                console.log(err);
+                setError(err.message);
+            })
+    };
+    function userRegister(e){
+        e.preventDefault();
+        if( passConfirmRef.current.value === passwordRef.current.value ){
+            const values = {
+                name : userNameRef.current.value,
+                email : emailRef.current.value,
+                password : passwordRef.current.value,
+            };
+            setPasswordConfirm("");
+            newUser(values);
+        }else{
+            setPasswordConfirm("Las contraseñas no coinciden, por favor, intente denuevo.");
+        };
+
+    }
     return (
         <div>
-            <form className='form'>
+            <form className='form' on onSubmit={ userRegister }>
                 <h1>Regístrate gratis</h1>
+                {
+                    error !== null
+                    ?
+                        <p className='error-message'>{ error }</p>
+                    :
+                    null
+                }
                 <label>Ingresa tu nombre de usuario</label>
                 <input 
                     type ="text"    
@@ -40,7 +79,7 @@ const RegisterForn = () => {
                     className = "input"
                     ref = { passwordRef }
                 ></input>
-                <label>Repite tu contraseña|</label>
+                <label>Confirma tu contraseña</label>
                 <input 
                     type ="password"    
                     id ="passConfirm"
@@ -49,6 +88,7 @@ const RegisterForn = () => {
                     className = "input"
                     ref = { passConfirmRef }
                 ></input>
+                <p className='error-message'>{ passwordConfirm }</p>
                 <div className='buttons-container'>
                     <button type='submit' className='submit-button'> Guardar </button>
                     <button 
