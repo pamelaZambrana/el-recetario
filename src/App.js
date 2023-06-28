@@ -14,7 +14,7 @@ import NotFoundPage from './pages/NotFoundPage.js';
 import LoginPage from './pages/loginPage.js';
 import RegistePage from './pages/registePage.js';
 import FavoritesPage from './pages/FavoritesPage.js';
-import { authFunction } from './functions/authFunction.js';
+import { authFunction, loginFunction } from './functions/authFunction.js';
 
 const router = createBrowserRouter(createRoutesFromElements(
           <Route element = <LayoutPage/>>
@@ -40,7 +40,11 @@ const router = createBrowserRouter(createRoutesFromElements(
 
             </Route>
 
-            <Route path='login' element = { <LoginPage/> }/>
+            <Route 
+              path='login' 
+              element = { <LoginPage/> }
+              loader={ async () => await loginFunction()}
+              />
             <Route path='registro' element = { <RegistePage/> }/>
             <Route path='*' element={<NotFoundPage/>}/>
           </Route>

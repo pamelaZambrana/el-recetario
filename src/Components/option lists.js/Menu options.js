@@ -62,7 +62,7 @@ export const menuOptionList = [
         logged : false,
         class : "principal-option",
         name : "INICIAR SESIÓN",
-        action : TYPES.INIT_SESSION,
+        action : TYPES.CLOSE_OPEN_MENU,
         path : "/login",
     },
     {

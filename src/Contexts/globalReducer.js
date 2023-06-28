@@ -38,7 +38,6 @@ export function globalReducer(state, action){
             return {
                 ...state,
                 loginState : true,
-                openMenu : false,
             };
         case TYPES.SHOW_RECIPE:
             return{
