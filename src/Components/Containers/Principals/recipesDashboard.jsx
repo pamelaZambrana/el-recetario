@@ -3,7 +3,7 @@ import RecipesGrill from '../Secondary/recipesDashboar/recipesGrill';
 
 import { title } from '../../../functions/setTitles';
 import { useSearchParams } from 'react-router-dom';
-import { allRecipesRequest, getRecipeByCatRequest } from '../../../Requests/recipes requests';
+import { allRecipesRequest, getRecipeByCatRequest } from '../../../Requests/recipesRequests';
 import { GlobalContext } from '../../../Contexts/globalContext';
 import { TYPES } from '../../../Contexts/globalReducer';
 import { filteringList } from '../../../functions/filteringList';

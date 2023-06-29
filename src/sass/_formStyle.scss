@@ -14,7 +14,7 @@
         align-self: flex-start;
         @include content-medium
     };
-    input{
+    .input, .input-short{
         @extend.search-box;
         @include content-medium
     };
@@ -24,8 +24,57 @@
     .error-message{
         color: $negative;
     }
+    fieldset{
+        align-self: flex-start;
+        @include display-estructure(center,center);
+        gap: 1rem;
+        .input-short{
+            align-self: center;
+        }
+    };
+    .input-short{
+        align-self: flex-start;
+        width: auto;
+    };
+    .input-file{
+        @include content-medium;
+    }
 
 };
+.ingredient-list{
+    width: 100%;
+    li{
+        @include content-medium;
+        margin-top: 1rem;
+    }
+}
+.add-button{
+    background-color: $secondary2;
+    border: none;
+    border-radius: 30%;
+    i{
+        @include subtitle1;
+        @include button-shadow;
+        color: $black;
+    };
+};
+.remove-button-active{
+    @extend.add-button;
+    background-color: $background3;
+};
+.confirm-button-active{
+    @extend.add-button;
+    background-color: $background3;
+};
+.confirm-button-active:hover{
+    background-color: $positive;
+}
+.added-inputs{
+    width: 100%;
+    @include display-estructure(center, center);
+    flex-direction: column;
+    gap: 1rem;
+}
 .buttons-container{
     width: 100%;
     margin-top: 1rem;  

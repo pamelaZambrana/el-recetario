@@ -15,6 +15,7 @@ import LoginPage from './pages/loginPage.js';
 import RegistePage from './pages/registePage.js';
 import FavoritesPage from './pages/FavoritesPage.js';
 import { authFunction, loginFunction } from './functions/authFunction.js';
+import NewRecipePage from './pages/NewRecipePage.js';
 
 const router = createBrowserRouter(createRoutesFromElements(
           <Route element = <LayoutPage/>>
@@ -49,6 +50,11 @@ const router = createBrowserRouter(createRoutesFromElements(
               path='registro' 
               element = { <RegistePage/> }
               loader={ async () => await loginFunction()}
+              />
+              <Route 
+              path='nueva-receta' 
+              element = { <NewRecipePage/> }
+              //loader={ async () => await loginFunction()}
               />
             <Route path='*' element={<NotFoundPage/>}/>
           </Route>

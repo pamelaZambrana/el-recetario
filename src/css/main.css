@@ -439,7 +439,7 @@
   font-weight: bold;
 }
 
-.search-box, .form input {
+.search-box, .form .input, .form .input-short {
   box-shadow: 0px 6px 8px 0px rgba(163, 163, 163, 0.75);
   width: 100%;
   padding: 0.5rem 1rem;
@@ -737,7 +737,7 @@
   font-family: "News Cycle", sans-serif;
   font-size: 1.4rem;
 }
-.form input {
+.form .input, .form .input-short {
   font-family: "News Cycle", sans-serif;
   font-size: 1.4rem;
 }
@@ -747,6 +747,68 @@
 }
 .form .error-message {
   color: #db0909;
+}
+.form fieldset {
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.form fieldset .input-short {
+  align-self: center;
+}
+.form .input-short {
+  align-self: flex-start;
+  width: auto;
+}
+.form .input-file {
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+}
+
+.ingredient-list {
+  width: 100%;
+}
+.ingredient-list li {
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+
+.add-button, .confirm-button-active, .remove-button-active {
+  background-color: #F5E418;
+  border: none;
+  border-radius: 30%;
+}
+.add-button i, .confirm-button-active i, .remove-button-active i {
+  font-family: "News Cycle", sans-serif;
+  font-size: 2rem;
+  box-shadow: 7px 7px 19px -7px rgba(89, 82, 82, 0.81);
+  -webkit-box-shadow: 7px 7px 19px -7px rgba(89, 82, 82, 0.81);
+  -moz-box-shadow: 7px 7px 19px -7px rgba(89, 82, 82, 0.81);
+  color: #1E1D1D;
+}
+
+.remove-button-active {
+  background-color: #DBDBD9;
+}
+
+.confirm-button-active {
+  background-color: #DBDBD9;
+}
+
+.confirm-button-active:hover {
+  background-color: #1FF536;
+}
+
+.added-inputs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .buttons-container {

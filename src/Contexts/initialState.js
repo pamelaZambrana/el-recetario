@@ -5,6 +5,7 @@ export const initialState ={
     user : {
         id: "123",
         name : userName,
+        rol : "user",
         email : "belloti@gmail.com",
         favorites : [2,3,7]
     },
