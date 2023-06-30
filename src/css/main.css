@@ -758,6 +758,11 @@
 .form fieldset .input-short {
   align-self: center;
 }
+.form textarea {
+  overflow: hidden;
+  height: auto;
+  resize: none;
+}
 .form .input-short {
   align-self: flex-start;
   width: auto;
@@ -776,12 +781,14 @@
   margin-top: 1rem;
 }
 
-.add-button, .confirm-button-active, .remove-button-active {
+.add-button, .remove-button-active {
+  width: 3.5rem;
+  height: 3.5rem;
   background-color: #F5E418;
   border: none;
   border-radius: 30%;
 }
-.add-button i, .confirm-button-active i, .remove-button-active i {
+.add-button i, .remove-button-active i {
   font-family: "News Cycle", sans-serif;
   font-size: 2rem;
   box-shadow: 7px 7px 19px -7px rgba(89, 82, 82, 0.81);
@@ -791,15 +798,11 @@
 }
 
 .remove-button-active {
-  background-color: #DBDBD9;
+  background-color: #F5F4F2;
 }
 
-.confirm-button-active {
-  background-color: #DBDBD9;
-}
-
-.confirm-button-active:hover {
-  background-color: #1FF536;
+.remove-button-active:hover i {
+  color: #db0909;
 }
 
 .added-inputs {

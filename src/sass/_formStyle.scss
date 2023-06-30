@@ -32,6 +32,11 @@
             align-self: center;
         }
     };
+    textarea{
+        overflow: hidden;
+        height: auto;
+        resize: none;
+    };
     .input-short{
         align-self: flex-start;
         width: auto;
@@ -49,6 +54,8 @@
     }
 }
 .add-button{
+    width: 3.5rem;
+    height: 3.5rem;
     background-color: $secondary2;
     border: none;
     border-radius: 30%;
@@ -60,14 +67,13 @@
 };
 .remove-button-active{
     @extend.add-button;
-    background-color: $background3;
+    background-color: $background2;
 };
-.confirm-button-active{
-    @extend.add-button;
-    background-color: $background3;
-};
-.confirm-button-active:hover{
-    background-color: $positive;
+
+.remove-button-active:hover{
+    i{
+        color: $negative;
+    }
 }
 .added-inputs{
     width: 100%;
