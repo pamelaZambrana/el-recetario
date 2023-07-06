@@ -37,21 +37,32 @@ export function getRecommendedRecipes(){
 /* ----like the recipe---- */
 export function putLike(id){
     const xtk = JSON.parse(localStorage.getItem("user")).token;
-    console.log(JSON.parse(localStorage.getItem("user")).token)
-    return(
-        axios.put(
-            `https://api-el-recetario.vercel.app/api/recipes?id=${id}&&action=like`,
-            {headers:{"xtoken":xtk}}
-        )
-    )
+    //console.log(JSON.parse(localStorage.getItem("user")).token)
+    const config = {
+        method: 'put',
+        url: `https://api-el-recetario.vercel.app/api/recipes?id=${id}&&action=like`,
+        headers:  {'xtoken':xtk}
+    }
+    return axios(config);
 };
 /* ----dislike the recipe---- */
 export function putDislike(id){
     const xtk = JSON.parse(localStorage.getItem("user")).token;
+    const config = {
+        method: 'put',
+        url: `https://api-el-recetario.vercel.app/api/recipes?id=${id}&&action=dislike`,
+        headers:  {'xtoken':xtk}
+    }
+    return axios(config);
+};
+/* ---- new revipe---- */
+export function newRecipeRequest(values){
+    const xtk = JSON.parse(localStorage.getItem("user")).token;
     return(
-        axios.put(
-            `https://api-el-recetario.vercel.app/api/recipes?id=${id}&&action=dislike`,
-            {headers:{"xtoken":xtk}}
+        axios.get(
+            `https://api-el-recetario.vercel.app/api/recipes`,
+            values,
+            {headers: { "xtoken" : xtk }}
         )
     )
 };

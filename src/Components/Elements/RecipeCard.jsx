@@ -32,7 +32,6 @@ const RecipeCard = ({ recipe, index}) => {
                 ></i>
             )
         }else{
-            console.log(recipeId)
             return(
                 <i 
                     className = { `bi bi-heart`}
@@ -45,7 +44,9 @@ const RecipeCard = ({ recipe, index}) => {
     const navigate = useNavigate()
     return (
         <div key={ index } className='recipe-card'>
-            <img src={ recipe.image } alt={ recipe.description } />
+            <img 
+                src={ recipe.image } 
+                alt={ recipe.description } />
             <div  className='recipe-card-description'>
                 <Link 
                     to={ `/recipes/recipe/${recipe.name}` } 

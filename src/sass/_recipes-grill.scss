@@ -23,6 +23,15 @@
 .grill-recipe-content{
     width: 150px;
 };
+.spinner-one{
+    color: $primary;
+};
+.spinner-two{
+    color: $secondary1;
+};
+.spinner-three{
+    color: $secondary2;
+};
 
 @media (min-width: 800px){
     .grill-recipes-container{

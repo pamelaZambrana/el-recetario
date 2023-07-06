@@ -483,15 +483,37 @@
   width: 150px;
 }
 
+.spinner-one {
+  color: #C02E09;
+}
+
+.spinner-two {
+  color: #0B8318;
+}
+
+.spinner-three {
+  color: #F5E418;
+}
+
 @media (min-width: 800px) {
   .grill-recipes-container {
     width: 85%;
   }
 }
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
 .message {
   position: absolute;
   width: 70vw;
   text-align: center;
+  font-family: "News Cycle", sans-serif;
+  font-size: 2rem;
+}
+
+.progress-bar {
+  background-color: #0B8318;
 }
 
 /* Color Variables */

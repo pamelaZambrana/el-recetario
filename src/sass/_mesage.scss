@@ -1,5 +1,10 @@
+@import "./_variables.scss";
 .message{
     position: absolute;
     width: 70vw;
     text-align: center;
+    @include subtitle1;
+};
+.progress-bar{
+    background-color: $secondary1;
 }

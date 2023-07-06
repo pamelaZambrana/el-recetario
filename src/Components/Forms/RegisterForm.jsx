@@ -6,6 +6,7 @@ const RegisterForn = () => {
     /* ---- using local state ---- */
     const [passwordConfirm, setPasswordConfirm] = useState("");
     const [error,setError] =useState(null);
+    const [confirmation, setConfirmation] = useState(false);
     /* ----navigation ----- */
     const navigate = useNavigate();
     /* ----refs---- */
@@ -17,8 +18,10 @@ const RegisterForn = () => {
     async function newUser(values){
         await newUserRequest(values)
             .then(response => {
+                setConfirmation(true);
                 console.log(response);
                 setError(null);
+                setConfirmation(false);
                 navigate("/login")
             })
             .catch(err => {
@@ -60,6 +63,7 @@ const RegisterForn = () => {
                     name = "userName"
                     className = "input"
                     ref = { userNameRef }
+                    autoFocus
                 ></input>
                 <label>Ingresa tu correo electrónico</label>
                 <input 
@@ -98,6 +102,16 @@ const RegisterForn = () => {
                     > Cancelar </button>
                 </div>
             </form>
+            {
+                confirmation ?
+                <div className="confirmation-message">
+                    <p>Iniciando sesión...</p>
+                    <div className="progress" role="progressbar" aria-label="Animated striped " aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <div className="progress-bar progress-bar-striped progress-bar-animated" style={{width: "95%"}}></div>
+                    </div>
+                </div>
+                : null
+            }
         </div>
     );
 }

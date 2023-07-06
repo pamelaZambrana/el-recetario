@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router';
 import { GlobalContext } from '../../Contexts/globalContext';
 import { TYPES } from '../../Contexts/globalReducer';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 
 const LoginForm = () => {
     /* ---- using ref to save the changes ---- */
@@ -16,35 +18,37 @@ const LoginForm = () => {
     console.log(loginState);
     /*---- using localstate ----- */
     const [error, setError] = useState(null);
-
+    const [confirmation, setConfirmation] = useState(false);
     async function login(values){
         await loginRequest(values)
-            .then(response => {
-                const user = {
-                    id : response.data.body.id,
-                    name : response.data.body.name,
-                    rol : response.data.body.rol,
-                    token : response.data.body.token,
-                    favorites : response.data.body.favorites,
-                    email : response.data.body.email,
+        .then(response => {
+            setConfirmation(true);
+            const user = {
+                id : response.data.body.id,
+                name : response.data.body.name,
+                rol : response.data.body.rol,
+                token : response.data.body.token,
+                favorites : response.data.body.favorites,
+                email : response.data.body.email,
+            }
+            localStorage.setItem("user", `${JSON.stringify(user)}`);
+            console.log(response);
+            dispatch({
+                type : TYPES.INIT_SESSION,
+            });
+            dispatch({
+                type : TYPES.SET_USER,
+                payload : {
+                    id : user.id,
+                    rol : user.rol,
+                    name : user.name,
+                    email : user.email,
+                    favorites : [2,3,8,1],
                 }
-                localStorage.setItem("user", `${JSON.stringify(user)}`);
-                console.log(response);
-                navigate(-1);
-                dispatch({
-                    type : TYPES.INIT_SESSION,
-                });
-                dispatch({
-                    type : TYPES.SET_USER,
-                    payload : {
-                        id : user.id,
-                        rol : user.rol,
-                        name : user.name,
-                        email : user.email,
-                        favorites : [2,3,8,1],
-                    }
-                })
-                setError(null);
+            })
+            setError(null);
+            setConfirmation(false);
+            navigate(-1);  
             })
             .catch(err => {
                 console.log("error",err.response.data.message);
@@ -59,6 +63,7 @@ const LoginForm = () => {
             password : passwordRef.current.value,            
         };
         login(values);
+
     };
     return (
         <div>
@@ -79,6 +84,7 @@ const LoginForm = () => {
                     required 
                     className='input'
                     ref={ emailRef }
+                    autoFocus
                 />
                 <label className='input-label'>Contraseña</label>
                 <input 
@@ -98,6 +104,16 @@ const LoginForm = () => {
                         onClick={() => navigate(-1)}
                     > Cancelar </button>
                 </div>
+            {
+                confirmation ?
+                <div className="confirmation-message">
+                    <p>Iniciando sesión...</p>
+                    <div className="progress" role="progressbar" aria-label="Animated striped " aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <div className="progress-bar progress-bar-striped progress-bar-animated" style={{width: "95%"}}></div>
+                    </div>
+                </div>
+                : null
+            }
             </form>
         </div>
     );
