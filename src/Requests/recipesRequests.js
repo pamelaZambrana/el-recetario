@@ -17,10 +17,41 @@ export function getRecipeByCatRequest(comida){
     )
 }
 /* ----- favorite recipes----- */
-export function getFavoriteRecipes(comida){
+export function getFavoriteRecipes(){
     return(
         axios.get(
             `https://api-el-recetario.vercel.app/api/recipes/favorites`,
         )
     )
-}
+};
+
+/* ----- recommended recipes ----- */
+export function getRecommendedRecipes(){
+    return(
+        axios.get(
+            `https://api-el-recetario.vercel.app/api/recipes/recommended`,
+        )
+    )
+};
+
+/* ----like the recipe---- */
+export function putLike(id){
+    const xtk = JSON.parse(localStorage.getItem("user")).token;
+    console.log(JSON.parse(localStorage.getItem("user")).token)
+    return(
+        axios.put(
+            `https://api-el-recetario.vercel.app/api/recipes?id=${id}&&action=like`,
+            {headers:{"xtoken":xtk}}
+        )
+    )
+};
+/* ----dislike the recipe---- */
+export function putDislike(id){
+    const xtk = JSON.parse(localStorage.getItem("user")).token;
+    return(
+        axios.put(
+            `https://api-el-recetario.vercel.app/api/recipes?id=${id}&&action=dislike`,
+            {headers:{"xtoken":xtk}}
+        )
+    )
+};

@@ -5,7 +5,7 @@
         user = JSON.parse(localStorage.getItem("user"));
         loginState = true;
     };
-    //console.log(JSON.parse(localStorage.getItem("favorites")))
+    //console.log(JSON.parse(localStorage.getItem("user")).token)
 export const initialState ={
     user : {
         ...user
@@ -187,6 +187,7 @@ export const initialState ={
     allRecipes : [],
     searchedRecipes : [],
     favoriteRecipesList : [],
+    recommendedList : [],
 };
 /* const recipes = initialState.recipes;
 const favor = initialState.user.favorites;

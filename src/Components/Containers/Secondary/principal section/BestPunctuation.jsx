@@ -15,7 +15,7 @@ const BestPunctuation = () => {
         async function bestScores(){
             await getFavoriteRecipes()
                 .then(response => {
-                    console.log(response.data.body);
+                    //console.log(response.data.body);
                     let finalList = [];
                     const initialList = response.data.body;
                     if(initialList.length >= 10){
@@ -35,8 +35,10 @@ const BestPunctuation = () => {
                 })
                 .catch(error => console.log(error));
         };
-       bestScores();
-    }, [dispatch]);
+        if(bestPunctuationList < 1){
+            bestScores();         
+        }
+    }, [dispatch, bestPunctuationList]);
 
     return (
         <section className='subsection-container'>
