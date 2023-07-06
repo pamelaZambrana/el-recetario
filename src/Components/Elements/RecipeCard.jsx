@@ -30,14 +30,12 @@ const RecipeCard = ({ recipe, index}) => {
             <div  className='recipe-card-description'>
                 <Link 
                     to={ `/recipes/recipe/${recipe.name}` } 
-                    //state={{path :"recipes", search : searchParams.toString()}}
-                    className='recipe-card-description'
+                    className='recipe-card-description-title'
                     onClick={() => dispatch({ type : TYPES.SHOW_RECIPE, payload : recipe.id})}
                 >
                     <h4> { recipe.name } </h4>
                 </Link>
                 <div className='ratings'>
-                    <h4 className='punctuation'> { `${recipe.punctuation}/10` } </h4>
                     {
                         loginState
                         ?                    
@@ -45,6 +43,7 @@ const RecipeCard = ({ recipe, index}) => {
                         :
                         <i className = "bi bi-heart"></i>
                     } 
+                    <h4 className='punctuation'> { `${recipe.favorite}` } </h4>
                 </div>
             </div>
         </div>

@@ -7,10 +7,12 @@
     background-color: $background2;
     border-radius:  12px ;
     @include shadow-card();
+    h4{
+        margin: 0.5rem;
+    };
     h4, i{
         justify-self:end;
         text-align: center;
-        margin: 0.5rem 1rem;
         @include content-medium;
         color: $primary;
         font-weight: bold;
@@ -21,8 +23,12 @@
         height: 120px
     };
     .recipe-card-description{
-        @include display-estructure(center, center );
-        text-decoration: none;
+        width: 100%;
+        padding: 0 0.5rem 1rem 0.5rem;
+        @include display-estructure(space-between, center );
+        .recipe-card-description-title{
+            text-decoration: none;
+        };
         .ratings{
             align-self: flex-end;
             @include display-estructure(center, center);

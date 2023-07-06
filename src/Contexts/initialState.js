@@ -1,13 +1,14 @@
     /* ----using localStorage---- */
-const userName = JSON.parse(localStorage.getItem("user")) ? JSON.parse(localStorage.getItem("user")).name : "";
-const loginState = JSON.parse(localStorage.getItem("user"))!== null? true : false;
+    let user = "";
+    let loginState = false;
+    if(localStorage.length > 0){
+        user = JSON.parse(localStorage.getItem("user"));
+        loginState = true;
+    };
+    //console.log(JSON.parse(localStorage.getItem("favorites")))
 export const initialState ={
     user : {
-        id: "123",
-        name : userName,
-        rol : "user",
-        email : "belloti@gmail.com",
-        favorites : [2,3,7]
+        ...user
     },
     loginState: loginState,
     openMenu: false,
@@ -16,8 +17,7 @@ export const initialState ={
         {   _id: 1,
             name: "Piquemacho",
             image: "/img/carousel/platillos-principales.jpg",
-            punctuation: 7,
-            favorite: false,
+            favorite: 2,
             time: 2,
             difficulty : 10,
             recommended : true,
@@ -31,8 +31,7 @@ export const initialState ={
             _id: 2,
             name: "Huminta",
             image: "/img/carousel/platillos-principales.jpg",
-            punctuation: 9,
-            favorite: false,
+            favorite: 5,
             time: 2,
             difficulty : 10,
             recommended : false,
@@ -45,8 +44,7 @@ export const initialState ={
             _id: 3,
             name: "Salteña",
             image: "/img/carousel/platillos-principales.jpg",
-            punctuation: 10,
-            favorite: true,
+            favorite: 3,
             time: 2,
             difficulty : 10,
             recommended : true,
@@ -58,8 +56,7 @@ export const initialState ={
             _id: 4,
             name: "Salchipapa",
             image: "/img/carousel/platillos-principales.jpg",
-            punctuation: 10,
-            favorite: true,
+            favorite: 2,
             time: 2,
             difficulty : 10,
             recommended : false,
@@ -72,8 +69,7 @@ export const initialState ={
             _id: 5,
             name: "Ají de fideo",
             image: "/img/carousel/platillos-principales.jpg",
-            punctuation: 5,
-            favorite: true,
+            favorite: 1,
             time: 2,
             difficulty : 10,
             recommended : true,
@@ -85,9 +81,8 @@ export const initialState ={
         {
             _id: 6,
             name: "Ají de papa",
-            image: "/img/carousel/platillos-principales.jpg",
-            punctuation: 1,
-            favorite: true,
+            image: "/img/carousel/platillos-principales.jpg",   
+            favorite: 6,
             time: 2,
             difficulty : 10,
             recommended : true,
@@ -99,9 +94,8 @@ export const initialState ={
         {
             _id: 7,
             name: "Hamburguesa de quinua",
-            image: "/img/carousel/platillos-principales.jpg",
-            punctuation: 5,
-            favorite: false,
+            image: "/img/carousel/platillos-principales.jpg",           
+            favorite: 9,
             time: 2,
             difficulty : 8,
             category: ["popular", "principales"],
@@ -112,9 +106,8 @@ export const initialState ={
         {
             _id: 8,
             name: "Plato paceño a la potosina",
-            image: "/img/carousel/platillos-principales.jpg",
-            punctuation: 5,
-            favorite: false,
+            image: "/img/carousel/platillos-principales.jpg",            
+            favorite: 0,
             time: 2,
             difficulty : 10,
             recommended : false,
@@ -126,9 +119,8 @@ export const initialState ={
         {
             _id: 9,
             name: "Api morado",
-            image: "/img/carousel/platillos-principales.jpg",
-            punctuation: 4,
-            favorite: true,
+            image: "/img/carousel/platillos-principales.jpg",           
+            favorite: 5,
             time: 2,
             difficulty : 10,
             recommended : true,
@@ -140,9 +132,8 @@ export const initialState ={
         {
             _id: 10,
             name: "Mocochinchi",
-            image: "/img/carousel/platillos-principales.jpg",
-            punctuation: 3,
-            favorite: false,
+            image: "/img/carousel/platillos-principales.jpg",           
+            favorite: 12,
             time: 2,
             difficulty : 10,
             recommended : true,
@@ -155,8 +146,7 @@ export const initialState ={
             _id: 11,
             name: "Llaucha",
             image: "/img/carousel/platillos-principales.jpg",
-            punctuation: 10,
-            favorite: false,
+            favorite: 11,
             time: 2,
             difficulty : 5,
             category: ["tipica", "postres"],
@@ -168,8 +158,7 @@ export const initialState ={
             _id: 12,
             name: "Alfajor",
             image: "/img/carousel/platillos-principales.jpg",
-            punctuation: 7,
-            favorite: false,
+            favorite: 15,
             time: 2,
             difficulty : 10,
             recommended : true,
@@ -182,8 +171,7 @@ export const initialState ={
             _id: 13,
             name: "Chairo",
             image: "/img/carousel/platillos-principales.jpg",
-            punctuation: 7,
-            favorite: false,
+            favorite: 10,
             time: 2,
             difficulty : 10,
             recommended : true,
@@ -198,7 +186,7 @@ export const initialState ={
     selectedRecipe : "",
     allRecipes : [],
     searchedRecipes : [],
-    favoriteRecipes : [],
+    favoriteRecipesList : [],
 };
 /* const recipes = initialState.recipes;
 const favor = initialState.user.favorites;

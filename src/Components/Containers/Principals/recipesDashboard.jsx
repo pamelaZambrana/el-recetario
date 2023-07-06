@@ -7,7 +7,6 @@ import { allRecipesRequest, getRecipeByCatRequest } from '../../../Requests/reci
 import { GlobalContext } from '../../../Contexts/globalContext';
 import { TYPES } from '../../../Contexts/globalReducer';
 import { filteringList } from '../../../functions/filteringList';
-import { bestScores } from '../../../functions/bestScores';
 
 
 const RecipeDashboard = () => {
@@ -18,6 +17,7 @@ const RecipeDashboard = () => {
      const recipes = globalState.recipes;
      const allRecipes = globalState.allRecipes;
      const recipesByCat = globalState.searchedRecipes;
+     const favoriteRecipes = globalState.favoriteRecipesList;
     /* ----Usins searchParams---- */
     const [searchParams] = useSearchParams();
     const typeFilter = searchParams.toString()?searchParams.get("type"):"todas";
@@ -70,8 +70,8 @@ const RecipeDashboard = () => {
                 filteredList  = filteringList([...recipesByCat], searcher2);
             }else;
         }else{
-            bestScores(recipesByCat, filteredList);
-            console.log(filteredList);
+            console.log(favoriteRecipes);
+            filteredList = [...favoriteRecipes];
             if(searcher2){
                 filteredList  = filteringList([...recipesByCat], searcher2);
             };

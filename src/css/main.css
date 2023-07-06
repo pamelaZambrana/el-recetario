@@ -188,10 +188,12 @@
   -webkit-box-shadow: 12px 15px 5px -8px rgba(133, 125, 125, 0.45);
   -moz-box-shadow: 12px 15px 5px -8px rgba(133, 125, 125, 0.45);
 }
+.recipe-card h4 {
+  margin: 0.5rem;
+}
 .recipe-card h4, .recipe-card i {
   justify-self: end;
   text-align: center;
-  margin: 0.5rem 1rem;
   font-family: "News Cycle", sans-serif;
   font-size: 1.4rem;
   color: #C02E09;
@@ -203,9 +205,13 @@
   height: 120px;
 }
 .recipe-card .recipe-card-description {
+  width: 100%;
+  padding: 0 0.5rem 1rem 0.5rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+}
+.recipe-card .recipe-card-description .recipe-card-description-title {
   text-decoration: none;
 }
 .recipe-card .recipe-card-description .ratings {

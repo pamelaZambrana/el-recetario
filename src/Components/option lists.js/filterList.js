@@ -41,12 +41,12 @@ export const filterList = [
         description: "Buscar por postres",
     },
     {
-        name: "Las 10 mejores calificaciones",
+        name: "Favoritos de la comunidad",
         filter:"mejores",
         class : "filter-button",
         level : 0,
         image: "/img/carousel/platillos-principales.jpg",
-        description: "Buscar las 10 mejores calificaciones",
+        description: "10 recetas favoritas de la comunidad",
     },
     {
         name: "Todas las recetas",

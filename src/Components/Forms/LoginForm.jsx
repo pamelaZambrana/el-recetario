@@ -21,9 +21,12 @@ const LoginForm = () => {
         await loginRequest(values)
             .then(response => {
                 const user = {
+                    id : response.data.body.id,
                     name : response.data.body.name,
                     rol : response.data.body.rol,
-                    token : response.data.body.token
+                    token : response.data.body.token,
+                    favorites : response.data.body.favorites,
+                    email : response.data.body.email,
                 }
                 localStorage.setItem("user", `${JSON.stringify(user)}`);
                 console.log(response);
@@ -34,9 +37,10 @@ const LoginForm = () => {
                 dispatch({
                     type : TYPES.SET_USER,
                     payload : {
-                        id : 123,
+                        id : user.id,
+                        rol : user.rol,
                         name : user.name,
-                        email : emailRef.current.value,
+                        email : user.email,
                         favorites : [2,3,8,1],
                     }
                 })
