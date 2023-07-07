@@ -42,7 +42,6 @@ const RecipeDashboard = () => {
         async function getRecipesByCat(comida){
             await getRecipeByCatRequest(comida)
                 .then(response => {
-                    console.log(response);
                     dispatch({type: TYPES.SET_RECIPES_BY_CAT, payload : response.data.body});
                     setLoading(false);
                 })

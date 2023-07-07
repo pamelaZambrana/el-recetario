@@ -11,6 +11,7 @@ const OpenMenu = () => {
     const [globalState, dispatch] = useContext(GlobalContext);
     const loginState =  globalState.loginState;
     const userName = globalState.user.name;
+    const userRol = globalState.user.rol;
     
     function closeSession(){
         localStorage.removeItem("user");
@@ -84,6 +85,14 @@ const OpenMenu = () => {
                         null
                         )
                     )
+                }
+                {
+                    loginState && userRol === "admin"
+                    ?
+                    <li className='principal-option'>
+                        <Link to={"/nueva-receta"}>Crear nueva Receta</Link>
+                    </li>
+                    : null
                 }
                 <li>
                     <span className='principal-option'>

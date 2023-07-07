@@ -50,7 +50,6 @@ const NewRecipe = () => {
             ingredients : ingredientsValues,
             process : stepsValues
         };
-        console.log(recipeValues);
         addNewRecipe(recipeValues);
 
     }

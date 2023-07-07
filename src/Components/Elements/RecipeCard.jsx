@@ -2,29 +2,45 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '../../Contexts/globalContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { TYPES } from '../../Contexts/globalReducer';
-import { putDislike, putLike } from '../../Requests/recipesRequests';
+import { putDislike, putLike, recipeDetailRequest } from '../../Requests/recipesRequests';
 
 
 const RecipeCard = ({ recipe, index}) => {
     /* ----using global context---- */
     const [globalState, dispatch ] = useContext(GlobalContext);
-    const favoritesList = globalState.user.favorites;
+    const favoritesList = globalState.favoriteUserRecipesList;
     const loginState = globalState.loginState;
+
+  
     /* ---- put like or dislike ---- */
     async function like(id){
         await putLike(id)
-            .then( response => console.log(response))
+        .then( response => {
+                const newFavListAdd = [...favoritesList, id];
+                dispatch({
+                    type : TYPES.SET_FAVORITES_USER_LIST,
+                    payload : newFavListAdd
+                })
+                console.log(response);
+            })
             .catch(error => console.log(error));
     };
     async function dislike(id){
         await putDislike(id)
-            .then( response => console.log(response))
+        .then( response => {
+                const newFavListRemove = favoritesList.filter(recipeID => recipeID !== id);
+                dispatch({
+                    type : TYPES.SET_FAVORITES_USER_LIST,
+                    payload : newFavListRemove
+                })
+                console.log(response)
+            })
             .catch(error => console.log(error));
     };
     /* ---- heart icon ---- */
-    function fullHeart( recipeId ){
+    function fillingHeart( recipeId ){
         const favorite = favoritesList.find(id => id === recipeId);
-        if(favorite ){
+        if(favorite){
             return(
                 <i 
                     className="bi bi-heart-fill"
@@ -40,8 +56,23 @@ const RecipeCard = ({ recipe, index}) => {
             )
         };
     };
+
     /* ---- navigation-----*/
     const navigate = useNavigate()
+
+    /* ---- get recipe Detail---- */
+    async function getRecipeDetail(id){
+        await recipeDetailRequest(id)
+            .then(response => {
+                console.log(response);
+                const recipeDetail = response.data.body;
+                dispatch({
+                    type : TYPES.SET_RECIPE_DETAIL,
+                    payload : recipeDetail
+                })
+            })
+        .catch(error => console.log(error));
+    }
     return (
         <div key={ index } className='recipe-card'>
             <img 
@@ -51,7 +82,10 @@ const RecipeCard = ({ recipe, index}) => {
                 <Link 
                     to={ `/recipes/recipe/${recipe.name}` } 
                     className='recipe-card-description-title'
-                    onClick={() => dispatch({ type : TYPES.SHOW_RECIPE, payload : recipe._id})}
+                    onClick={() => {
+                        getRecipeDetail(recipe._id);
+                        dispatch({ type : TYPES.SHOW_RECIPE, payload : recipe._id})
+                        }}
                 >
                     <h4> { recipe.name } </h4>
                 </Link>
@@ -59,7 +93,7 @@ const RecipeCard = ({ recipe, index}) => {
                     {
                         loginState
                         ?                    
-                        fullHeart( recipe._id )                                       
+                        fillingHeart( recipe._id )                                       
                         :
                         <i 
                             className = "bi bi-heart"

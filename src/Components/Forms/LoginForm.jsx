@@ -28,24 +28,12 @@ const LoginForm = () => {
                 name : response.data.body.name,
                 rol : response.data.body.rol,
                 token : response.data.body.token,
-                favorites : response.data.body.favorites,
-                email : response.data.body.email,
             }
             localStorage.setItem("user", `${JSON.stringify(user)}`);
             console.log(response);
             dispatch({
                 type : TYPES.INIT_SESSION,
             });
-            dispatch({
-                type : TYPES.SET_USER,
-                payload : {
-                    id : user.id,
-                    rol : user.rol,
-                    name : user.name,
-                    email : user.email,
-                    favorites : [2,3,8,1],
-                }
-            })
             setError(null);
             setConfirmation(false);
             navigate(-1);  

@@ -1,10 +1,14 @@
 @import "./variables";
 
-.scroll-filter, .scroll-recipe{
+.scroll-recipe{
     height: 20rem;
     @include display-estructure(center,center );
     gap: 0.5rem;
 };
+.scroll-filter{
+    @extend .scroll-recipe;
+    height: 15rem;
+}
 .arrow-active{
     visibility: hidden;
     right: 0;

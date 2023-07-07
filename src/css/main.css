@@ -254,7 +254,7 @@
 .filter-card img {
   border-radius: 12px 12px 0px 0px;
   width: 120px;
-  height: 130px;
+  height: 90px;
 }
 
 @media (min-width: 1000px) {
@@ -269,12 +269,16 @@
 /* Font-family variables */
 /* Font-size variables */
 /* Mixins */
-.scroll-filter, .scroll-recipe {
+.scroll-recipe, .scroll-filter {
   height: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+}
+
+.scroll-filter {
+  height: 15rem;
 }
 
 .arrow-active {
@@ -323,7 +327,7 @@
     justify-content: center;
     gap: 2rem;
   }
-  .scroll-recipe .scroll-content {
+  .scroll-recipe .scroll-content, .scroll-filter .scroll-content {
     width: 90%;
     overflow-x: hidden;
   }

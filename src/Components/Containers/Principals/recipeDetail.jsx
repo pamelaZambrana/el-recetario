@@ -1,20 +1,21 @@
-import React, { useContext } from 'react';
+import React, { /* useContext */ } from 'react';
 import { useParams } from 'react-router';
-import { GlobalContext } from '../../../Contexts/globalContext';
+/* 
+import { GlobalContext } from '../../../Contexts/globalContext'; */
 
 const RecipeDetail = () => {
     const params = useParams();
+    /* 
     const [ globalState ] = useContext(GlobalContext);
     const user = globalState.user;
     const loginState = globalState.loginState;
-    const recipes = globalState.recipes;
-    const id = globalState.selectedRecipe;
-    const recipeToShow = recipes.filter(recipe => recipe.id === id)[0];
+    const recipe = globalState.recipes; */
+
 
     return (
         <section className='recipe-detail'>
             <h1 className='recipe-detail-title'>{ params.recipeName }</h1>
-            <div className='recipe-detail-img'>
+            {/* <div className='recipe-detail-img'>
                 <img src={recipeToShow.image} alt={`Imagen de ${recipeToShow.name}`}/>
             </div>
             <h3>Ingredientes: </h3>
@@ -75,7 +76,7 @@ const RecipeDetail = () => {
                     <p>Compartir link</p>
                 </div>
             </div>
-
+ */}
         </section>
     );
 }

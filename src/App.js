@@ -35,12 +35,9 @@ const router = createBrowserRouter(createRoutesFromElements(
               <Route
                 path='favorites'
                 element = <FavoritesPage/>
-                loader={ async () => await authFunction()}
-                  
+                loader={ async () => await authFunction()}                 
               />
-
             </Route>
-
             <Route 
               path='login' 
               element = { <LoginPage/> }
@@ -54,7 +51,7 @@ const router = createBrowserRouter(createRoutesFromElements(
               <Route 
               path='nueva-receta' 
               element = { <NewRecipePage/> }
-              //loader={ async () => await loginFunction()}
+              loader={ async () => await authFunction()}
               />
             <Route path='*' element={<NotFoundPage/>}/>
           </Route>

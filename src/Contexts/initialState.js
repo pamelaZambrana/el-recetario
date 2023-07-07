@@ -15,10 +15,11 @@ export const initialState ={
     openMenu: false,
     secondOpenMenu: false,
     titles : "",
-    selectedRecipe : "",
+    recipeDetail :"",
     allRecipes : [],
     searchedRecipes : [],
-    favoriteRecipesList : [],
+    favoriteCommunityRecipesList : [],
+    favoriteUserRecipesList : [],
     recommendedList : [],
 };
 /* const recipes = initialState.recipes;

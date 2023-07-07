@@ -8,7 +8,7 @@ import { getFavoriteRecipes } from '../../../../Requests/recipesRequests';
 const BestPunctuation = () => {
     /* -----using global state---- */
    const [globalState, dispatch] = useContext(GlobalContext);
-   let bestPunctuationList = globalState.favoriteRecipesList;
+   let bestPunctuationList = globalState.favoriteCommunityRecipesList;
 
    
    useEffect(() => {
@@ -29,7 +29,7 @@ const BestPunctuation = () => {
                         finalList = [...initialList];
                     };
                     dispatch({
-                        type : TYPES.SET_FAVORITES_LIST,
+                        type : TYPES.SET_FAVORITES_COMMUNITY_LIST,
                         payload : finalList
                     })
                 })

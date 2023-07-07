@@ -4,10 +4,11 @@ export const TYPES = {
     INIT_SESSION: "init session",
     CLOSE_OPEN_MENU : "close, open menu",
     CLOSE_SECOND_OPEN_MENU : "close, second open menu",
-    SHOW_RECIPE : "show recipe",
+    SET_RECIPE_DETAIL : "show recipe",
     SET_ALL_RECIPES : "set all recipes",
     SET_RECIPES_BY_CAT : "set recipes by category",
-    SET_FAVORITES_LIST : "set favorites list",
+    SET_FAVORITES_COMMUNITY_LIST : "set community favorites list",
+    SET_FAVORITES_USER_LIST : " set favorites user list",
     SET_USER : "set user",
     SET_RECOMMENDED_LIST : "set recommended list",
 }
@@ -46,10 +47,10 @@ export function globalReducer(state, action){
                 ...state,
                 user : action.payload,
             }
-        case TYPES.SHOW_RECIPE:
+        case TYPES.SET_RECIPE_DETAIL:
             return{
                 ...state,
-                selectedRecipe : action.payload
+                recipeDetail : action.payload
             };
         case TYPES.SET_ALL_RECIPES:
             return {
@@ -61,16 +62,22 @@ export function globalReducer(state, action){
                 ...state,
                 searchedRecipes : action.payload,
             }
-        case TYPES.SET_FAVORITES_LIST:
+        case TYPES.SET_FAVORITES_COMMUNITY_LIST:
             return{
                 ...state,
-                favoriteRecipesList : action.payload,
+                favoriteCommunityRecipesList : action.payload,
+            }
+        case TYPES.SET_FAVORITES_USER_LIST:
+            return{
+                ...state,
+                favoriteUserRecipesList : action.payload,
             }
         case TYPES.SET_RECOMMENDED_LIST:
             return{
                 ...state,
                 recommendedList : action.payload,
             }
+        
         default:
             return state
     }
