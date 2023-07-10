@@ -4,7 +4,7 @@ export const filterList = [
         filter:"tipica",
         class : "filter-button",
         level : 1,
-        image: "/img/carousel/platillos-principales.jpg",
+        image: "/img/filters/comida-tipica.png",
         description: "Buscar comida típica",
         
     },
@@ -13,7 +13,7 @@ export const filterList = [
         filter:"popular",
         class : "filter-button",
         level : 1,
-        image: "/img/carousel/platillos-principales.jpg",
+        image: "/img/filters/comida-popular.png",
         description: "Buscar comida popular",
     },
     {
@@ -21,7 +21,7 @@ export const filterList = [
         filter:"principales",
         class : "filter-button",
         level : 2,
-        image: "/img/carousel/platillos-principales.jpg",
+        image: "/img/filters/platillos-principales.png",
         description: "Buscar por platillos principales",
     },
     {
@@ -29,7 +29,7 @@ export const filterList = [
         filter:"bebidas",
         class : "filter-button",
         level : 2,
-        image: "/img/carousel/platillos-principales.jpg",
+        image: "/img/filters/bebidas.png",
         description: "Buscar por bebidas",
     },
     {
@@ -37,7 +37,7 @@ export const filterList = [
         filter:"postres",
         class : "filter-button",
         level : 2,
-        image: "/img/carousel/platillos-principales.jpg",
+        image: "/img/filters/postres.png",
         description: "Buscar por postres",
     },
     {
@@ -45,7 +45,7 @@ export const filterList = [
         filter:"mejores",
         class : "filter-button",
         level : 0,
-        image: "/img/carousel/platillos-principales.jpg",
+        image: "/img/filters/favoritos-comunidad.png",
         description: "10 recetas favoritas de la comunidad",
     },
     {
@@ -53,7 +53,7 @@ export const filterList = [
         filter:"todas",
         class : "filter-button",
         level : 0,
-        image: "/img/carousel/platillos-principales.jpg",
+        image: "/img/filters/todas.png",
         description: "Mostrar todas las recetas",
     },
     {
@@ -61,7 +61,7 @@ export const filterList = [
         path:"/recipes/favorites",
         class : "filter-button",
         level : 0,
-        image: "/img/carousel/platillos-principales.jpg",
+        image: "/img/filters/mis-favoritos.png",
         description: "Ir a mis recetas favoritas",
     },
 

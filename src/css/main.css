@@ -662,6 +662,9 @@
   width: 150px;
   height: 120px;
 }
+.recipe-detail-img-icons i:hover {
+  cursor: pointer;
+}
 
 .recipe-detail-icons {
   display: flex;
