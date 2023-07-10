@@ -71,8 +71,8 @@ export function recipeDetailRequest(id){
     console.log(id);
     const config = {
         method: 'get',
-        url: `https://api-el-recetario.vercel.app/api/recipes`,
-        data:  {'_id':id}
+        url: `https://api-el-recetario.vercel.app/api/recipes/${id}`,
+
     };
     return axios(config);
 };

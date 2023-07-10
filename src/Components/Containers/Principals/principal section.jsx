@@ -20,7 +20,6 @@ const PrincipalSection = () => {
                             type : TYPES.SET_FAVORITES_USER_LIST,
                             payload : [...favorites],
                         })
-                        console.log(response)
                     })
                     .catch(error => console.log(error));
             }; 

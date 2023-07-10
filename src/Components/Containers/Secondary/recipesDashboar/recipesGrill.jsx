@@ -28,6 +28,7 @@ const RecipesGrill = ({ filteredList, loading }) => {
                                 <RecipeCard 
                                     recipe = { recipe }
                                     index={ recipe._id }
+                                    likes = { recipe.favorite }
                                 ></RecipeCard>
                             </div>
                         )

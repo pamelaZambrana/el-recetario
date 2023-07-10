@@ -6,6 +6,7 @@
     gap: 0.5rem;
 };
 .scroll-filter{
+    
     @extend .scroll-recipe;
     height: 15rem;
 }
@@ -41,22 +42,13 @@
 };
 @media(min-width: 800px){
     .scroll-content{
-        width: 650px;
         overflow-x: hidden;
     };
 };
 @media (min-width: 1000px){
     .scroll-filter{
         .scroll-content{
-            width: 90%;
-            justify-content: center;
             gap: 2rem;
-        };
-    };
-    .scroll-recipe{
-        .scroll-content{
-            width: 90%;
-            overflow-x: hidden;
         };
     };
 }

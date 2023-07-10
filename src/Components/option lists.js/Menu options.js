@@ -73,13 +73,13 @@ export const menuOptionList = [
         path : "/recipes/favorites",
 
     },
-    {
+/*     {
         logged : true,
         class : "principal-option",
         name : "EDITAR USUSARIO",
         action : TYPES.CLOSE_SESION,
         path : "/editUser",
-    },
+    }, */
     {
         logged : true,
         class : "principal-option",

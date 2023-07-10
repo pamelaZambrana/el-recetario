@@ -75,6 +75,10 @@ $hero-heigth5 : 90vh;
             }
         };
     };
+    .subsection-container{
+        width: 90%;
+        margin: 0 auto;
+    }
     .subsection-title{
         font-size: 1.4*$size-subtitule2;
     };

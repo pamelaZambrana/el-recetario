@@ -15,12 +15,12 @@ export const initialState ={
     openMenu: false,
     secondOpenMenu: false,
     titles : "",
-    recipeDetail :"",
     allRecipes : [],
     searchedRecipes : [],
     favoriteCommunityRecipesList : [],
     favoriteUserRecipesList : [],
     recommendedList : [],
+    countLikes: 0,
 };
 /* const recipes = initialState.recipes;
 const favor = initialState.user.favorites;

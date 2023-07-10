@@ -35,9 +35,8 @@ const BestPunctuation = () => {
                 })
                 .catch(error => console.log(error));
         };
-        if(bestPunctuationList < 1){
-            bestScores();         
-        }
+
+        bestScores();         
     }, [dispatch, bestPunctuationList]);
 
     return (

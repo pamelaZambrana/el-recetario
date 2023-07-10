@@ -17,7 +17,7 @@ const RecipeDashboard = () => {
      const recipes = globalState.recipes;
      const allRecipes = globalState.allRecipes;
      const recipesByCat = globalState.searchedRecipes;
-     const favoriteRecipes = globalState.favoriteRecipesList;
+     const favoriteCommunityRecipes = globalState.favoriteCommunityRecipesList;
     /* ----Usins searchParams---- */
     const [searchParams] = useSearchParams();
     const typeFilter = searchParams.toString()?searchParams.get("type"):"todas";
@@ -69,8 +69,8 @@ const RecipeDashboard = () => {
                 filteredList  = filteringList([...recipesByCat], searcher2);
             }else;
         }else{
-            console.log(favoriteRecipes);
-            filteredList = [...favoriteRecipes];
+            console.log(favoriteCommunityRecipes);
+            filteredList = [...favoriteCommunityRecipes];
             if(searcher2){
                 filteredList  = filteringList([...recipesByCat], searcher2);
             };

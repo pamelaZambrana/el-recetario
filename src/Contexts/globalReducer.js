@@ -4,13 +4,13 @@ export const TYPES = {
     INIT_SESSION: "init session",
     CLOSE_OPEN_MENU : "close, open menu",
     CLOSE_SECOND_OPEN_MENU : "close, second open menu",
-    SET_RECIPE_DETAIL : "show recipe",
     SET_ALL_RECIPES : "set all recipes",
     SET_RECIPES_BY_CAT : "set recipes by category",
     SET_FAVORITES_COMMUNITY_LIST : "set community favorites list",
     SET_FAVORITES_USER_LIST : " set favorites user list",
     SET_USER : "set user",
     SET_RECOMMENDED_LIST : "set recommended list",
+    SET_COUNT_LIKES : "set count likes",
 }
 
 export function globalReducer(state, action){
@@ -47,11 +47,6 @@ export function globalReducer(state, action){
                 ...state,
                 user : action.payload,
             }
-        case TYPES.SET_RECIPE_DETAIL:
-            return{
-                ...state,
-                recipeDetail : action.payload
-            };
         case TYPES.SET_ALL_RECIPES:
             return {
                 ...state,
@@ -77,7 +72,11 @@ export function globalReducer(state, action){
                 ...state,
                 recommendedList : action.payload,
             }
-        
+        case TYPES.SET_COUNT_LIKES:
+            return{
+                ...state,
+                countLikes : action.payload,
+            }
         default:
             return state
     }

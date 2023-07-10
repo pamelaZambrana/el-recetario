@@ -1,6 +1,7 @@
 @import "./variables";
 .second-navbar{
     z-index: 0;
+    max-height: 15vh;
     padding: 1.2rem 1.2rem 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);

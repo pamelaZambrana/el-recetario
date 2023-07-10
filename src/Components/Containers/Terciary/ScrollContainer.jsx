@@ -36,6 +36,7 @@ const ScrollContainer = ({ list }) => {
                             <RecipeCard
                                 recipe={ recipe }
                                 key={ index } 
+                                likes = { recipe.favorite }
                             ></RecipeCard>                          
                         ))
                     }

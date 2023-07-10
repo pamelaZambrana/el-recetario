@@ -23,9 +23,7 @@ const Recomendations = () => {
                 })
                 .catch(error => console.log(error));
         };
-        if(recommendedList.length < 1){
-            recommended();
-        };
+        recommended();
     }, [dispatch, recommendedList]);
 
     return (
