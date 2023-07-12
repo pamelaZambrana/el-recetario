@@ -44,6 +44,7 @@ const OpenMenu = () => {
                             <Link 
                                 className={ `${option.class}`}
                                 to={`recipes?type=${ option.filter}`}
+                                onClick={() => dispatch({ type : option.action })}
                             >
                                 { option.name }
 
@@ -55,8 +56,9 @@ const OpenMenu = () => {
                                             key={ index } 
                                         >
                                             <Link 
-                                                to={`recipes?type=${ option.filter }&type2=${ item.filter }` }
                                                 className={ `${option.secOptions.class}`}
+                                                onClick={() => dispatch({ type : option.action })}
+                                                to={`recipes?type=${ option.filter }&type2=${ item.filter }` }
                                             > 
                                                 { item.itemName } 
                                             </Link>
@@ -89,13 +91,17 @@ const OpenMenu = () => {
                 {
                     loginState && userRol === "admin"
                     ?
-                    <li className='principal-option'>
-                        <Link to={"/nueva-receta"}>Crear nueva Receta</Link>
+                    <li >
+                        <Link 
+                            to={"/nueva-receta"}
+                            className='principal-option'
+                            onClick={() => dispatch({ type : TYPES.CLOSE_OPEN_MENU})}
+                        >CREAR NUEVA RECETA</Link>
                     </li>
                     : null
                 }
-                <li>
-                    <span className='principal-option'>
+                <li className='principal-option'>
+                    <span >
                         COMPARTE
                     </span>
                 </li>

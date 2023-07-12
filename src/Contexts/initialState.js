@@ -18,6 +18,7 @@ export const initialState ={
     allRecipes : [],
     searchedRecipes : [],
     favoriteCommunityRecipesList : [],
+    favoriteUserList : [],
     favoriteUserRecipesList : [],
     recommendedList : [],
     countLikes: 0,

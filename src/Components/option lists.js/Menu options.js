@@ -23,9 +23,9 @@ export const menuOptionList = [
                     filter : "bebidas"
                 }              
             ],
-            action : TYPES.CLOSE_SESION,
+            action : TYPES.CLOSE_OPEN_MENU,
         },
-        action : TYPES.CLOSE_SESION,
+        action : TYPES.CLOSE_OPEN_MENU,
     },
     {
         class : "principal-option",
@@ -47,9 +47,9 @@ export const menuOptionList = [
                     filter : "bebidas"
                 }              
             ],
-            action : TYPES.CLOSE_SESION,
+            action : TYPES.CLOSE_OPEN_MENU,
         },
-        action : TYPES.CLOSE_SESION,
+        action : TYPES.CLOSE_OPEN_MENU,
     },
     {
         logged : false,
@@ -69,7 +69,7 @@ export const menuOptionList = [
         logged : true,
         class : "principal-option",
         name : "MIS FAVORITOS",
-        action : TYPES.CLOSE_SESION,
+        action : TYPES.CLOSE_OPEN_MENU,
         path : "/recipes/favorites",
 
     },

@@ -29,7 +29,7 @@ const NewRecipe = () => {
             })
             .catch(err => { 
                 console.log(err);
-                setError(err.response.data.message);
+                setError("Algo saló mal");
             })
     };
    
@@ -50,18 +50,19 @@ const NewRecipe = () => {
             ingredients : ingredientsValues,
             process : stepsValues
         };
+        console.log(recipeValues);
         addNewRecipe(recipeValues);
 
     }
     return (
         <div>
             <form className='form' onSubmit={saveRecipe}>
+                <h1>Crear nueva receta</h1>
                 {
                     error ?
-                    <p className='error-message'>{ error }</p>
+                    <div className='error-message' role="alert">{ error }</div>
                     : null
                 }
-                <h1>Crear nueva receta</h1>
                 <label className='input-label'>Título de la receta</label>
                 <input 
                     type='text'    
@@ -79,36 +80,42 @@ const NewRecipe = () => {
                 <DinamicIputs 
                     inputType = { "step" }
                 ></DinamicIputs>
-                <label className='input-label'>Tiempo estimado de preparación</label>
-                <select     
-                    id='time' 
-                    name='time' 
-                    required 
-                    className='input-short'
-                    ref={ timeRef }
-                    defaultValue={`DEFAULT`}
-                >
-                <option value="DEFAULT" disabled hidden>Selecciona una opción</option>
-                <option value="15 min">15 min</option>
-                <option value="30 min">30 min</option>
-                <option value="1 hora">1 hora</option>
-                <option value="1 hora y 30 min">1 hora y 30 min</option>
-                <option value="2 horas o más">2 horas o más</option>
-                </select>
-                <label className='input-label'>Dificultad</label>
-                <select     
-                    id='difficulty' 
-                    name='difficulty' 
-                    required 
-                    className='input-short'
-                    ref={ difficultyRef }
-                    defaultValue={`DEFAULT`}
-                >
-                <option value="DEFAULT" disabled hidden>Selecciona una opción</option>
-                <option value="easy">Fácil</option>
-                <option value="hard">Difícil</option>
-                <option value="veryHard">Muy difícil</option>
-                </select>
+                <fieldset>
+                    <div>
+                        <label className='input-label'>Tiempo de preparación</label>
+                        <select     
+                            id='time' 
+                            name='time' 
+                            required 
+                            className='input-short'
+                            ref={ timeRef }
+                            defaultValue={`DEFAULT`}
+                        >
+                        <option value="DEFAULT" disabled hidden>Selecciona una opción</option>
+                        <option value="15 min">15 min</option>
+                        <option value="30 min">30 min</option>
+                        <option value="1 hora">1 hora</option>
+                        <option value="1 hora y 30 min">1 hora y 30 min</option>
+                        <option value="2 horas o más">2 horas o más</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label className='input-label'>Dificultad</label>
+                        <select     
+                            id='difficulty' 
+                            name='difficulty' 
+                            required 
+                            className='input-short'
+                            ref={ difficultyRef }
+                            defaultValue={`DEFAULT`}
+                        >
+                        <option value="DEFAULT" disabled hidden>Selecciona una opción</option>
+                        <option value="easy">Fácil</option>
+                        <option value="hard">Difícil</option>
+                        <option value="veryHard">Muy difícil</option>
+                        </select>
+                    </div>
+                </fieldset>
                 <label className='input-label'>Categoría Principal</label>
                 <select     
                     id='principal' 

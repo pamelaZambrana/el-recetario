@@ -8,6 +8,7 @@ export const TYPES = {
     SET_RECIPES_BY_CAT : "set recipes by category",
     SET_FAVORITES_COMMUNITY_LIST : "set community favorites list",
     SET_FAVORITES_USER_LIST : " set favorites user list",
+    SET_FAVORITES_USER_RECIPES_LITS : "set favorites user recipes list",
     SET_USER : "set user",
     SET_RECOMMENDED_LIST : "set recommended list",
     SET_COUNT_LIKES : "set count likes",
@@ -65,7 +66,12 @@ export function globalReducer(state, action){
         case TYPES.SET_FAVORITES_USER_LIST:
             return{
                 ...state,
-                favoriteUserRecipesList : action.payload,
+                favoriteUserList : action.payload,
+            }
+        case TYPES.SET_FAVORITES_USER_RECIPES_LITS:
+            return{
+                ...state,
+                favoriteUserRecipesList : action.payload
             }
         case TYPES.SET_RECOMMENDED_LIST:
             return{

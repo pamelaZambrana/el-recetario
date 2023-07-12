@@ -823,7 +823,7 @@
   align-self: flex-start;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
 }
 .form fieldset .input-short {

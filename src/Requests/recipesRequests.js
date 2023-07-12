@@ -59,7 +59,7 @@ export function putDislike(id){
 export function newRecipeRequest(values){
     const xtk = JSON.parse(localStorage.getItem("user")).token;
     return(
-        axios.get(
+        axios.post(
             `https://api-el-recetario.vercel.app/api/recipes`,
             values,
             {headers: { "xtoken" : xtk }}
@@ -77,7 +77,7 @@ export function recipeDetailRequest(id){
     return axios(config);
 };
 
-/* ---- user favorites ----- */
+/* ---- user favorites array----- */
 export function userFavoritesRequest(){
     const xtk = JSON.parse(localStorage.getItem("user")).token;
     return(
@@ -87,4 +87,13 @@ export function userFavoritesRequest(){
         )
     )
 };
-
+/* ---- user favorites details----- */
+export function userFavoritesRecipesRequest(){
+    const xtk = JSON.parse(localStorage.getItem("user")).token;
+    return(
+        axios.get(
+            "https://api-el-recetario.vercel.app/api/users/favorites/details",
+            {headers: { "xtoken" : xtk }}
+        )
+    )
+};

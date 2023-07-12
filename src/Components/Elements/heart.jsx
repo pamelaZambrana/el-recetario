@@ -6,7 +6,7 @@ import { TYPES } from '../../Contexts/globalReducer';
 const Heart = ({ id, countLikes, setCountLikes }) => {
     /* ----using global context---- */
     const [globalState, dispatch ] = useContext(GlobalContext);
-    const favoritesList = globalState.favoriteUserRecipesList;
+    const favoritesList = globalState.favoriteUserList;
 
     /* ---- put like or dislike ---- */
     async function like(id){
