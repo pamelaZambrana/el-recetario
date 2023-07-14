@@ -1,15 +1,16 @@
-import React, { useContext } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import React, { useContext} from 'react';
+import { Link, useNavigate, useParams} from 'react-router-dom';
 import { GlobalContext } from '../../../Contexts/globalContext';
 import { TYPES } from '../../../Contexts/globalReducer';
 import SecondOpenMenu from '../Terciary/SecondMenu';
-import SearchBox from '../../Elements/SearchBox';
+
+
 const SecondNavbar = () => {
     const [globalState, dispatch] = useContext(GlobalContext);
     const open = globalState.secondOpenMenu;
     /* ---- using params---- */
     const params = useParams();
-
+    
     /* ---- using location ----- */
     /* const location = useLocation();
     console.log(location); */
@@ -61,7 +62,6 @@ const SecondNavbar = () => {
                 <SecondOpenMenu></SecondOpenMenu>
                 : null
             }
-            <SearchBox></SearchBox>
         </nav>
     );
 }

@@ -35,6 +35,10 @@ const Favorites = () => {
                     dispatch({
                         type : TYPES.SET_FAVORITES_USER_RECIPES_LITS,
                         payload : response.data.body
+                    });
+                    dispatch({
+                        type : TYPES.SET_RECIPES_BY_CAT,
+                        payload : response.data.body,
                     })
                     setLoading(false);
                 })

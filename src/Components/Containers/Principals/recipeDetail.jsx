@@ -63,7 +63,7 @@ const RecipeDetail = () => {
                         <div className='recipe-icons-container'>
                         {
                             !loginState?
-                            <div className='recipe-detail-icons'>
+                            <div className='recipe-detail-icons '>
                                 <i 
                                     className="bi bi-heart"
                                     onClick={() => navigate("/login")}

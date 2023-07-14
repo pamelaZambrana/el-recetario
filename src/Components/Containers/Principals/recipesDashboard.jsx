@@ -3,7 +3,7 @@ import RecipesGrill from '../Secondary/recipesDashboar/recipesGrill';
 
 import { title } from '../../../functions/setTitles';
 import { useSearchParams } from 'react-router-dom';
-import { allRecipesRequest, getRecipeByCatRequest } from '../../../Requests/recipesRequests';
+import { allRecipesRequest, getFavoriteRecipes, getRecipeByCatRequest } from '../../../Requests/recipesRequests';
 import { GlobalContext } from '../../../Contexts/globalContext';
 import { TYPES } from '../../../Contexts/globalReducer';
 import { filteringList } from '../../../functions/filteringList';
@@ -14,7 +14,6 @@ const RecipeDashboard = () => {
      const [loading, setLoading] = useState(true);
      /* ---- Using the global context---- */
      const [ globalState, dispatch] = useContext(GlobalContext);
-     const recipes = globalState.recipes;
      const allRecipes = globalState.allRecipes;
      const recipesByCat = globalState.searchedRecipes;
      const favoriteCommunityRecipes = globalState.favoriteCommunityRecipesList;
@@ -42,6 +41,7 @@ const RecipeDashboard = () => {
         async function getRecipesByCat(comida){
             await getRecipeByCatRequest(comida)
                 .then(response => {
+                    console.log(response.data.body)
                     dispatch({type: TYPES.SET_RECIPES_BY_CAT, payload : response.data.body});
                     setLoading(false);
                 })
@@ -49,30 +49,49 @@ const RecipeDashboard = () => {
         };
         if (searcher === "todas"){
             getAllRecipes();
-        }else if(searcher !== "todas"){
+        }else{
             if(searcher !== "mejores"){
                 console.log(searcher);
-                getRecipesByCat(searcher);
+                if(searcher !== "names"){
+                    getRecipesByCat(searcher);
+                }else{
+                    setLoading(false);
+                }
             }else{
-                dispatch({type: TYPES.SET_RECIPES_BY_CAT, payload : recipes});
+                async function bestScores(){
+                    await getFavoriteRecipes()
+                        .then(response => {
+                            const list = response.data.body;
+                           
+                            dispatch({
+                                type : TYPES.SET_FAVORITES_COMMUNITY_LIST,
+                                payload : list
+                            })
+                        })
+                        .catch(error => console.log(error));
+                };
+                if(favoriteCommunityRecipes.length < 1 ){
+                    bestScores();
+                };
                 setLoading(false);
             };
 
         };
-    }, [dispatch, searcher, recipes]);
+    }, [dispatch, searcher, favoriteCommunityRecipes]);
 
     /* ----- filteringList---- */
     if(searcher !== "todas" ){
         if(searcher !== "mejores"){
+            console.log(recipesByCat);
             filteredList  = [...recipesByCat] ;
             if(searcher2){
                 filteredList  = filteringList([...recipesByCat], searcher2);
-            }else;
+            };
         }else{
             console.log(favoriteCommunityRecipes);
             filteredList = [...favoriteCommunityRecipes];
             if(searcher2){
-                filteredList  = filteringList([...recipesByCat], searcher2);
+                filteredList  = filteringList([...favoriteCommunityRecipes], searcher2);
             };
         };
     }else if(searcher === "todas" && searcher2){

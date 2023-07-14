@@ -11,6 +11,7 @@ const Filters = () => {
     //console.log(searchParams.toString());
     /* ----using global context ---- */
     const [ globalState, dispatch ] = useContext(GlobalContext);
+    //console.log(globalState);
     /* ---- carousel ----*/
     const leap = 130;
     const scrollContainerRef = useRef(null);
@@ -33,7 +34,7 @@ const Filters = () => {
         window.addEventListener("resize", updateWidth);
         return () => {
             window.removeEventListener("resize", updateWidth);
-        }
+        };
     }, [scrollValues.containerWidth]);
     
 

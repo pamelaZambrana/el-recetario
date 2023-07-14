@@ -1,0 +1,940 @@
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
+.navbar {
+  width: 100%;
+  height: 10vh;
+  background-color: #C02E09;
+}
+.navbar img {
+  width: 68px;
+  height: auto;
+}
+.navbar .navbar-title {
+  margin: 0px;
+  text-decoration: none;
+  font-size: 3rem;
+  font-family: "Libre Baskerville", serif;
+  color: #FBFAF8;
+}
+.navbar .navbar-menu {
+  width: 68px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.navbar .navbar-menu .menu-icon {
+  color: #FBFAF8;
+  font-size: 3rem;
+}
+.navbar .navbar-menu:hover {
+  cursor: pointer;
+}
+
+.footer {
+  height: 12vh;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 8px 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #C02E09;
+  color: #FBFAF8;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.2rem;
+}
+.footer .social-media-section {
+  width: 60%;
+}
+.footer .social-media-section p {
+  margin: 0px;
+}
+.footer .actions-section .register-link-true {
+  text-decoration: none;
+  color: #FBFAF8;
+}
+
+@media (min-width: 450px) {
+  .navbar img {
+    width: 81.6px;
+  }
+  .navbar p {
+    font-size: 3.6rem;
+  }
+  .navbar .navbar-menu {
+    width: 81.6px;
+  }
+  .navbar .navbar-menu .menu-icon {
+    font-size: 3.6rem;
+  }
+  .footer {
+    font-size: 1.44rem;
+  }
+}
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
+/* -----Variables----- */
+.home-principal-section {
+  display: block;
+}
+
+.hero {
+  width: 100%;
+  height: 20rem;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url("../../public/img/hero-big.jpg");
+  background-size: cover;
+}
+
+.hero-message {
+  width: 100%;
+  height: 6rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "News Cycle", sans-serif;
+  font-size: 2rem;
+  background-color: hsla(4, 100%, 39%, 0.74);
+}
+.hero-message p {
+  margin: 0;
+  text-align: center;
+  color: #DBDBD9;
+}
+
+.subsection-title {
+  margin: 0;
+  padding: 0.8rem 0.8rem 0.8rem 0.8rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.8rem;
+}
+
+@media (min-width: 400px) {
+  .hero {
+    height: 30vh;
+  }
+  .hero .hero-message {
+    height: 12vh;
+  }
+  .hero .hero-message p {
+    font-size: 2.4rem;
+  }
+  .subsection-title {
+    font-size: 2.16rem;
+  }
+}
+@media (min-width: 500px) {
+  .hero {
+    height: 50vh;
+    padding: 4rem 0;
+  }
+  .hero .hero-message p {
+    font-size: 2.6rem;
+  }
+  .subsection-title {
+    font-size: 2.34rem;
+  }
+}
+@media (min-width: 800px) {
+  .hero {
+    height: 70vh;
+  }
+  .hero .hero-message p {
+    font-size: 2.8rem;
+  }
+  .subsection-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .subsection-title {
+    font-size: 2.52rem;
+  }
+}
+@media (min-width: 1000px) {
+  .hero {
+    width: 100%;
+    height: 90vh;
+    background-image: url("../../public/img/hero biggest.jpg");
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+  }
+  .hero .hero-message p {
+    font-size: 4rem;
+  }
+}
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
+.recipe-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  background-color: #F5F4F2;
+  border-radius: 12px;
+  box-shadow: 5px 15px 5px -8px rgba(177, 169, 169, 0.45);
+  -webkit-box-shadow: 12px 15px 5px -8px rgba(133, 125, 125, 0.45);
+  -moz-box-shadow: 12px 15px 5px -8px rgba(133, 125, 125, 0.45);
+}
+.recipe-card h4 {
+  margin: 0.5rem;
+}
+.recipe-card h4, .recipe-card i {
+  justify-self: end;
+  text-align: center;
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+  color: #C02E09;
+  font-weight: bold;
+}
+.recipe-card img {
+  border-radius: 12px 12px 0px 0px;
+  width: 150px;
+  height: 120px;
+}
+.recipe-card .recipe-card-description {
+  width: 100%;
+  padding: 0 0.5rem 1rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.recipe-card .recipe-card-description .recipe-card-description-title {
+  text-decoration: none;
+}
+.recipe-card .recipe-card-description .ratings {
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.recipe-card .recipe-card-description .ratings .punctuation {
+  margin: 0;
+}
+
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
+.filter-card {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  background-color: #F5F4F2;
+  border-radius: 12px;
+  box-shadow: 5px 15px 5px -8px rgba(177, 169, 169, 0.45);
+  -webkit-box-shadow: 12px 15px 5px -8px rgba(133, 125, 125, 0.45);
+  -moz-box-shadow: 12px 15px 5px -8px rgba(133, 125, 125, 0.45);
+}
+.filter-card h4, .filter-card i {
+  justify-self: end;
+  text-align: center;
+  margin: 0.5rem 1rem;
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+  color: #C02E09;
+  font-weight: bold;
+}
+.filter-card img {
+  border-radius: 12px 12px 0px 0px;
+  width: 120px;
+  height: 90px;
+}
+
+@media (min-width: 1000px) {
+  .filter-card {
+    width: 150px;
+  }
+  .filter-card img {
+    width: 150px;
+  }
+}
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
+.scroll-recipe, .scroll-filter {
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scroll-filter {
+  height: 15rem;
+}
+
+.arrow-active {
+  visibility: hidden;
+  right: 0;
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #C02E09;
+}
+
+.arrow-inactive {
+  font-size: 2.4rem;
+  font-weight: bold;
+  visibility: hidden;
+}
+
+.arrow-active:hover {
+  cursor: pointer;
+}
+
+.scroll-content {
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  overflow-x: scroll;
+  gap: 2rem;
+}
+
+@media (min-width: 500px) {
+  .arrow-active {
+    visibility: visible;
+  }
+}
+@media (min-width: 800px) {
+  .scroll-content {
+    overflow-x: hidden;
+  }
+}
+@media (min-width: 1000px) {
+  .scroll-filter .scroll-content {
+    gap: 2rem;
+  }
+}
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
+.open-menu-container {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: auto;
+  padding: 1rem;
+  position: absolute;
+  top: 100%;
+  right: 0px;
+  background-color: #FBFAF8;
+  color: #1E1D1D;
+  border-radius: 15px 0 0 15px;
+  box-shadow: -3px 9px 14px 0px rgba(163, 163, 163, 0.75);
+}
+.open-menu-container ul {
+  width: auto;
+  height: 90%;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: left;
+  flex-direction: column;
+  gap: 1rem;
+}
+.open-menu-container li {
+  list-style-type: none;
+}
+
+.user-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.user-container .bi-person-fill {
+  color: #1FF536;
+}
+
+.search-box-option {
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 60vw;
+}
+
+.principal-option {
+  display: inline-block;
+  width: 100%;
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: #1E1D1D;
+}
+
+.secondary-option {
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+  padding-left: 1rem;
+  text-decoration: none;
+  color: #1E1D1D;
+}
+
+.principal-option:hover, .secondary-option:hover {
+  padding: 0.5rem;
+  border-radius: 12px;
+  box-shadow: 7px 7px 19px -7px rgba(89, 82, 82, 0.81);
+  -webkit-box-shadow: 7px 7px 19px -7px rgba(89, 82, 82, 0.81);
+  -moz-box-shadow: 7px 7px 19px -7px rgba(89, 82, 82, 0.81);
+  background-color: #F5F4F2;
+}
+
+@media (min-width: 500px) {
+  .open-menu-container {
+    width: 50%;
+  }
+  .search-box-option {
+    width: 80%;
+  }
+}
+@media (min-width: 800px) {
+  .open-menu-container {
+    width: 40%;
+  }
+}
+@media (min-width: 1000px) {
+  .open-menu-container {
+    width: 25%;
+  }
+}
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
+.search-box-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 1rem;
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+}
+.search-box-container i {
+  color: #C02E09;
+  font-weight: bold;
+}
+
+.search-box, .form .input, .form .input-short {
+  box-shadow: 0px 6px 8px 0px rgba(163, 163, 163, 0.75);
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #DBDBD9;
+  border-radius: 12px;
+}
+
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
+.recipes-dashboard {
+  top: 50px;
+  min-height: 100vh;
+}
+.recipes-dashboard h1 {
+  width: 70%;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  font-family: "News Cycle", sans-serif;
+  font-size: 2rem;
+}
+
+.grill-recipes-container {
+  width: 100%;
+  margin: 1rem auto 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  justify-content: center;
+  justify-items: center;
+  gap: 2rem;
+}
+
+.grill-recipe-content {
+  width: 150px;
+}
+
+.spinner-one {
+  color: #C02E09;
+}
+
+.spinner-two {
+  color: #0B8318;
+}
+
+.spinner-three {
+  color: #F5E418;
+}
+
+@media (min-width: 800px) {
+  .grill-recipes-container {
+    width: 85%;
+  }
+}
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
+.message {
+  position: absolute;
+  width: 70vw;
+  text-align: center;
+  font-family: "News Cycle", sans-serif;
+  font-size: 2rem;
+}
+
+.progress-bar {
+  background-color: #0B8318;
+}
+
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
+.second-navbar {
+  z-index: 0;
+  max-height: 15vh;
+  padding: 1.2rem 1.2rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.8rem;
+}
+.second-navbar i {
+  color: #1E1D1D;
+}
+.second-navbar i:hover {
+  cursor: pointer;
+}
+.second-navbar .search-box-container {
+  width: 90%;
+  grid-column: 1/4;
+}
+
+.second-open-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.second-open-menu i:hover {
+  cursor: pointer;
+}
+
+.second-navbar-button-list {
+  z-index: 1;
+  position: absolute;
+  top: 10rem;
+  left: 55vw;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #FBFAF8;
+  box-shadow: -3px 9px 14px 0px rgba(163, 163, 163, 0.75);
+  border-radius: 15px;
+}
+.second-navbar-button-list a {
+  padding: 0.5rem;
+  text-decoration: none;
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+  color: #1E1D1D;
+}
+
+@media (max-width: 350px) {
+  .second-navbar {
+    right: -50px;
+  }
+}
+@media (min-width: 400px) {
+  .second-navbar-button-list {
+    top: 11rem;
+    left: 62vw;
+  }
+}
+@media (min-width: 450px) {
+  .second-navbar-button-list {
+    top: 11rem;
+    left: 64vw;
+  }
+}
+@media (min-width: 500px) {
+  .second-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 70%;
+  }
+  .second-navbar .search-box-container {
+    width: 50%;
+  }
+  .second-navbar-button-list {
+    top: 12rem;
+    left: 40vw;
+  }
+}
+@media (min-width: 800px) {
+  .second-navbar {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .second-navbar .search-box-container {
+    width: 50%;
+  }
+  .second-navbar-button-list {
+    top: 12rem;
+    left: 45vw;
+  }
+}
+@media (min-width: 1300px) {
+  .second-navbar {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .second-navbar .search-box-container {
+    width: 50%;
+  }
+}
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
+.recipe-detail {
+  min-height: 67vh;
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.recipe-detail-img-icons {
+  width: 100%;
+  padding: 1rem;
+}
+.recipe-detail-img-icons img {
+  width: 150px;
+  height: 120px;
+}
+.recipe-detail-img-icons i:hover {
+  cursor: pointer;
+}
+
+.recipe-detail-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
+  text-align: center;
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+  color: #C02E09;
+}
+
+.recipe-detail-title {
+  width: 100%;
+  font-family: "News Cycle", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.recipe-detail-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recipe-detail-content-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.recipe-detail-content-item h3 {
+  align-self: flex-start;
+  margin-left: 1.2rem;
+  margin: 1rem 0 0.5rem 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.recipe-ingredients, .recipe-detail-author, .recipe-process {
+  margin: 1rem auto 0;
+  align-self: flex-start;
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+}
+
+.recipe-detail-author {
+  width: 100%;
+  padding: 1.2rem;
+  border-top: solid 2px #C02E09;
+  border-bottom: solid 2px #C02E09;
+  text-align: end;
+}
+
+.recipe-detail-icons {
+  text-align: center;
+}
+.recipe-detail-icons p {
+  max-width: 120px;
+}
+
+@media (min-width: 450px) {
+  .recipe-detail {
+    width: 90%;
+  }
+}
+@media (min-width: 500px) {
+  .recipe-detail {
+    margin: 1rem auto;
+  }
+  .recipe-detail-img-icons {
+    width: 400px;
+  }
+  .recipe-detail-content {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+    justify-items: center;
+  }
+  .recipe-detail-content .recipe-detail-author {
+    grid-column: 1/3;
+  }
+}
+@media (min-width: 800px) {
+  /*  .recipe-detail{
+       width: 70%;
+   }; */
+}
+@media (min-width: 1000px) {
+  /* .recipe-detail{
+      width: 40%;
+  }; */
+}
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
+.not-found-page {
+  min-height: 100vh;
+  width: 50%;
+  margin: 10rem auto;
+  text-align: center;
+}
+.not-found-page h1 {
+  font-family: "News Cycle", sans-serif;
+  font-size: 2rem;
+}
+.not-found-page a {
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+}
+
+/* Color Variables */
+/* Font-family variables */
+/* Font-size variables */
+/* Mixins */
+.form {
+  width: 80%;
+  min-height: 100vh;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form h1 {
+  font-family: "News Cycle", sans-serif;
+  font-size: 2rem;
+}
+.form label {
+  align-self: flex-start;
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+}
+.form .input, .form .input-short {
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+}
+.form p {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.2rem;
+}
+.form .error-message {
+  color: #db0909;
+}
+.form fieldset {
+  align-self: flex-start;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.form fieldset .input-short {
+  align-self: center;
+}
+.form textarea {
+  overflow: hidden;
+  height: auto;
+  resize: none;
+}
+.form .input-short {
+  align-self: flex-start;
+  width: auto;
+}
+.form .input-file {
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+}
+
+.ingredient-list {
+  width: 100%;
+}
+.ingredient-list li {
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+
+.add-button, .remove-button-active {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #F5E418;
+  border: none;
+  border-radius: 30%;
+}
+.add-button i, .remove-button-active i {
+  font-family: "News Cycle", sans-serif;
+  font-size: 2rem;
+  box-shadow: 7px 7px 19px -7px rgba(89, 82, 82, 0.81);
+  -webkit-box-shadow: 7px 7px 19px -7px rgba(89, 82, 82, 0.81);
+  -moz-box-shadow: 7px 7px 19px -7px rgba(89, 82, 82, 0.81);
+  color: #1E1D1D;
+}
+
+.remove-button-active {
+  background-color: #F5F4F2;
+}
+
+.remove-button-active:hover i {
+  color: #db0909;
+}
+
+.added-inputs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.buttons-container {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.submit-button, .cancel-button {
+  width: 10rem;
+  padding: 1rem;
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.4rem;
+  border-radius: 1.5rem;
+  border: none;
+}
+
+.submit-button {
+  color: #FBFAF8;
+  background-color: #0B8318;
+}
+
+.cancel-button {
+  color: #1E1D1D;
+  background-color: #DBDBD9;
+}
+
+@media (min-width: 500px) {
+  .form {
+    width: 60%;
+  }
+}
+@media (min-width: 600px) {
+  .form {
+    width: 50%;
+  }
+}
+@media (min-width: 800px) {
+  .form {
+    width: 40%;
+  }
+}
+@media (min-width: 1000px) {
+  .form {
+    width: 30%;
+  }
+}
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #FBFAF8;
+  min-width: 360px;
+}/*# sourceMappingURL=main.css.map */

@@ -5,12 +5,13 @@ import { GlobalContext } from '../../../Contexts/globalContext';
 import { TYPES } from '../../../Contexts/globalReducer';
 
 const SecondOpenMenu = () => {
-    /* ----using global state---- */
-    const [globalState, dispatch] = useContext(GlobalContext);
-    console.log(globalState);
     /* ----using query params---- */
     const [searchParams] = useSearchParams();
     const typeFilter = searchParams.get("type");
+    /* ----using global state---- */
+    const [globalState, dispatch] = useContext(GlobalContext);
+    console.log(globalState);
+    
 
     /* ----filtering the list---- */
     let paramsLevel = 0;
