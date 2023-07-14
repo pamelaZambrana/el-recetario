@@ -5,10 +5,23 @@
     @include display-estructure(space-between, center);
     flex-direction: column;
 }
+.recipe-detail-charact{
+    @include display-estructure(center, flex-start);
+    width: 90%;
+}
+.recipe-detail-others{
+    width: 20rem;
+    padding-top: 1rem;
+    li{
+        @include content-medium;
+    };
 
+}
 .recipe-detail-img-icons{
-    width: 100%;
     padding: 1rem;
+    @include display-estructure(center, center);
+    flex-direction: column;
+    gap: 1.5rem;
     img{
         width: 150px;
         height: 120px;
@@ -17,13 +30,21 @@
         cursor: pointer;
     }
 };
+.recipe-icons-container{
+    width: 100%;
+
+    @include display-estructure(space-between, center);
+    gap: 1rem;
+}
 .recipe-detail-icons{
-    @include display-estructure(space-around, center);
-    flex-direction: column;
     width: 30%;
     text-align: center;
     @include content-medium;
     color: $primary;
+    text-align: center;
+    p{
+        max-width: 120px
+    }
 }
 .recipe-detail-title{
     width: 100%;
@@ -65,12 +86,7 @@
     text-align: end;
 }
 
-.recipe-detail-icons{
-    text-align: center;
-    p{
-        max-width: 120px
-    }
-}
+
 @media(min-width: 450px){
     .recipe-detail{
         width: 90%;
@@ -82,6 +98,9 @@
     };
     .recipe-detail-img-icons{
         width: 400px;
+    }
+    .recipe-icons-container{
+        width: 40%;
     }
     .recipe-detail-content{
         width: 80%;

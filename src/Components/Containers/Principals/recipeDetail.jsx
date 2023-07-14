@@ -58,35 +58,41 @@ const RecipeDetail = () => {
                 ?
                 <div className='recipe-detail'>
                     <h1 className='recipe-detail-title'>{ recipe.name }</h1>
-                    <section className='recipe-detail-img-icons'>
-                        <img src={recipe.image} alt={`Imagen de ${recipe.name}`}/>
-                        <div className='recipe-icons-container'>
-                        {
-                            !loginState?
-                            <div className='recipe-detail-icons '>
-                                <i 
-                                    className="bi bi-heart"
-                                    onClick={() => navigate("/login")}
-                                ></i>
-                                <p>{ "Añadir a favoritos " }</p>
+                    <section className='recipe-detail-charact' >
+                        <ul className='recipe-detail-others'>
+                            <li>Tiempo estimado de preparación: <span>{recipe.time}</span></li>
+                            <li>Dificultad: <span>{recipe.difficulty}</span></li>
+                        </ul>
+                        <div className='recipe-detail-img-icons'>
+                            <img src={recipe.image} alt={`Imagen de ${recipe.name}`}/>
+                            <div className='recipe-icons-container'>
+                            {
+                                !loginState?
+                                <div className='recipe-detail-icons '>
+                                    <i 
+                                        className="bi bi-heart"
+                                        onClick={() => navigate("/login")}
+                                    ></i>
+                                    <p> Añadir a favoritos</p>
 
-                            </div>
-                            :
-                            <div className='recipe-detail-icons'>
-                                <Heart 
-                                    id={ recipe._id }
-                                    countLikes = { countLikes }
-                                    setCountLikes = { setCountLikes }
-                                ></Heart>
-                                <p>{ countLikes }</p>
-                            </div>
-                            
-                        }
-                            <div className='recipe-detail-icons'>
-                                <i 
-                                    className="bi bi-share-fill"
-                                ></i>
-                                <p>Compartir</p>
+                                </div>
+                                :
+                                <div className='recipe-detail-icons'>
+                                    <Heart 
+                                        id={ recipe._id }
+                                        countLikes = { countLikes }
+                                        setCountLikes = { setCountLikes }
+                                    ></Heart>
+                                    <p>{ countLikes }</p>
+                                </div>
+                                
+                            }
+                                <div className='recipe-detail-icons'>
+                                    <i 
+                                        className="bi bi-share-fill"
+                                    ></i>
+                                    <p>Compartir</p>
+                                </div>
                             </div>
                         </div>
                     </section>

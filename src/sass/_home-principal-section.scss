@@ -14,7 +14,7 @@ $hero-heigth5 : 90vh;
     height: $hero-heigth1;
     padding: 2rem 0;
     @include display-estructure(center,flex-end);
-    background-image: url('../../public/img/hero-big.jpg');
+    background-image: url('/public/img/hero-big.jpg');
     background-size: cover;
 };
 .hero-message{
@@ -88,7 +88,7 @@ $hero-heigth5 : 90vh;
     .hero{
         width: 100%;
         height: $hero-heigth5;
-        background-image: url('../../public/img/hero\ biggest.jpg');
+        background-image: url('/public/img/hero\ biggest.jpg');
         object-fit: cover;
         object-position: center;
         .hero-message{
